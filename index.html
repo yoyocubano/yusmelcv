@@ -128,8 +128,8 @@
 <!-- Navigation -->
 <nav
     class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b lux-border h-24 flex items-center px-8 md:px-16 justify-between">
-    <div class="serif text-4xl font-black tracking-tighter text-prime flex items-baseline gap-2">
-        YUSMEL <span class="font-sans text-[10px] uppercase tracking-[0.6em] text-zinc-800 font-black">COLOMBO</span>
+    <div class="serif text-2xl tracking-tighter text-prime flex items-baseline gap-1">
+        yusmel <span class="font-sans text-[10px] uppercase tracking-[0.6em] text-zinc-900 font-black">COLOMBO</span>
     </div>
     <div class="hidden md:flex gap-16 text-[10px] uppercase tracking-[0.4em] font-bold text-gray-400">
         <a href="#profil" class="nav-link" x-text="lang === 'lb' ? 'Profil' : 'Profil'"></a>
@@ -156,18 +156,10 @@
                 x-text="lang === 'fr' ? 'Électricien • Spécialiste Luxembourg' : (lang === 'es' ? 'Electricista • Especialista Luxemburgo' : (lang === 'lb' ? 'Elektriker • Spezialist Lëtzebuerg' : 'Electrician • Luxembourg Specialist'))">
             </div>
             <h1
-                class="text-8xl md:text-[11.5rem] leading-[0.75] font-black mb-10 tracking-tighter relative z-30 text-prime">
+                class="text-7xl md:text-[9rem] leading-[0.8] font-black mb-12 tracking-tighter relative z-10 text-prime">
                 Yusmel <br> <span class="italic serif font-normal">Colombo</span>
             </h1>
-            <div class="flex flex-wrap gap-4 mb-12">
-                <span
-                    class="px-4 py-2 border border-zinc-200 text-[10px] font-black uppercase tracking-widest text-zinc-400"
-                    x-text="lang === 'es' ? 'Nacionalidad: Cubano - Luxemburgués' : 'Nationalité: Cubano - Luxembourgeois'"></span>
-                <span
-                    class="px-4 py-2 border border-blue-100 bg-blue-50/50 text-prime text-[10px] font-black uppercase tracking-widest"
-                    x-text="lang === 'es' ? 'Licencia B + Vehículo Propio' : 'Permis B + Véhicule Personnel'"></span>
-            </div>
-            <p class="text-xl md:text-3xl font-light serif italic text-gray-600 max-w-2xl mb-16 leading-relaxed"
+            <p class="text-lg md:text-2xl font-light serif italic text-gray-500 max-w-xl mb-16 leading-relaxed"
                 x-text="lang === 'fr' ? 'Luxe technique: Précision et discipline en chaque connexion.' : (lang === 'es' ? 'Lujo técnico: Precisión y disciplina en cada conexión.' : (lang === 'lb' ? 'Technesche Luxus: Präzisioun an Disziplin an all Verbindung.' : 'Technical Luxury: Precision and discipline in every connection.'))">
             </p>
             <div class="flex flex-col md:flex-row gap-12 items-start md:items-center">
@@ -187,16 +179,17 @@
                 </div>
             </div>
         </div>
-        <div class="md:col-span-5 relative z-10" data-aos="fade-left" data-aos-delay="300">
-            <div class="hero-frame">
-                <img src="yusmel_real.png" alt="Yusmel Colombo Portrait" class="w-full img-premium block relative">
+        <div class="md:col-span-5 relative z-40" data-aos="fade-left" data-aos-delay="300">
+            <div class="hero-frame overflow-hidden">
+                <img src="yusmel_real.png" alt="Yusmel Colombo Portrait"
+                    class="w-full img-premium block relative -top-4 scale-110">
             </div>
             <div
-                class="absolute -bottom-12 -left-12 bg-prime p-14 shadow-[0_35px_60px_-15px_rgba(30,58,138,0.3)] border lux-border z-20">
-                <div class="text-5xl serif font-bold mb-2 tracking-tighter text-white"
+                class="absolute -bottom-8 -left-8 bg-prime p-10 shadow-[0_35px_60px_-15px_rgba(30,58,138,0.3)] border lux-border z-50">
+                <div class="text-4xl serif font-bold mb-1 tracking-tighter text-white"
                     x-text="lang === 'es' ? 'Electricista' : 'Électricien'"></div>
-                <div class="text-[10px] uppercase tracking-[0.4em] font-black text-white/70"
-                    x-text="lang === 'lb' ? 'Zertifizéiert Lëtzebuerg' : (lang === 'es' ? 'Certificado Luxemburgo' : 'Certifié Luxembourg')">
+                <div class="text-[9px] uppercase tracking-[0.4em] font-black text-white/70"
+                    x-text="lang === 'lb' ? 'Certifiéiert Lëtzebuerg' : 'Certifié Luxembourg'">
                 </div>
             </div>
         </div>
