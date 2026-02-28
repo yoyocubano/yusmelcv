@@ -62,8 +62,11 @@
         .hero-frame {
             position: relative;
             background: #fff;
-            padding: 10px;
-            box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.12);
+            padding: 0;
+            /* Removed padding to avoid borders */
+            overflow: hidden;
+            box-shadow: 0 40px 80px -15px rgba(30, 58, 138, 0.15);
+            /* Tinted shadow */
         }
 
         /* Lighting/Glow effect for Nav */
@@ -134,10 +137,12 @@
             x-text="lang === 'lb' ? 'Kontakt' : 'Contact'"></a>
     </div>
     <div class="flex gap-4 text-[10px] font-bold">
-        <button @click="lang = 'fr'" :class="lang === 'fr' ? 'text-black' : 'text-gray-300'">FR</button>
-        <button @click="lang = 'lb'" :class="lang === 'lb' ? 'text-black' : 'text-gray-300'">LB</button>
-        <button @click="lang = 'en'" :class="lang === 'en' ? 'text-black' : 'text-gray-300'">EN</button>
-        <button @click="lang = 'es'" :class="lang === 'es' ? 'text-black' : 'text-gray-300'">ES</button>
+        <button @click="lang = 'fr'" :class="lang === 'fr' ? 'text-prime' : 'text-gray-300'">FR</button>
+        <button @click="lang = 'lb'" :class="lang === 'lb' ? 'text-prime' : 'text-gray-300'">LB</button>
+        <button @click="lang = 'en'" :class="lang === 'en' ? 'text-prime' : 'text-gray-300'">EN</button>
+        <button @click="lang = 'es'" :class="lang === 'es' ? 'text-prime' : 'text-gray-300'">ES</button>
+        <button @click="lang = 'pt'" :class="lang === 'pt' ? 'text-prime' : 'text-gray-300'">PT</button>
+        <button @click="lang = 'it'" :class="lang === 'it' ? 'text-prime' : 'text-gray-300'">IT</button>
     </div>
 </nav>
 
@@ -148,8 +153,9 @@
             <div class="text-[11px] uppercase tracking-[0.6em] text-prime font-bold mb-8"
                 x-text="lang === 'fr' ? 'Électricien • Spécialiste Luxembourg' : (lang === 'es' ? 'Electricista • Especialista Luxemburgo' : (lang === 'lb' ? 'Elektriker • Spezialist Lëtzebuerg' : 'Electrician • Luxembourg Specialist'))">
             </div>
-            <h1 class="text-8xl md:text-[11.5rem] leading-[0.75] font-bold mb-10 tracking-tighter relative z-30">
-                Yusmel <br> <span class="italic serif font-normal text-zinc-100">Colombo</span>
+            <h1
+                class="text-8xl md:text-[11.5rem] leading-[0.75] font-bold mb-10 tracking-tighter relative z-30 text-prime">
+                Yusmel <br> <span class="italic serif font-normal text-zinc-100 opacity-90">Colombo</span>
             </h1>
             <p class="text-xl md:text-3xl font-light serif italic text-gray-600 max-w-2xl mb-16 leading-relaxed"
                 x-text="lang === 'fr' ? 'Luxe technique: Précision et discipline en chaque connexion.' : (lang === 'es' ? 'Lujo técnico: Precisión y disciplina en cada conexión.' : (lang === 'lb' ? 'Technesche Luxus: Präzisioun an Disziplin an all Verbindung.' : 'Technical Luxury: Precision and discipline in every connection.'))">
