@@ -128,8 +128,8 @@
 <!-- Navigation -->
 <nav
     class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b lux-border h-24 flex items-center px-8 md:px-16 justify-between">
-    <div class="serif text-3xl font-black tracking-tighter text-prime">
-        YUSMEL <span class="font-sans text-[11px] uppercase tracking-[0.5em] text-gray-800 ml-3">Colombo</span>
+    <div class="serif text-4xl font-black tracking-tighter text-prime flex items-baseline gap-2">
+        YUSMEL <span class="font-sans text-[10px] uppercase tracking-[0.6em] text-zinc-800 font-black">COLOMBO</span>
     </div>
     <div class="hidden md:flex gap-16 text-[10px] uppercase tracking-[0.4em] font-bold text-gray-400">
         <a href="#profil" class="nav-link" x-text="lang === 'lb' ? 'Profil' : 'Profil'"></a>
@@ -159,6 +159,14 @@
                 class="text-8xl md:text-[11.5rem] leading-[0.75] font-black mb-10 tracking-tighter relative z-30 text-prime">
                 Yusmel <br> <span class="italic serif font-normal">Colombo</span>
             </h1>
+            <div class="flex flex-wrap gap-4 mb-12">
+                <span
+                    class="px-4 py-2 border border-zinc-200 text-[10px] font-black uppercase tracking-widest text-zinc-400"
+                    x-text="lang === 'es' ? 'Nacionalidad: Cubano - Luxemburgués' : 'Nationalité: Cubano - Luxembourgeois'"></span>
+                <span
+                    class="px-4 py-2 border border-blue-100 bg-blue-50/50 text-prime text-[10px] font-black uppercase tracking-widest"
+                    x-text="lang === 'es' ? 'Licencia B + Vehículo Propio' : 'Permis B + Véhicule Personnel'"></span>
+            </div>
             <p class="text-xl md:text-3xl font-light serif italic text-gray-600 max-w-2xl mb-16 leading-relaxed"
                 x-text="lang === 'fr' ? 'Luxe technique: Précision et discipline en chaque connexion.' : (lang === 'es' ? 'Lujo técnico: Precisión y disciplina en cada conexión.' : (lang === 'lb' ? 'Technesche Luxus: Präzisioun an Disziplin an all Verbindung.' : 'Technical Luxury: Precision and discipline in every connection.'))">
             </p>
@@ -197,10 +205,7 @@
 
 <!-- Profile Context & Brand Asset -->
 <section id="profil" class="py-56 bg-zinc-50 relative overflow-hidden">
-    <div
-        class="absolute top-0 right-0 w-1/3 h-full opacity-10 grayscale brightness-50 pointer-events-none hidden lg:block">
-        <img src="yusmel_hero.png" alt="Contextual Asset" class="h-full object-cover">
-    </div>
+    <!-- Background cleaned up for clarity -->
     <div class="max-w-5xl mx-auto px-6 relative z-10" data-aos="fade-up">
         <div class="flex flex-col items-center text-center">
             <h2 class="text-[12px] uppercase tracking-[0.6em] font-black text-gray-300 mb-12"
@@ -209,36 +214,36 @@
                 x-text="lang === 'lb' ? 'Mat enger technescher Villsäitegkeet déi international gewonnen gouf, iwwersetzen ech Komplexitéit a Sécherheet an elektresch Leeschtung.' : 'Fort d\'une polyvalence technique acquise à l\'international, je traduis la complexité en sécurité et performance électrique.'">
             </p>
             <div class="grid grid-cols-2 lg:grid-cols-3 gap-12 w-full mt-16">
-                <!-- Languages with clear levels -->
+                <!-- Languages with clear levels and labels -->
                 <div class="group border-l-4 border-prime pl-8 py-4 bg-white shadow-sm transition-all hover:shadow-md">
-                    <span class="text-[11px] uppercase tracking-widest text-gray-400 font-black block mb-2"
+                    <span class="text-[11px] uppercase tracking-widest text-blue-600 font-black block mb-2"
                         x-text="lang === 'es' ? 'Español' : 'Espagnol'"></span>
-                    <span class="text-2xl font-bold text-prime uppercase tracking-tighter">Natif</span>
+                    <span class="text-2xl font-bold text-zinc-800 uppercase tracking-tighter">Natif</span>
                 </div>
                 <div class="group border-l-4 border-prime pl-8 py-4 bg-white shadow-sm transition-all hover:shadow-md">
-                    <span class="text-[11px] uppercase tracking-widest text-gray-400 font-black block mb-2"
+                    <span class="text-[11px] uppercase tracking-widest text-blue-600 font-black block mb-2"
                         x-text="lang === 'lb' ? 'Franséisch' : 'Français'"></span>
-                    <span class="text-2xl font-bold text-prime uppercase tracking-tighter">B1.2 Business</span>
+                    <span class="text-2xl font-bold text-zinc-800 uppercase tracking-tighter">B1.2 Business</span>
                 </div>
                 <div class="group border-l-4 border-prime pl-8 py-4 bg-white shadow-sm transition-all hover:shadow-md">
-                    <span class="text-[11px] uppercase tracking-widest text-gray-400 font-black block mb-2"
+                    <span class="text-[11px] uppercase tracking-widest text-blue-600 font-black block mb-2"
                         x-text="lang === 'lb' ? 'Lëtzebuergesch' : 'Luxembourgeois'"></span>
-                    <span class="text-2xl font-bold text-prime uppercase tracking-tighter">B1 Communication</span>
+                    <span class="text-2xl font-bold text-zinc-800 uppercase tracking-tighter">B1 Communication</span>
                 </div>
                 <div class="group border-l-4 border-prime pl-8 py-4 bg-white shadow-sm transition-all hover:shadow-md">
-                    <span class="text-[11px] uppercase tracking-widest text-gray-400 font-black block mb-2"
+                    <span class="text-[11px] uppercase tracking-widest text-blue-600 font-black block mb-2"
                         x-text="lang === 'lb' ? 'Englesch' : 'Anglais'"></span>
-                    <span class="text-2xl font-bold text-prime uppercase tracking-tighter">B1 Technique</span>
+                    <span class="text-2xl font-bold text-zinc-800 uppercase tracking-tighter">B1 Technique</span>
                 </div>
                 <div class="group border-l-4 border-prime pl-8 py-4 bg-white shadow-sm transition-all hover:shadow-md">
-                    <span class="text-[11px] uppercase tracking-widest text-gray-400 font-black block mb-2"
+                    <span class="text-[11px] uppercase tracking-widest text-blue-600 font-black block mb-2"
                         x-text="lang === 'lb' ? 'Portugisesch' : 'Portugais'"></span>
-                    <span class="text-2xl font-bold text-prime uppercase tracking-tighter">A2.2 Pratique</span>
+                    <span class="text-2xl font-bold text-zinc-800 uppercase tracking-tighter">A2.2 Pratique</span>
                 </div>
                 <div class="group border-l-4 border-prime pl-8 py-4 bg-white shadow-sm transition-all hover:shadow-md">
-                    <span class="text-[11px] uppercase tracking-widest text-gray-400 font-black block mb-2"
+                    <span class="text-[11px] uppercase tracking-widest text-blue-600 font-black block mb-2"
                         x-text="lang === 'lb' ? 'Italienesch' : 'Italien'"></span>
-                    <span class="text-2xl font-bold text-prime uppercase tracking-tighter">A2.2 Pratique</span>
+                    <span class="text-2xl font-bold text-zinc-800 uppercase tracking-tighter">A2.2 Pratique</span>
                 </div>
             </div>
         </div>
@@ -284,7 +289,6 @@
             <div class="relative" data-aos="fade-up" data-aos-delay="200">
                 <div class="grid grid-cols-2 gap-1 bg-zinc-100 p-1">
                     <div class="bg-white p-14 flex flex-col justify-between min-h-[280px]">
-                        <div class="text-[10px] font-black tracking-[0.4em] text-zinc-200">ASSET 04</div>
                         <h3 class="text-xl font-black uppercase tracking-widest leading-none"
                             x-text="lang === 'lb' ? 'Technesch Rigurositéit' : 'Rigueur Technique'"></h3>
                     </div>
@@ -297,7 +301,6 @@
                             class="w-full h-full object-cover img-premium">
                     </div>
                     <div class="bg-white p-14 flex flex-col justify-between min-h-[280px]">
-                        <div class="text-[10px] font-black tracking-[0.4em] text-zinc-200">CORE 01</div>
                         <h3 class="text-xl font-black uppercase tracking-widest leading-none"
                             x-text="lang === 'lb' ? 'Global Flexibilitéit' : 'Flexibilité Globale'"></h3>
                     </div>
@@ -313,108 +316,100 @@
         <h2 class="text-8xl serif font-bold mb-32 opacity-20" x-text="lang === 'lb' ? 'Chronologie' : 'Chronologie'">
         </h2>
 
-        <div class="space-y-12 relative z-10">
-            <!-- Exteam Group -->
-            <div class="grid md:grid-cols-12 gap-8 items-start" data-aos="fade-up">
-                <div class="md:col-span-3 text-xs font-bold tracking-[0.4em] text-prime uppercase"
-                    x-text="lang === 'lb' ? 'Zäit 2025' : 'Depuis 2025'"></div>
-                <div class="md:col-span-6">
+        <div class="grid md:grid-cols-2 gap-20 relative z-10">
+            <!-- Luxembourg Column (Right) -->
+            <div class="order-1 md:order-2 space-y-12 border-l border-zinc-800 pl-8">
+                <h3 class="text-xs font-black tracking-[0.6em] text-prime uppercase mb-16"
+                    x-text="lang === 'es' ? 'Luxemburgo (Desde 2019)' : 'Luxembourg (Depuis 2019)'"></h3>
+
+                <!-- Exteam Group -->
+                <div data-aos="fade-up">
+                    <div class="text-[10px] font-bold tracking-[0.4em] text-prime mb-2 uppercase"
+                        x-text="lang === 'lb' ? 'Zäit 2025' : 'Depuis 2025'"></div>
                     <h3 class="text-3xl serif italic mb-2 text-prime">Exteam Group</h3>
                     <p class="text-xl font-light text-white"
                         x-text="lang === 'lb' ? 'Missioun an der BDL (Banque de Luxembourg).' : 'Mission à la BDL (Banque de Luxembourg).'">
                     </p>
                 </div>
-            </div>
 
-            <!-- Global Facilities -->
-            <div class="grid md:grid-cols-12 gap-8 items-start" data-aos="fade-up">
-                <div class="md:col-span-3 text-xs font-bold tracking-[0.4em] text-gray-400 uppercase">2023 - 2025</div>
-                <div class="md:col-span-6">
+                <!-- Global Facilities -->
+                <div data-aos="fade-up">
+                    <div class="text-[10px] font-bold tracking-[0.4em] text-gray-400 mb-2 uppercase">2023 - 2025</div>
                     <h3 class="text-3xl serif italic mb-2 text-gray-200">Global Facilities</h3>
                     <p class="text-xl font-light text-gray-400"
                         x-text="lang === 'lb' ? 'DAP an der Elektrizitéit, Léierplaz.' : 'DAP en électricité, apprentissage.'">
                     </p>
                 </div>
-            </div>
 
-            <!-- MySafety -->
-            <div class="grid md:grid-cols-12 gap-8 items-start" data-aos="fade-up">
-                <div class="md:col-span-3 text-xs font-bold tracking-[0.4em] text-gray-500">2022 - 2023</div>
-                <div class="md:col-span-6">
+                <!-- MySafety -->
+                <div data-aos="fade-up">
+                    <div class="text-[10px] font-bold tracking-[0.4em] text-gray-500 mb-2 uppercase">2022 - 2023</div>
                     <h3 class="text-3xl serif italic mb-2">MySafety</h3>
                     <p class="text-xl font-light text-gray-400"
                         x-text="lang === 'lb' ? 'DAP an der Elektrizitéit, Léierplaz.' : 'DAP en électricité, apprentissage.'">
                     </p>
                 </div>
-            </div>
 
-            <!-- Co-Labor -->
-            <div class="grid md:grid-cols-12 gap-8 items-start border-l border-zinc-800 pl-8" data-aos="fade-up">
-                <div class="md:col-span-3 text-xs font-bold tracking-[0.4em] text-gray-400">2021 - 2022</div>
-                <div class="md:col-span-6">
+                <!-- Co-Labor -->
+                <div data-aos="fade-up">
+                    <div class="text-[10px] font-bold tracking-[0.4em] text-gray-400 mb-2 uppercase">2021 - 2022</div>
                     <h3 class="text-3xl serif italic mb-2 text-white">Co-Labor</h3>
                     <p class="text-xl font-light text-gray-300"
                         x-text="lang === 'lb' ? 'Villsäitegen Aarbechter.' : 'Ouvrier polyvalent.'"></p>
                 </div>
-            </div>
 
-            <!-- Verda -->
-            <div class="grid md:grid-cols-12 gap-8 items-start border-l border-zinc-800 pl-8" data-aos="fade-up">
-                <div class="md:col-span-3 text-xs font-bold tracking-[0.4em] text-prime underline decoration-prime/30"
-                    x-text="lang === 'lb' ? 'AUG 2020' : 'AOÛT 2020'"></div>
-                <div class="md:col-span-6">
+                <!-- Verda -->
+                <div data-aos="fade-up">
+                    <div
+                        class="text-[10px] font-bold tracking-[0.4em] text-prime underline decoration-prime/30 mb-2 uppercase">
+                        2020</div>
                     <h3 class="text-3xl serif italic mb-2 text-white">Verda (Jardinerie)</h3>
                     <p class="text-xl font-light text-gray-300"
                         x-text="lang === 'lb' ? 'Villsäitegen Aarbechter.' : 'Ouvrier polyvalent.'"></p>
                 </div>
-            </div>
 
-            <!-- Restaurant Kugener -->
-            <div class="grid md:grid-cols-12 gap-8 items-start border-l border-zinc-800 pl-8" data-aos="fade-up">
-                <div class="md:col-span-3 text-xs font-bold tracking-[0.4em] text-gray-400"
-                    x-text="lang === 'lb' ? 'DEZ 2019' : 'DÉC 2019'"></div>
-                <div class="md:col-span-6">
+                <!-- Winterlights -->
+                <div data-aos="fade-up">
+                    <div class="text-[10px] font-bold tracking-[0.4em] text-gray-400 mb-2 uppercase">2019 - 2020</div>
                     <h3 class="text-3xl serif italic mb-2 text-white">Restaurant Kugener (Winterlights)</h3>
                     <p class="text-xl font-light text-gray-300"
                         x-text="lang === 'lb' ? 'Geleeëntlech Hëllef.' : 'Aide occasionelle.'"></p>
                 </div>
             </div>
 
-            <!-- Restaurant Management -->
-            <div class="grid md:grid-cols-12 gap-8 items-start" data-aos="fade-up">
-                <div class="md:col-span-3 text-xs font-bold tracking-[0.4em] text-gray-500">2017 - 2019</div>
-                <div class="md:col-span-6">
+            <!-- International Column (Left) -->
+            <div class="order-2 md:order-1 space-y-12">
+                <h3 class="text-xs font-black tracking-[0.6em] text-zinc-500 uppercase mb-16"
+                    x-text="lang === 'es' ? 'Internacional (Antes de 2019)' : 'International (Avant 2019)'"></h3>
+
+                <!-- Restauration -->
+                <div data-aos="fade-up">
+                    <div class="text-[10px] font-bold tracking-[0.4em] text-gray-500 mb-2 uppercase">2017 - 2019</div>
                     <h3 class="text-3xl serif italic mb-2">Restauration</h3>
                     <p class="text-xl font-light text-gray-400"
                         x-text="lang === 'lb' ? 'Co-Gérant vun engem Restaurant.' : 'Co-gérant d\'un restaurant.'"></p>
                 </div>
-            </div>
 
-            <!-- Internet & Voyage -->
-            <div class="grid md:grid-cols-12 gap-8 items-start" data-aos="fade-up">
-                <div class="md:col-span-3 text-xs font-bold tracking-[0.4em] text-gray-500">2016 - 2017</div>
-                <div class="md:col-span-6">
+                <!-- Tech & Tourism -->
+                <div data-aos="fade-up">
+                    <div class="text-[10px] font-bold tracking-[0.4em] text-gray-500 mb-2 uppercase">2016 - 2017</div>
                     <h3 class="text-3xl serif italic mb-2">Tech & Tourism</h3>
                     <p class="text-xl font-light text-gray-400"
                         x-text="lang === 'lb' ? 'Maintenance vun Internetverbindungen, Reesguide.' : 'Maintenance et gestion des connexions internet, guide de voyage.'">
                     </p>
                 </div>
-            </div>
 
-            <!-- HVAC -->
-            <div class="grid md:grid-cols-12 gap-8 items-start" data-aos="fade-up">
-                <div class="md:col-span-3 text-xs font-bold tracking-[0.4em] text-gray-500">2014 - 2016</div>
-                <div class="md:col-span-6">
+                <!-- HVAC -->
+                <div data-aos="fade-up">
+                    <div class="text-[10px] font-bold tracking-[0.4em] text-gray-500 mb-2 uppercase">2014 - 2016</div>
                     <h3 class="text-3xl serif italic mb-2">HVAC Sector</h3>
                     <p class="text-xl font-light text-gray-400"
                         x-text="lang === 'lb' ? 'Hëllefs-Installateur an HVAC.' : 'Aide-installateur en HVAC.'"></p>
                 </div>
-            </div>
 
-            <!-- Métrologie -->
-            <div class="grid md:grid-cols-12 gap-8 items-start" data-aos="fade-up">
-                <div class="md:col-span-3 text-xs font-bold tracking-[0.4em] text-gray-500">2006 - 2008</div>
-                <div class="md:col-span-6">
+                <!-- Métrologie -->
+                <div data-aos="fade-up">
+                    <div class="text-[10px] font-bold tracking-[0.4em] text-gray-500 mb-2 uppercase">2006 - 2008</div>
                     <h3 class="text-3xl serif italic mb-2" x-text="lang === 'lb' ? 'Metrologie' : 'Métrologie'"></h3>
                     <p class="text-xl font-light text-gray-400"
                         x-text="lang === 'lb' ? 'Qualitéitskontroll.' : 'Métrologie et contrôle de qualité.'"></p>
@@ -523,8 +518,10 @@
                 <h2 class="text-8xl serif font-bold mb-12 text-white"
                     x-text="lang === 'lb' ? 'Loosst eis geschwat.' : 'Parlons Tech.'"></h2>
                 <div class="space-y-4 text-xl font-light text-gray-500">
-                    <p>17a, rue du Lavoir</p>
-                    <p x-text="lang === 'lb' ? 'L-3358 Leudelange • Lëtzebuerg' : 'L-3358 Leudelange • Luxembourg'"></p>
+                    <p class="font-black text-white/90">17a, rue du Lavoir</p>
+                    <p class="font-bold"
+                        x-text="lang === 'lb' ? 'L-3358 Leudelange • Lëtzebuerg' : 'L-3358 Leudelange • Luxembourg'">
+                    </p>
                 </div>
             </div>
             <div class="space-y-8" data-aos="fade-up" data-aos-delay="200">
