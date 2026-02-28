@@ -102,14 +102,16 @@
 
         .img-premium {
             transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
-            /* Removed filters that might cause color lines */
             display: block;
             width: 100%;
             height: auto;
+            transform: scale(1.02);
+            /* Slight scale to hide edge artifacts */
+            transform-origin: center;
         }
 
         .img-premium:hover {
-            transform: scale(1.02);
+            transform: scale(1.05);
         }
 
         .bg-noise {
