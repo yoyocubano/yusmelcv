@@ -429,52 +429,87 @@
     <div class="max-w-7xl mx-auto px-6">
         <h2 class="text-4xl serif italic mb-20 text-center"
             x-text="lang === 'lb' ? 'Studien a Formatiounen' : 'Études et Formations'"></h2>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="bg-zinc-50 p-8 border-l-2 border-prime" data-aos="fade-up">
-                <div class="text-[9px] font-bold text-gray-300 mb-2 uppercase tracking-tighter">Depuis 2022</div>
-                <h4 class="text-lg font-black uppercase text-prime mb-1"
-                    x-text="lang === 'es' ? 'Electricista' : 'Électricien'"></h4>
-                <p class="text-sm text-gray-500">Lycée Technique de Bonnevoie</p>
+        <div class="grid md:grid-cols-2 gap-16">
+            <!-- Luxembourg Column -->
+            <div data-aos="fade-right">
+                <h3 class="text-xl font-black uppercase tracking-[0.4em] text-prime mb-12 border-b border-prime/10 pb-4"
+                    x-text="lang === 'lb' ? 'Lëtzebuerg Parcours' : 'Parcours au Luxembourg'"></h3>
+                <div class="space-y-6">
+                    <div class="bg-zinc-50 p-6 border-l-4 border-prime transition-transform hover:scale-[1.02]">
+                        <div class="text-[9px] font-bold text-gray-400 mb-1 uppercase tracking-tighter">Depuis 2022
+                        </div>
+                        <h4 class="text-lg font-black uppercase text-prime"
+                            x-text="lang === 'es' ? 'Electricista' : 'Électricien'"></h4>
+                        <p class="text-xs text-gray-500 uppercase tracking-widest mt-1">Lycée Technique de Bonnevoie</p>
+                    </div>
+                    <div class="bg-zinc-50 p-6 border-l-4 border-prime transition-transform hover:scale-[1.02]">
+                        <div class="text-[9px] font-bold text-gray-400 mb-1 uppercase tracking-tighter">Depuis 2021
+                        </div>
+                        <h4 class="text-lg font-black uppercase text-prime"
+                            x-text="lang === 'lb' ? 'Lëtzebuergesch' : (lang === 'es' ? 'Luxemburgués' : 'Luxembourgeois')">
+                        </h4>
+                        <p class="text-xs text-gray-500 uppercase tracking-widest mt-1">Ville de Luxembourg (VDL)</p>
+                    </div>
+                    <div class="bg-zinc-50 p-6 border-l-4 border-prime transition-transform hover:scale-[1.02]">
+                        <div class="text-[9px] font-bold text-gray-400 mb-1 uppercase tracking-tighter">2020</div>
+                        <h4 class="text-lg font-black uppercase text-prime"
+                            x-text="lang === 'lb' ? 'JR Web Entwéckler' : 'JR Web Developer'"></h4>
+                        <p class="text-xs text-gray-500 uppercase tracking-widest mt-1">House of Training</p>
+                    </div>
+                    <div class="bg-zinc-50 p-6 border-l-4 border-prime transition-transform hover:scale-[1.02]">
+                        <div class="text-[9px] font-bold text-gray-400 mb-1 uppercase tracking-tighter">2019 - 2021
+                        </div>
+                        <h4 class="text-lg font-black uppercase text-prime"
+                            x-text="lang === 'es' ? 'Lengua Francesa' : 'Langue Française'"></h4>
+                        <p class="text-xs text-gray-500 uppercase tracking-widest mt-1">CLAE</p>
+                    </div>
+                </div>
             </div>
-            <div class="bg-zinc-50 p-8 border-l-2 border-prime" data-aos="fade-up" data-aos-delay="50">
-                <div class="text-[9px] font-bold text-gray-300 mb-2 uppercase tracking-tighter">Depuis 2021</div>
-                <h4 class="text-lg font-bold uppercase text-prime mb-1">Luxembourgeois</h4>
-                <p class="text-sm text-gray-500">VDL (Ville de Luxembourg)</p>
-            </div>
-            <div class="bg-zinc-50 p-8 border-l-2 border-prime" data-aos="fade-up" data-aos-delay="100">
-                <div class="text-[9px] font-bold text-gray-300 mb-2 uppercase tracking-tighter">2020</div>
-                <h4 class="text-lg font-bold uppercase text-prime mb-1">JR Web Developer</h4>
-                <p class="text-sm text-gray-500">House of Training</p>
-            </div>
-            <div class="bg-zinc-50 p-8 border-l-2 border-prime" data-aos="fade-up" data-aos-delay="150">
-                <div class="text-[9px] font-bold text-gray-300 mb-2 uppercase tracking-tighter">2019 - 2021</div>
-                <h4 class="text-lg font-bold uppercase text-prime mb-1">Langue Française</h4>
-                <p class="text-sm text-gray-500">CLAE</p>
-            </div>
-            <div class="bg-zinc-50 p-8 border-l-2 border-prime" data-aos="fade-up" data-aos-delay="200">
-                <div class="text-[9px] font-bold text-gray-300 mb-2 uppercase tracking-tighter">2013</div>
-                <h4 class="text-lg font-bold uppercase text-prime mb-1">Gestion & Art</h4>
-                <p class="text-sm text-gray-500">Casa de la Cultura, FMC</p>
-            </div>
-            <div class="bg-zinc-50 p-8 border-l-2 border-prime" data-aos="fade-up" data-aos-delay="250">
-                <div class="text-[9px] font-bold text-gray-300 mb-2 uppercase tracking-tighter">2011 - 2012</div>
-                <h4 class="text-lg font-bold uppercase text-prime mb-1">Baccalauréat</h4>
-                <p class="text-sm text-gray-500">Facultad Carlos Cespedes</p>
-            </div>
-            <div class="bg-zinc-50 p-8 border-l-2 border-prime" data-aos="fade-up" data-aos-delay="300">
-                <div class="text-[9px] font-bold text-gray-300 mb-2 uppercase tracking-tighter">2009 - 2011</div>
-                <h4 class="text-lg font-bold uppercase text-prime mb-1">Anglais & Marketing</h4>
-                <p class="text-sm text-gray-500">École "La Salle"</p>
-            </div>
-            <div class="bg-zinc-50 p-8 border-l-2 border-prime" data-aos="fade-up" data-aos-delay="350">
-                <div class="text-[9px] font-bold text-gray-300 mb-2 uppercase tracking-tighter">2008</div>
-                <h4 class="text-lg font-bold uppercase text-prime mb-1">Italien B1</h4>
-                <p class="text-sm text-gray-500">École privée</p>
-            </div>
-            <div class="bg-zinc-50 p-8 border-l-2 border-prime" data-aos="fade-up" data-aos-delay="400">
-                <div class="text-[9px] font-bold text-gray-300 mb-2 uppercase tracking-tighter">2003 - 2007</div>
-                <h4 class="text-lg font-bold uppercase text-prime mb-1">Métrologie</h4>
-                <p class="text-sm text-gray-500">Lycée René R. Latour</p>
+
+            <!-- Cuba Column -->
+            <div data-aos="fade-left">
+                <h3 class="text-xl font-black uppercase tracking-[0.4em] text-gray-400 mb-12 border-b border-gray-100 pb-4"
+                    x-text="lang === 'lb' ? 'Formatioun op Kuba' : 'Formation à Cuba'"></h3>
+                <div class="space-y-6">
+                    <div
+                        class="bg-zinc-50 p-6 border-l-4 border-zinc-200 opacity-80 filter grayscale hover:grayscale-0 hover:opacity-100 transition-all">
+                        <div class="text-[9px] font-bold text-gray-400 mb-1 uppercase tracking-tighter">2013</div>
+                        <h4 class="text-lg font-bold uppercase text-zinc-700"
+                            x-text="lang === 'es' ? 'Gestión y Arte' : 'Gestion & Art'"></h4>
+                        <p class="text-xs text-gray-500 uppercase tracking-widest mt-1">Casa de la Cultura, FMC</p>
+                    </div>
+                    <div
+                        class="bg-zinc-50 p-6 border-l-4 border-zinc-200 opacity-80 filter grayscale hover:grayscale-0 transition-all">
+                        <div class="text-[9px] font-bold text-gray-400 mb-1 uppercase tracking-tighter">2011 - 2012
+                        </div>
+                        <h4 class="text-lg font-bold uppercase text-zinc-700"
+                            x-text="lang === 'es' ? 'Bachillerato' : 'Baccalauréat'"></h4>
+                        <p class="text-xs text-gray-500 uppercase tracking-widest mt-1">Facultad Carlos Cespedes</p>
+                    </div>
+                    <div
+                        class="bg-zinc-50 p-6 border-l-4 border-zinc-200 opacity-80 filter grayscale hover:grayscale-0 transition-all">
+                        <div class="text-[9px] font-bold text-gray-400 mb-1 uppercase tracking-tighter">2009 - 2011
+                        </div>
+                        <h4 class="text-lg font-bold uppercase text-zinc-700"
+                            x-text="lang === 'es' ? 'Inglés y Marketing' : 'Anglais & Marketing'"></h4>
+                        <p class="text-xs text-gray-500 uppercase tracking-widest mt-1 font-black">École "La Salle"</p>
+                    </div>
+                    <div
+                        class="bg-zinc-50 p-6 border-l-4 border-zinc-200 opacity-80 filter grayscale hover:grayscale-0 transition-all">
+                        <div class="text-[9px] font-bold text-gray-400 mb-1 uppercase tracking-tighter">2008</div>
+                        <h4 class="text-lg font-bold uppercase text-zinc-700"
+                            x-text="lang === 'es' ? 'Italiano B1' : 'Italien B1'"></h4>
+                        <p class="text-xs text-gray-500 uppercase tracking-widest mt-1">École privée</p>
+                    </div>
+                    <div
+                        class="bg-zinc-50 p-6 border-l-4 border-zinc-200 opacity-80 filter grayscale hover:grayscale-0 transition-all">
+                        <div class="text-[9px] font-bold text-gray-400 mb-1 uppercase tracking-tighter">2003 - 2007
+                        </div>
+                        <h4 class="text-lg font-bold uppercase text-zinc-700"
+                            x-text="lang === 'es' ? 'Metrología' : 'Métrologie'"></h4>
+                        <p class="text-xs text-gray-500 uppercase tracking-widest mt-1">Lycée René R. Latour</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
