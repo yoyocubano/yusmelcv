@@ -1,0 +1,239 @@
+# The Editorial Direction
+
+## Product Overview
+
+**The Pitch:** An ultra-premium digital portfolio positioning Yusmel Colombo not as a laborer, but as an artisanal craftsman of electricity. By leveraging high-fashion editorial layouts, we elevate the perception of his technical expertise to that of a luxury service provider.
+
+**For:** High-end residential clients, architects, and luxury contractors in Luxembourg who value precision, aesthetics, and multilingual professionalism.
+
+**Device:** Desktop (Primary focus for architectural context)
+
+**Design Direction:** "Architectural Digest meets Technical Precision." Massive whitespace, confident typography, and zero container borders create a fluid, continuous narrative flow rather than discrete sections.
+
+**Inspired by:** *Kinfolk Magazine* layouts, *Aesop* product pages, *The New York Times Magazine* feature spreads.
+
+---
+
+## Screens
+
+- **The Cover (Home):** Immersive, cinematic introduction establishing tone and identity.
+- **The Narrative (About):** A narrow, typeset biography column akin to a magazine article.
+- **The Craft (Expertise):** Asymmetrical grid showcasing skills with numerical typographic drama.
+- **The Chronology (Experience):** A linear, refined timeline of professional evolution.
+- **The Ledger (Details):** Structured data view of languages, education, and soft skills.
+- **The Connection (Contact):** A dark, sophisticated footer acting as the final call to action.
+
+---
+
+## Key Flows
+
+**Flow: The Discovery** (Prospective Client vetting Yusmel)
+
+1.  User lands on **The Cover** -> Sees full-screen cinematic imagery with "COLOMBO" superimposed in massive, thin type.
+2.  User scrolls down to **The Narrative** -> Reads a refined, centered bio surrounded by breathing room.
+3.  User continues to **The Craft** -> Scans "01 Electricité" and "02 IOT" treated as headlines.
+4.  User reaches **The Connection** -> Copies the phone number from the dark footer block.
+
+---
+
+<details>
+<summary>Design System</summary>
+
+## Color Palette
+
+- **Primary:** `#1A1A1A` - Primary text, headings (Charcoal)
+- **Background:** `#FFFFFF` - Main canvas (Pure White)
+- **Surface:** `#F9FAFB` - Subtle alternating sections (Ghost White)
+- **Text:** `#404040` - Body copy (Dark Grey)
+- **Muted:** `#9CA3AF` - Dates, metadata
+- **Accent:** `#3B82F6` - Selected states, subtle underlines (Soft Electric Blue)
+
+## Typography
+
+**Philosophy:** A tension between ultra-modern sans-serifs and a high-contrast editorial serif.
+
+- **Display (Hero):** *Playfair Display*, 300 Italic, 160px. (Elegant, massive)
+- **Headings (Section):** *Playfair Display*, 700, 48px. (Bold, authoritative)
+- **Numerals:** *Bodoni Moda*, 900, 80px. (High contrast, sculptural)
+- **Body:** *Switzer* (or Inter tight), 300, 18px. (Clean, technical, legible)
+- **Captions:** *Switzer*, 500, 12px, Uppercase, tracking 2px.
+
+**Style Notes:**
+- **Zero Borders:** Separation is created solely through spacing (160px+ margins) and font weight contrast.
+- **Asymmetry:** Content rarely spans full width unless it is an image. Text hugs a central 600px column or adheres to a 12-column grid edge.
+- **Images:** Sharp corners, no shadows. Treat images like architectural blocks.
+
+## Design Tokens
+
+```css
+:root {
+  --color-primary: #1A1A1A;
+  --color-bg: #FFFFFF;
+  --color-surface: #F9FAFB;
+  --color-accent: #3B82F6;
+  --font-serif: 'Playfair Display', serif;
+  --font-numeral: 'Bodoni Moda', serif;
+  --font-sans: 'Switzer', sans-serif;
+  --spacing-section: 180px;
+  --spacing-element: 32px;
+}
+```
+
+</details>
+
+---
+
+<details>
+<summary>Screen Specifications</summary>
+
+### 1. The Cover (Hero)
+
+**Purpose:** Instant emotional impact. Establishes Yusmel as a premium brand.
+
+**Layout:** Full viewport height (`100vh`). Image is absolute, covering the screen.
+
+**Key Elements:**
+- **Background Image:** High-res photo of electrical conduit work or architectural lighting, desaturated or high-key.
+- **Overlay Text:** "YUSMEL COLOMBO"
+  - Font: *Playfair Display*, 120px, White (mix-blend-mode: exclusion or difference if needed).
+  - Position: Absolute center, spanning 90% width.
+- **Subtitle:** "Électricien & Spécialiste IOT — Luxembourg"
+  - Font: *Switzer*, 14px, Uppercase, tracking wide.
+  - Position: Bottom left, 48px from bottom.
+- **Scroll Indicator:** A single vertical line (1px wide, 60px tall) animating downwards.
+
+**States:**
+- **Load:** Text fades in `ease-out` over 1.2s. Image slightly scales down from 1.1 to 1.0.
+
+**Responsive:**
+- **Mobile:** Text breaks to two lines ("YUSMEL" / "COLOMBO"). Font size 64px.
+
+---
+
+### 2. The Narrative (Profile)
+
+**Purpose:** Humanizes the technician.
+
+**Layout:** Single narrow column (max-width: 600px) centered in a sea of white space.
+
+**Key Elements:**
+- **Section Label:** "01 — Profil" (Sticky on left edge of viewport on desktop).
+- **Portrait:** Floating image to the right of the text column (parallax effect).
+  - Size: 300x400px.
+- **Body Copy:** "From precise metrology to complex HVAC installations, my journey is defined by technical rigor. Based in Leudelange, I bring a multilingual, artisanal approach to modern electrical systems."
+  - Style: *Switzer* 300, 20px, leading 1.6.
+- **Key Stats Row:** Beneath text, 3 columns.
+  - "DAP Certified" | "6 Languages" | "17 Years Tech Exp"
+
+---
+
+### 3. The Craft (Expertise)
+
+**Purpose:** Showcase technical range with editorial flair.
+
+**Layout:** 2x2 Grid, but staggered (zigzag).
+
+**Key Elements:**
+- **Skill Cards:** No background, just text groupings.
+- **Numerals:** "01", "02", "03", "04"
+  - Style: *Bodoni Moda*, 80px, Color: `#E5E7EB` (Light Gray) to `#1A1A1A` on hover.
+- **Headlines:**
+  - 1. Électricité Générale
+  - 2. Métrologie & Précision
+  - 3. Informatique & IOT
+  - 4. Climatisation
+- **Description:** 3 lines of copy per skill, *Switzer* 16px.
+
+**Interactions:**
+- **Hover:** The Numeral fills with charcoal color. A thin blue line (`#3B82F6`) grows under the headline.
+
+---
+
+### 4. The Chronology (Experience)
+
+**Purpose:** Demonstrates stability and growth without a boring table.
+
+**Layout:** A vertical line runs down the center. Nodes branch left and right alternatively.
+
+**Key Elements:**
+- **Timeline Axis:** 1px solid `#E5E5E5`.
+- **Entries:**
+  - **Left Side:** Date Range (e.g., "Oct 2023 — Présent")
+    - Style: *Switzer*, 14px, Muted.
+  - **Right Side:** Role & Company (e.g., "DAP en électricité — Global Facilities")
+    - Style: *Playfair Display*, 24px, Regular.
+- **Data Points:**
+  - 2023: Global Facilities
+  - 2022: MySafety
+  - 2019: Ouvrier polyvalent
+  - 2017: Co-gérant restaurant
+  - 2014: Aide-installateur HVAC
+  - 2006: Métrologie
+
+**Responsive:**
+- **Mobile:** Line moves to far left. All content stacks on the right.
+
+---
+
+### 5. The Ledger (Education & Languages)
+
+**Purpose:** Hard data presented elegantly.
+
+**Layout:** Split screen. Left 50% = Languages. Right 50% = Education. Background: `#F9FAFB`.
+
+**Key Elements:**
+- **Language List:**
+  - Format: Language Name (Bold) .......... Level (Right aligned)
+  - Visual: Dotted leader line between name and level.
+  - "Français — B1.2", "Espagnol — Maternelle", "Luxembourgeois — B1".
+- **Education Stack:**
+  - Simple list, no bullets.
+  - "2022 — DAP Electricien"
+  - "2020 — JR Web Developer"
+  - "2003 — Métrologie"
+
+---
+
+### 6. The Connection (Footer)
+
+**Purpose:** High-contrast closure. Direct contact.
+
+**Layout:** Full width block. Dark Charcoal background (`#1A1A1A`).
+
+**Key Elements:**
+- **Layout:** Three distinct columns.
+- **Col 1 (Availability):** "Currently accepting new projects in Leudelange & Greater Luxembourg."
+  - Text: White, 14px.
+- **Col 2 (Coordinates):**
+  - "17a, rue du Lavoir L-3358"
+  - "+352 621 430 283"
+  - "yucolaguilar@gmail.com"
+  - Style: White, 18px, underlined on hover.
+- **Col 3 (Signature):** "Yusmel Colombo © 2024"
+
+**Interactions:**
+- **Email Click:** Copies to clipboard. Toast notification appears: "Address Copied."
+
+</details>
+
+---
+
+<details>
+<summary>Build Guide</summary>
+
+**Stack:** HTML + Tailwind CSS v3
+
+**Build Order:**
+1.  **Global Typography & Grid:** Define `font-family` classes and the master spacing variables. The "Editorial" feel lives or dies by the typography implementation.
+2.  **The Cover (Hero):** Build the full-screen landing. Ensure text scales correctly on resize without breaking the layout.
+3.  **The Connection (Footer):** Establish the bookends of the site.
+4.  **The Narrative (Text Column):** Implement the narrow reading experience.
+5.  **The Craft (Grid):** Implement the staggered grid layout.
+6.  **The Chronology:** Complex flexbox/grid implementation for the timeline.
+
+**Tailwind Config Nuances:**
+- Extend `spacing` to include massive values like `128` (32rem) for margins.
+- Add custom `fontFamily` for Playfair Display and Switzer.
+- Set default `container` center and padding to `0` (we will handle margins manually for the "borderless" feel).
+
+</details>

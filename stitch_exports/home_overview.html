@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Yusmel Colombo - Électricien &amp; Spécialiste IOT</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,900&amp;family=Inter:wght@300;400;500;600&amp;family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3780f6",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#101722",
+                        "charcoal": "#1A1A1A",
+                    },
+                    fontFamily: {
+                        "display": ["Playfair Display", "serif"],
+                        "sans": ["Inter", "sans-serif"],
+                        "numeral": ["Bodoni Moda", "serif"],
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        scaleDown: {
+                            '0%': { transform: 'scale(1.1)' },
+                            '100%': { transform: 'scale(1)' },
+                        },
+                        scrollLine: {
+                            '0%': { transform: 'scaleY(0)', transformOrigin: 'top' },
+                            '50%': { transform: 'scaleY(1)', transformOrigin: 'top' },
+                            '51%': { transform: 'scaleY(1)', transformOrigin: 'bottom' },
+                            '100%': { transform: 'scaleY(0)', transformOrigin: 'bottom' },
+                        }
+                    },
+                    animation: {
+                        'fade-in-slow': 'fadeIn 1.2s ease-out forwards',
+                        'scale-down-slow': 'scaleDown 1.8s ease-out forwards',
+                        'scroll-indicator': 'scrollLine 2s cubic-bezier(0.77, 0, 0.175, 1) infinite',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom utilities for blend modes and text styles */
+        .blend-exclusion {
+            mix-blend-mode: exclusion;
+        }
+        
+        /* Hide scrollbar for clean aesthetic */
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+
+        /* Ensure font rendering is crisp */
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-charcoal overflow-x-hidden antialiased">
+<!-- The Cover (Hero) -->
+<main class="relative h-screen w-full overflow-hidden bg-black">
+<!-- Background Image with Scale Animation -->
+<div class="absolute inset-0 z-0 animate-scale-down-slow">
+<!-- Image overlay for contrast -->
+<div class="absolute inset-0 bg-black/20 z-10"></div>
+<img alt="Abstract architectural minimalist interior with light and shadow play" class="h-full w-full object-cover object-center opacity-90 grayscale-[20%]" data-alt="Abstract architectural minimalist interior with light and shadow play" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDj4zY-zBCEbklMHNU7wxXzK6eb2memfUustrAGy5sdhyQBR0oc9-_qPlvS9b-LZM8hXGbrhFcPVAGBUqhuZW65qrAEeX3uB_PXihUZ4bGl8Ko_s0L3_tE67FMUm-1OZ0ttCrlp4sAN6NiHNwri2gKKQNfDHCl2B4dA2hAoo5QvMrQHnq_XDIRTkLvI0KAwgv5UdR2ICCMQjBDnU5Kq9xBd3Ihft5dTTvVgiwqLyK75Q6kDlIoT18sIXHSy-m2kqvUcsyAZngFChI"/>
+</div>
+<!-- Content Container -->
+<div class="relative z-20 flex h-full w-full flex-col justify-between px-6 py-8 md:px-12 md:py-12 lg:px-16">
+<!-- Top Bar (Minimal) -->
+<div class="flex w-full justify-between items-start opacity-0 animate-fade-in-slow" style="animation-delay: 0.2s;">
+<span class="text-white/80 font-sans text-xs tracking-[0.2em] font-medium uppercase mix-blend-difference">Portfolio 2024</span>
+<span class="text-white/80 font-sans text-xs tracking-[0.2em] font-medium uppercase mix-blend-difference">LU / FR / EN / ES</span>
+</div>
+<!-- Hero Typography -->
+<div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center px-4">
+<h1 class="font-display italic text-white leading-[0.85] tracking-tight mix-blend-difference opacity-0 animate-fade-in-slow" style="animation-delay: 0.5s;">
+<span class="block text-[15vw] md:text-[12vw] lg:text-[160px] whitespace-nowrap">YUSMEL</span>
+<span class="block text-[15vw] md:text-[12vw] lg:text-[160px] whitespace-nowrap ml-[0.5em] lg:ml-[1.5em]">COLOMBO</span>
+</h1>
+</div>
+<!-- Bottom Information -->
+<div class="flex w-full items-end justify-between opacity-0 animate-fade-in-slow" style="animation-delay: 0.8s;">
+<!-- Subtitle / Role -->
+<div class="max-w-[280px] md:max-w-md">
+<h2 class="text-white font-sans text-xs md:text-sm font-medium tracking-[0.15em] uppercase leading-relaxed mix-blend-difference">
+                        Électricien &amp; Spécialiste IOT <br class="hidden md:block"/>
+<span class="opacity-70">— Luxembourg</span>
+</h2>
+</div>
+<!-- Scroll Indicator -->
+<div class="flex flex-col items-center gap-4 absolute left-1/2 bottom-12 -translate-x-1/2 hidden md:flex">
+<span class="text-white/60 text-[10px] tracking-[0.2em] uppercase mix-blend-difference">Scroll</span>
+<div class="h-[60px] w-[1px] bg-white/20 overflow-hidden relative">
+<div class="absolute top-0 left-0 w-full h-full bg-white animate-scroll-indicator"></div>
+</div>
+</div>
+<!-- Contact / Secondary Action (Minimal) -->
+<div class="hidden md:block">
+<button class="group flex items-center gap-2 text-white mix-blend-difference hover:opacity-70 transition-opacity">
+<span class="text-xs tracking-[0.15em] uppercase font-medium">Contact</span>
+<span class="material-symbols-outlined text-[16px]">arrow_outward</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+</body></html>

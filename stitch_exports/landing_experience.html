@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>YC Electric - Precision Engineering Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3B82F6", // Electric Blue
+                        "ink": "#1A1A1A",     // Charcoal
+                        "paper": "#FFFFFF",   // White
+                        "surface": "#F8F9FA", // Ghost White
+                        "grid": "#E5E7EB",    // Light Grey
+                        "technical": "#64748B", // Slate
+                    },
+                    fontFamily: {
+                        "sans": ["Inter", "sans-serif"],
+                        "serif": ["Playfair Display", "serif"],
+                        "mono": ["JetBrains Mono", "monospace"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0px", // Sharp corners per design spec
+                        "sm": "2px",
+                        "md": "4px",
+                    },
+                    spacing: {
+                        "block": "120px",
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for technical feel */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F8F9FA;
+            border-left: 1px solid #E5E7EB;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+
+        /* Grid lines utility */
+        .bg-grid-pattern {
+            background-size: 40px 40px;
+            background-image:
+                linear-gradient(to right, #f1f5f9 1px, transparent 1px),
+                linear-gradient(to bottom, #f1f5f9 1px, transparent 1px);
+        }
+
+        .hover-trigger .hover-target {
+            opacity: 0;
+            transform: translateY(10px) scale(0.95);
+            transition: all 0.2s ease-out;
+            pointer-events: none;
+        }
+        
+        .hover-trigger:hover .hover-target {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            pointer-events: auto;
+        }
+
+        @media print {
+            .no-print { display: none !important; }
+            .print-only { display: block !important; }
+            body { font-size: 12pt; color: black; background: white; }
+            a { text-decoration: none; color: black; }
+        }
+    </style>
+</head>
+<body class="bg-paper text-ink font-sans antialiased selection:bg-primary/20 selection:text-primary overflow-x-hidden">
+<!-- Top Navigation / Masthead -->
+<header class="fixed top-0 left-0 w-full z-50 bg-paper/95 backdrop-blur-sm border-b border-ink transition-all duration-300 group/header">
+<div class="max-w-[1440px] mx-auto px-6 h-16 flex items-center justify-between">
+<!-- Logo -->
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-2xl">electric_bolt</span>
+<h1 class="font-serif font-bold text-xl tracking-tight text-ink group-hover/header:scale-95 transition-transform origin-left">YC ELECTRIC</h1>
+</div>
+<!-- Right Controls -->
+<div class="flex items-center gap-8">
+<!-- Language Switcher -->
+<div class="hidden md:flex items-center gap-4 font-mono text-xs text-technical">
+<a class="text-ink font-bold border-b border-primary pb-0.5" href="#">EN</a>
+<a class="hover:text-ink transition-colors" href="#">FR</a>
+<a class="hover:text-ink transition-colors" href="#">DE</a>
+</div>
+<!-- Status Indicator -->
+<div class="flex items-center gap-3 border-l border-grid pl-6">
+<div class="relative flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary"></span>
+</div>
+<span class="font-mono text-[10px] tracking-[0.1em] font-bold text-ink">AVAILABLE FOR HIRE</span>
+</div>
+<!-- Mobile Menu Icon -->
+<button class="md:hidden text-ink">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Wrapper -->
+<main class="relative w-full pt-16 min-h-screen">
+<!-- Grid Structure Background (Visible on larger screens) -->
+<div class="absolute inset-0 pointer-events-none z-0 hidden lg:flex max-w-[1440px] mx-auto border-x border-grid">
+<div class="w-1/12 border-r border-grid h-full"></div>
+<div class="w-1/12 border-r border-grid h-full"></div>
+<div class="w-1/12 border-r border-grid h-full"></div>
+<div class="w-1/12 border-r border-grid h-full"></div>
+<div class="w-1/12 border-r border-grid h-full"></div>
+<div class="w-1/12 border-r border-grid h-full"></div>
+<div class="w-1/12 border-r border-grid h-full"></div>
+<div class="w-1/12 border-r border-grid h-full"></div>
+<div class="w-1/12 border-r border-grid h-full"></div>
+<div class="w-1/12 border-r border-grid h-full"></div>
+<div class="w-1/12 border-r border-grid h-full"></div>
+<div class="w-1/12 h-full"></div>
+</div>
+<div class="relative z-10 max-w-[1440px] mx-auto border-x border-grid bg-transparent">
+<!-- Hero Section -->
+<section class="grid grid-cols-1 lg:grid-cols-12 min-h-[80vh] items-center border-b border-ink">
+<!-- Headline Area -->
+<div class="col-span-1 lg:col-span-8 p-8 lg:p-16 flex flex-col justify-center h-full border-b lg:border-b-0 lg:border-r border-grid bg-paper/80 backdrop-blur-sm">
+<span class="font-mono text-xs text-primary mb-6 tracking-widest uppercase">Portfolio 2024 — V.2.1</span>
+<h2 class="font-serif text-5xl lg:text-[64px] leading-[1.1] font-semibold text-ink mb-8">
+                        Precision Electrical <br class="hidden lg:block"/>
+                        Engineering &amp; <br class="hidden lg:block"/>
+                        Facility Maintenance.
+                    </h2>
+<div class="flex items-center gap-4">
+<button class="bg-ink text-paper px-8 py-4 font-mono text-xs font-bold tracking-wider hover:bg-primary transition-colors flex items-center gap-2">
+                            DOWNLOAD CV PDF
+                            <span class="material-symbols-outlined text-sm">download</span>
+</button>
+<button class="bg-transparent border border-ink text-ink px-8 py-4 font-mono text-xs font-bold tracking-wider hover:bg-surface transition-colors">
+                            CONTACT PROTOCOL
+                        </button>
+</div>
+</div>
+<!-- Tech Data Box -->
+<div class="col-span-1 lg:col-span-4 h-full flex flex-col bg-surface/50">
+<div class="flex-1 p-8 lg:p-12 flex flex-col gap-8 justify-center">
+<div class="space-y-1">
+<p class="font-mono text-xs text-technical uppercase tracking-wider">Operator</p>
+<p class="font-serif text-xl italic text-ink">Yusmel Colombo</p>
+</div>
+<div class="h-px w-full bg-grid"></div>
+<div class="space-y-1">
+<p class="font-mono text-xs text-technical uppercase tracking-wider">Location</p>
+<p class="font-sans text-base text-ink">Leudelange, LU</p>
+<div class="h-48 w-full bg-gray-200 mt-2 overflow-hidden relative grayscale hover:grayscale-0 transition-all duration-500">
+<img alt="Map view of Luxembourg industrial area, geometric grid overlay" class="object-cover w-full h-full opacity-80 mix-blend-multiply" data-alt="Abstract map representation of Leudelange, Luxembourg" data-location="Leudelange, Luxembourg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuByMvnmshysUtMv88mi1-ir11BhGZWjRRZkdslGA9TUVMR2QHUD5S6BymU6Q2qtctdZSm1Fb0k4GCS8gscE7L06JbxEKnjFnvIhNy9oMrmdB2Sx3ayqPSn00iUw12f6Jdgw84fsVO4bTh-vtOkLwn3I9p-fEzSN7IfxiM6C20QAcPZoIPcRxIanWJQ1BJ3bMdXJDmLVyurf0xHyjTpKJwSD_jlDe7PXNP77Y3eROtW7eIc4HL9Jcy5BNu4xlNaPrpvRU2Bgy7IE_cs"/>
+</div>
+</div>
+<div class="h-px w-full bg-grid"></div>
+<div class="space-y-1">
+<p class="font-mono text-xs text-technical uppercase tracking-wider">Classification</p>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">verified</span>
+<p class="font-sans text-sm font-medium text-ink">DAP Certified Electrician</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Competency Matrix -->
+<section class="border-b border-grid bg-surface">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-grid">
+<!-- Col 1 -->
+<div class="p-10 group hover:bg-white transition-colors duration-300">
+<div class="flex justify-between items-start mb-12">
+<span class="font-serif italic text-2xl text-technical group-hover:text-primary transition-colors">01</span>
+<span class="material-symbols-outlined text-technical">bolt</span>
+</div>
+<h3 class="font-mono text-sm font-bold tracking-widest mb-6">ÉLECTRICITÉ</h3>
+<ul class="space-y-3 font-sans text-sm text-technical">
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-primary rounded-full"></span>High &amp; Low Voltage</li>
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-primary rounded-full"></span>Industrial Cabling</li>
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-primary rounded-full"></span>Schematic Interpretation</li>
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-primary rounded-full"></span>Safety Compliance</li>
+</ul>
+</div>
+<!-- Col 2 -->
+<div class="p-10 group hover:bg-white transition-colors duration-300">
+<div class="flex justify-between items-start mb-12">
+<span class="font-serif italic text-2xl text-technical group-hover:text-primary transition-colors">02</span>
+<span class="material-symbols-outlined text-technical">square_foot</span>
+</div>
+<h3 class="font-mono text-sm font-bold tracking-widest mb-6">MÉTROLOGIE</h3>
+<ul class="space-y-3 font-sans text-sm text-technical">
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-grid rounded-full group-hover:bg-primary transition-colors"></span>Precision Calibration</li>
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-grid rounded-full group-hover:bg-primary transition-colors"></span>Diagnostic Analysis</li>
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-grid rounded-full group-hover:bg-primary transition-colors"></span>Testing Protocols</li>
+</ul>
+</div>
+<!-- Col 3 -->
+<div class="p-10 group hover:bg-white transition-colors duration-300">
+<div class="flex justify-between items-start mb-12">
+<span class="font-serif italic text-2xl text-technical group-hover:text-primary transition-colors">03</span>
+<span class="material-symbols-outlined text-technical">router</span>
+</div>
+<h3 class="font-mono text-sm font-bold tracking-widest mb-6">IOT &amp; IT</h3>
+<ul class="space-y-3 font-sans text-sm text-technical">
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-grid rounded-full group-hover:bg-primary transition-colors"></span>Smart Home Systems</li>
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-grid rounded-full group-hover:bg-primary transition-colors"></span>Network Infrastructure</li>
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-grid rounded-full group-hover:bg-primary transition-colors"></span>Digital Diagnostics</li>
+</ul>
+</div>
+<!-- Col 4 -->
+<div class="p-10 group hover:bg-white transition-colors duration-300">
+<div class="flex justify-between items-start mb-12">
+<span class="font-serif italic text-2xl text-technical group-hover:text-primary transition-colors">04</span>
+<span class="material-symbols-outlined text-technical">ac_unit</span>
+</div>
+<h3 class="font-mono text-sm font-bold tracking-widest mb-6">CLIMATISATION</h3>
+<ul class="space-y-3 font-sans text-sm text-technical">
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-grid rounded-full group-hover:bg-primary transition-colors"></span>HVAC Installation</li>
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-grid rounded-full group-hover:bg-primary transition-colors"></span>System Maintenance</li>
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-grid rounded-full group-hover:bg-primary transition-colors"></span>Thermal Regulation</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Timeline Journey -->
+<section class="py-32 px-6 lg:px-16 border-b border-grid overflow-hidden relative">
+<div class="flex items-end mb-16">
+<h2 class="font-serif text-4xl text-ink">Timeline Journey</h2>
+<div class="ml-4 font-mono text-xs text-technical mb-2">2006 — PRESENT</div>
+</div>
+<!-- Desktop Horizontal Timeline -->
+<div class="hidden lg:block relative mt-20">
+<!-- Main Axis Line -->
+<div class="absolute top-1/2 left-0 w-full h-px bg-ink transform -translate-y-1/2 z-0"></div>
+<div class="grid grid-cols-5 w-full relative z-10">
+<!-- Node 1 -->
+<div class="relative flex flex-col items-center group hover-trigger">
+<div class="mb-8 p-4 border border-grid bg-white shadow-sm opacity-0 group-hover:opacity-100 transition-all duration-300 absolute bottom-full w-64 text-center pointer-events-none">
+<p class="font-mono text-xs text-technical mb-1">FOUNDATION</p>
+<p class="font-serif text-lg italic">Initial Training</p>
+</div>
+<div class="w-4 h-4 bg-paper border-2 border-ink rounded-full group-hover:bg-primary group-hover:border-primary group-hover:scale-150 transition-all duration-300 z-10 cursor-pointer"></div>
+<div class="mt-8 text-center opacity-50 group-hover:opacity-100 transition-opacity">
+<p class="font-mono text-xs font-bold mb-1">2006</p>
+<p class="font-serif text-sm italic">Career Start</p>
+</div>
+</div>
+<!-- Node 2 -->
+<div class="relative flex flex-col items-center group hover-trigger">
+<div class="mt-8 text-center opacity-50 group-hover:opacity-100 transition-opacity absolute top-full">
+<p class="font-mono text-xs font-bold mb-1">2014</p>
+<p class="font-serif text-sm italic">Specialization</p>
+</div>
+<div class="w-4 h-4 bg-paper border-2 border-ink rounded-full group-hover:bg-primary group-hover:border-primary group-hover:scale-150 transition-all duration-300 z-10 cursor-pointer"></div>
+<div class="mb-8 p-4 border border-grid bg-white shadow-sm opacity-0 group-hover:opacity-100 transition-all duration-300 absolute bottom-full w-64 text-center pointer-events-none">
+<p class="font-mono text-xs text-technical mb-1">CERTIFICATION</p>
+<p class="font-serif text-lg italic">Industrial Certs</p>
+</div>
+</div>
+<!-- Node 3 -->
+<div class="relative flex flex-col items-center group hover-trigger">
+<div class="mb-8 p-4 border border-grid bg-white shadow-sm opacity-0 group-hover:opacity-100 transition-all duration-300 absolute bottom-full w-64 text-center pointer-events-none">
+<p class="font-mono text-xs text-technical mb-1">EXPANSION</p>
+<p class="font-serif text-lg italic">Team Lead Role</p>
+</div>
+<div class="w-4 h-4 bg-paper border-2 border-ink rounded-full group-hover:bg-primary group-hover:border-primary group-hover:scale-150 transition-all duration-300 z-10 cursor-pointer"></div>
+<div class="mt-8 text-center opacity-50 group-hover:opacity-100 transition-opacity">
+<p class="font-mono text-xs font-bold mb-1">2018</p>
+<p class="font-serif text-sm italic">Management</p>
+</div>
+</div>
+<!-- Node 4 -->
+<div class="relative flex flex-col items-center group hover-trigger">
+<div class="mt-8 text-center opacity-50 group-hover:opacity-100 transition-opacity absolute top-full">
+<p class="font-mono text-xs font-bold mb-1">2022</p>
+<p class="font-serif text-sm italic">MySafety</p>
+</div>
+<div class="w-4 h-4 bg-paper border-2 border-ink rounded-full group-hover:bg-primary group-hover:border-primary group-hover:scale-150 transition-all duration-300 z-10 cursor-pointer"></div>
+<div class="mb-8 p-4 border border-grid bg-white shadow-sm opacity-0 group-hover:opacity-100 transition-all duration-300 absolute bottom-full w-64 text-center pointer-events-none">
+<p class="font-mono text-xs text-technical mb-1">PROJECT</p>
+<p class="font-serif text-lg italic">Safety Systems Lead</p>
+</div>
+</div>
+<!-- Node 5 -->
+<div class="relative flex flex-col items-center group hover-trigger">
+<div class="mb-8 p-4 border border-ink bg-ink text-white shadow-lg shadow-primary/20 hover-target absolute bottom-full w-64 text-center z-20">
+<p class="font-mono text-xs text-primary mb-1">CURRENT</p>
+<p class="font-serif text-lg italic">Global Facilities</p>
+<p class="text-xs text-gray-300 mt-2 font-sans">Full facility management oversight.</p>
+</div>
+<div class="w-6 h-6 bg-primary border-4 border-white outline outline-1 outline-ink rounded-full shadow-[0_0_0_4px_rgba(59,130,246,0.3)] z-10 cursor-pointer animate-pulse"></div>
+<div class="mt-8 text-center">
+<p class="font-mono text-xs font-bold mb-1">2023</p>
+<p class="font-serif text-sm italic font-bold">Global Facilities</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Mobile Vertical Timeline -->
+<div class="lg:hidden relative border-l border-ink ml-4 space-y-12 pl-8 py-4">
+<div class="relative">
+<div class="absolute -left-[39px] top-1.5 w-3 h-3 bg-paper border-2 border-ink rounded-full"></div>
+<p class="font-mono text-xs text-technical mb-1">2006</p>
+<h4 class="font-serif text-xl italic">Career Start</h4>
+<p class="text-sm text-technical mt-2">Initial electrical training and foundation.</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[39px] top-1.5 w-3 h-3 bg-paper border-2 border-ink rounded-full"></div>
+<p class="font-mono text-xs text-technical mb-1">2014</p>
+<h4 class="font-serif text-xl italic">Certification Phase</h4>
+<p class="text-sm text-technical mt-2">Acquired key industrial certifications.</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[39px] top-1.5 w-3 h-3 bg-paper border-2 border-ink rounded-full"></div>
+<p class="font-mono text-xs text-technical mb-1">2022</p>
+<h4 class="font-serif text-xl italic">MySafety Project</h4>
+<p class="text-sm text-technical mt-2">Led safety systems implementation.</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[40px] top-1.5 w-4 h-4 bg-primary border-2 border-white outline outline-1 outline-ink rounded-full"></div>
+<p class="font-mono text-xs text-primary mb-1 font-bold">2023 - PRESENT</p>
+<h4 class="font-serif text-xl italic font-bold">Global Facilities</h4>
+<p class="text-sm text-technical mt-2">Senior facility management and oversight.</p>
+</div>
+</div>
+</section>
+<!-- Soft Skills Radar -->
+<section class="border-b border-grid bg-paper py-24 px-6 lg:px-16">
+<div class="grid grid-cols-1 lg:grid-cols-12">
+<div class="col-span-1 lg:col-span-3 mb-12 lg:mb-0">
+<h3 class="font-mono text-sm font-bold tracking-widest text-ink border-b border-primary inline-block pb-1">SOFT SKILLS</h3>
+<p class="font-sans text-sm text-technical mt-4 max-w-[200px]">
+                            Beyond technical capacity, the operational mindset required for high-stakes environments.
+                        </p>
+</div>
+<div class="col-span-1 lg:col-span-9 flex flex-col gap-2">
+<div class="group cursor-default">
+<span class="font-serif text-5xl md:text-7xl lg:text-[80px] font-semibold text-grid group-hover:text-ink transition-colors duration-300 leading-tight select-none">FLEXIBILITÉ</span>
+</div>
+<div class="group cursor-default pl-0 lg:pl-24">
+<span class="font-serif text-5xl md:text-7xl lg:text-[80px] font-semibold text-grid group-hover:text-ink transition-colors duration-300 leading-tight select-none">RIGUEUR</span>
+</div>
+<div class="group cursor-default pl-0 lg:pl-48">
+<span class="font-serif text-5xl md:text-7xl lg:text-[80px] font-semibold text-grid group-hover:text-ink transition-colors duration-300 leading-tight select-none">RELATIONNEL</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer / Contact CTA -->
+<footer class="bg-surface border-t border-ink py-20 px-6 lg:px-16">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+<div>
+<h2 class="font-serif text-3xl text-ink mb-6">Ready for integration?</h2>
+<p class="font-sans text-technical mb-8 max-w-md">
+                            Available for long-term contracts and facility management roles in Luxembourg. Full schematic breakdown available upon request.
+                        </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="inline-flex justify-center items-center px-8 py-3 bg-ink text-paper font-mono text-sm font-bold tracking-wider hover:bg-primary transition-colors" href="#">
+                                INITIATE CONTACT
+                            </a>
+<a class="inline-flex justify-center items-center px-8 py-3 border border-ink text-ink font-mono text-sm font-bold tracking-wider hover:bg-white transition-colors" href="#">
+                                VIEW FULL SPECS
+                            </a>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-8 text-sm">
+<div>
+<p class="font-mono text-xs text-technical mb-2 uppercase tracking-wider">Contact</p>
+<p class="font-sans text-ink">+352 621 430 283</p>
+<p class="font-sans text-ink">yucolaguilar@gmail.com</p>
+</div>
+<div>
+<p class="font-mono text-xs text-technical mb-2 uppercase tracking-wider">Social</p>
+<a class="block font-sans text-ink hover:text-primary hover:underline decoration-primary underline-offset-4" href="#">LinkedIn Profile</a>
+<a class="block font-sans text-ink hover:text-primary hover:underline decoration-primary underline-offset-4" href="#">CV Download</a>
+</div>
+<div class="col-span-2 pt-8 border-t border-grid mt-auto">
+<p class="font-mono text-[10px] text-technical">© 2024 YC ELECTRIC. DESIGNED FOR PRECISION.</p>
+</div>
+</div>
+</div>
+</footer>
+</div>
+</main>
+</body></html>

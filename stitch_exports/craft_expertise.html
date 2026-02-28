@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Project Detail Modal - YC Electric</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Playfair+Display:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3c83f6", // Mapped to the requested electric blue #3B82F6 approximation
+                        "background-light": "#FFFFFF",
+                        "background-dark": "#101722", // Kept for config consistency, but design is high-key
+                        "ink": "#1A1A1A",
+                        "surface": "#F8F9FA",
+                        "grid": "#E5E7EB",
+                        "technical": "#64748B"
+                    },
+                    fontFamily: {
+                        "display": ["Playfair Display", "serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "mono": ["JetBrains Mono", "monospace"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0px", // Strict square corners per design system
+                        "sm": "2px",
+                    },
+                    spacing: {
+                        "18": "4.5rem",
+                        "30": "7.5rem",
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for technical feel */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F8F9FA;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #E5E7EB;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #cbd5e1;
+        }
+        
+        /* Grid background pattern for the backdrop */
+        .bg-grid-pattern {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, #f1f5f9 1px, transparent 1px),
+                              linear-gradient(to bottom, #f1f5f9 1px, transparent 1px);
+        }
+    </style>
+</head>
+<body class="bg-background-light text-ink font-body antialiased selection:bg-primary/20 selection:text-primary">
+<!-- 
+      Backdrop / Overlay 
+      Simulating the "Home" page underneath with a blur and overlay.
+      The content below "simulates" the page behind the modal for context.
+    -->
+<div class="fixed inset-0 z-0 bg-background-light bg-grid-pattern overflow-hidden pointer-events-none opacity-40 blur-[2px]">
+<!-- Simulated Header -->
+<div class="flex justify-between items-center p-8 border-b border-grid">
+<h1 class="font-display font-semibold text-2xl tracking-tight">YC ELECTRIC</h1>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-mono text-[10px] tracking-widest text-ink">AVAILABLE FOR HIRE</span>
+</div>
+</div>
+<!-- Simulated Grid Content -->
+<div class="grid grid-cols-12 h-full border-b border-grid">
+<div class="col-span-1 border-r border-grid h-full"></div>
+<div class="col-span-1 border-r border-grid h-full"></div>
+<div class="col-span-8 border-r border-grid h-full pt-20 px-10">
+<h2 class="font-display text-6xl text-ink/20 leading-tight">Precision Electrical<br/>Engineering.</h2>
+</div>
+<div class="col-span-2 h-full"></div>
+</div>
+</div>
+<!-- 
+      Modal Wrapper 
+      Centered, High-Key, Technical Spec Sheet Look
+    -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-12 overflow-y-auto bg-white/60 backdrop-blur-sm">
+<!-- Modal Card -->
+<div class="relative w-full max-w-[1024px] bg-white border border-ink shadow-2xl shadow-gray-200/50 flex flex-col max-h-[90vh] overflow-hidden">
+<!-- Top Bar: Identification -->
+<div class="flex flex-col md:flex-row border-b border-grid">
+<!-- ID Block -->
+<div class="flex-1 p-6 md:p-8 flex flex-col justify-center border-b md:border-b-0 md:border-r border-grid bg-white">
+<span class="font-mono text-xs text-technical tracking-wider mb-2">01. ROLE SPECIFICATION</span>
+<h2 class="font-display text-3xl md:text-4xl font-semibold text-ink leading-tight">TECHNICIEN DE MAINTENANCE</h2>
+</div>
+<!-- Company & Close Block -->
+<div class="w-full md:w-80 flex flex-row md:flex-col">
+<div class="flex-1 p-6 border-r border-grid md:border-r-0 md:border-b flex items-center justify-between bg-surface/30">
+<div>
+<span class="font-mono text-[10px] text-technical uppercase tracking-widest block mb-1">EMPLOYER</span>
+<span class="font-mono text-base font-medium text-ink">GLOBAL FACILITIES</span>
+</div>
+<img alt="Company Logo Placeholder" class="w-10 h-10 border border-grid grayscale opacity-80" data-alt="Minimalist company logo monogram" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAs3uL2WfheWueKTBoIUYcn0FxvOM7MYAu7xztl7k-0caA3YEq-LFvRDY3P_O22use5ZeJ0KBRcd7FMmHKQQzXUBAP-Tup3k_oxvF5NMYOAWHnhFlURAca-Y1vm2iPi4VKc8w_s__7Uvgg05XzA6yh6waMvC1NgfWFDwarX1ghIB6bYOWIbeLMuP_JYxdvKZZQZYTRWNO9UD8udNjfHD6tUxdJuSUXvZiDnXInNH8giWFSMhnHmNC86xelRILO4Ld717IMbzBhFDlo"/>
+</div>
+<button class="group flex-1 p-6 flex items-center justify-center gap-3 hover:bg-primary hover:text-white transition-colors duration-200 cursor-pointer border-t border-grid md:border-t-0">
+<span class="font-mono text-xs tracking-widest uppercase">CLOSE PROTOCOL</span>
+<span class="material-symbols-outlined text-lg group-hover:rotate-90 transition-transform duration-300">close</span>
+</button>
+</div>
+</div>
+<!-- Data Grid (The Metadata Strip) -->
+<div class="grid grid-cols-2 md:grid-cols-4 border-b border-grid bg-surface/50 divide-x divide-grid">
+<div class="p-4 flex flex-col gap-1">
+<span class="font-mono text-[10px] text-technical uppercase tracking-widest">TIMELINE</span>
+<span class="font-mono text-sm text-ink font-medium">SEPT 2023 — PRESENT</span>
+</div>
+<div class="p-4 flex flex-col gap-1">
+<span class="font-mono text-[10px] text-technical uppercase tracking-widest">LOCATION</span>
+<span class="font-mono text-sm text-ink font-medium">LEUDELANGE, LU</span>
+</div>
+<div class="p-4 flex flex-col gap-1">
+<span class="font-mono text-[10px] text-technical uppercase tracking-widest">CONTRACT</span>
+<span class="font-mono text-sm text-ink font-medium">CDI (FULL TIME)</span>
+</div>
+<div class="p-4 flex flex-col gap-1">
+<span class="font-mono text-[10px] text-technical uppercase tracking-widest">SECTOR</span>
+<span class="font-mono text-sm text-ink font-medium">FACILITY MANAGEMENT</span>
+</div>
+</div>
+<!-- Main Content Area -->
+<div class="flex flex-col md:flex-row flex-1 overflow-auto">
+<!-- Left Column: Scope & Duties (Technical Description) -->
+<div class="flex-1 p-8 md:p-12 space-y-10 overflow-y-auto">
+<!-- Section: Synopsis -->
+<div class="space-y-4">
+<h3 class="font-display italic text-xl text-ink border-b border-grid pb-2 inline-block pr-12">Scope of Operations</h3>
+<p class="font-body text-base font-light leading-relaxed text-gray-800 max-w-prose">
+                            Execution of preventive and corrective maintenance on technical installations across high-security facility environments. Responsible for the analysis of electrical diagrams for high and low voltage systems, including HVAC controls, fire safety compliance metrics, and automated building management systems (BMS).
+                        </p>
+</div>
+<!-- Section: Key Responsibilities -->
+<div class="space-y-6">
+<h3 class="font-display italic text-xl text-ink border-b border-grid pb-2 inline-block pr-12">Key Responsibilities</h3>
+<ul class="space-y-4">
+<li class="flex items-start gap-4 group">
+<span class="font-mono text-xs text-primary pt-1 opacity-50 group-hover:opacity-100 transition-opacity">01</span>
+<div>
+<h4 class="font-mono text-sm font-medium text-ink mb-1 uppercase tracking-wide">Preventive Maintenance</h4>
+<p class="font-body text-sm text-gray-600 font-light">Scheduled inspection of electrical distribution boards and emergency lighting systems to ensure 99.9% uptime.</p>
+</div>
+</li>
+<li class="flex items-start gap-4 group">
+<span class="font-mono text-xs text-primary pt-1 opacity-50 group-hover:opacity-100 transition-opacity">02</span>
+<div>
+<h4 class="font-mono text-sm font-medium text-ink mb-1 uppercase tracking-wide">Diagnostic Analysis</h4>
+<p class="font-body text-sm text-gray-600 font-light">Troubleshooting complex faults in HVAC regulators and automated access control systems using schematic blueprints.</p>
+</div>
+</li>
+<li class="flex items-start gap-4 group">
+<span class="font-mono text-xs text-primary pt-1 opacity-50 group-hover:opacity-100 transition-opacity">03</span>
+<div>
+<h4 class="font-mono text-sm font-medium text-ink mb-1 uppercase tracking-wide">Compliance &amp; Safety</h4>
+<p class="font-body text-sm text-gray-600 font-light">Strict adherence to ITM (Inspection du Travail et des Mines) regulations during all high-voltage interventions.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<!-- Right Column: Tech Stack & Specs (Sidebar) -->
+<div class="w-full md:w-80 bg-surface border-t md:border-t-0 md:border-l border-grid p-8 space-y-10">
+<!-- Tech Stack -->
+<div class="space-y-4">
+<span class="font-mono text-[10px] text-technical uppercase tracking-widest block border-b border-grid pb-2">Technical Matrix</span>
+<div class="flex flex-wrap gap-2">
+<div class="border border-grid bg-white px-3 py-1.5 flex items-center gap-2 hover:border-primary transition-colors cursor-default group">
+<span class="w-1.5 h-1.5 bg-grid group-hover:bg-primary rounded-full transition-colors"></span>
+<span class="font-mono text-xs text-ink font-medium">KNX SYSTEMS</span>
+</div>
+<div class="border border-grid bg-white px-3 py-1.5 flex items-center gap-2 hover:border-primary transition-colors cursor-default group">
+<span class="w-1.5 h-1.5 bg-grid group-hover:bg-primary rounded-full transition-colors"></span>
+<span class="font-mono text-xs text-ink font-medium">DALI LIGHTING</span>
+</div>
+<div class="border border-grid bg-white px-3 py-1.5 flex items-center gap-2 hover:border-primary transition-colors cursor-default group">
+<span class="w-1.5 h-1.5 bg-grid group-hover:bg-primary rounded-full transition-colors"></span>
+<span class="font-mono text-xs text-ink font-medium">HVAC</span>
+</div>
+<div class="border border-grid bg-white px-3 py-1.5 flex items-center gap-2 hover:border-primary transition-colors cursor-default group">
+<span class="w-1.5 h-1.5 bg-grid group-hover:bg-primary rounded-full transition-colors"></span>
+<span class="font-mono text-xs text-ink font-medium">AUTOCAD</span>
+</div>
+<div class="border border-grid bg-white px-3 py-1.5 flex items-center gap-2 hover:border-primary transition-colors cursor-default group">
+<span class="w-1.5 h-1.5 bg-grid group-hover:bg-primary rounded-full transition-colors"></span>
+<span class="font-mono text-xs text-ink font-medium">HIGH VOLTAGE</span>
+</div>
+</div>
+</div>
+<!-- Certification Validation -->
+<div class="space-y-4">
+<span class="font-mono text-[10px] text-technical uppercase tracking-widest block border-b border-grid pb-2">Certification Level</span>
+<div class="relative w-full aspect-[3/2] bg-white border border-grid p-1">
+<div class="absolute top-2 right-2">
+<span class="material-symbols-outlined text-primary text-xl">verified</span>
+</div>
+<div class="w-full h-full bg-grid/10 flex flex-col items-center justify-center text-center p-2">
+<span class="font-mono text-xs text-technical mb-1">REQ. ID: DAP-2022</span>
+<span class="font-display font-bold text-lg text-ink">DAP CERTIFIED</span>
+<span class="font-mono text-[10px] text-primary mt-1">VALIDATED</span>
+</div>
+</div>
+</div>
+<!-- Reference Contact (Optional Micro-interaction) -->
+<div class="pt-4 mt-auto">
+<a class="flex items-center justify-between w-full border border-grid bg-white p-3 hover:border-ink transition-colors group" href="#">
+<span class="font-mono text-xs font-medium text-ink">DOWNLOAD SPECS</span>
+<span class="material-symbols-outlined text-sm text-technical group-hover:text-ink">download</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Bottom decorative ticker -->
+<div class="h-2 bg-ink w-full flex items-center overflow-hidden relative">
+<div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImEiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTTAgNDBMMDQgMCIgc3Ryb2tlPSIjM2M4M2Y2IiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjYSkiLz48L3N2Zz4=')] opacity-20"></div>
+</div>
+</div>
+</div>
+</body></html>

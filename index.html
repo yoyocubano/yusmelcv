@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yusmel Colombo | Électricien - Profil Multilingue</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        :root {
+            --lux-gold: #C5A059;
+            --lux-black: #1A1A1A;
+            --lux-bg: #FDFDFD;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--lux-bg);
+            color: var(--lux-black);
+        }
+
+        h1,
+        h2,
+        h3,
+        .serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .lux-border {
+            border-color: rgba(26, 26, 26, 0.05);
+        }
+
+        .hero-mask {
+            mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+        }
+    </style>
+</head>
+
+<body x-data="{ lang: 'fr' }">
+
+    <!-- Navigation -->
+    <nav
+        class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-sm border-b lux-border h-20 flex items-center px-6 justify-between">
+        <div class="serif text-xl font-bold tracking-tighter">
+            YUSMEL <span class="font-sans text-[10px] uppercase tracking-[0.4em] text-gray-400 ml-2">Colombo</span>
+        </div>
+        <div class="hidden md:flex gap-12 text-[10px] uppercase tracking-[0.3em] font-semibold text-gray-500">
+            <a href="#profil" class="hover:text-black transition-colors">Profil</a>
+            <a href="#expert" class="hover:text-black transition-colors">Expertise</a>
+            <a href="#parcours" class="hover:text-black transition-colors">Parcours</a>
+            <a href="#contact"
+                class="hover:text-black transition-colors font-bold text-black border-b border-black pb-1">Contact</a>
+        </div>
+        <div class="flex gap-4 text-[10px] font-bold">
+            <button @click="lang = 'fr'" :class="lang === 'fr' ? 'text-black' : 'text-gray-300'">FR</button>
+            <button @click="lang = 'es'" :class="lang === 'es' ? 'text-black' : 'text-gray-300'">ES</button>
+            <button @click="lang = 'en'" :class="lang === 'en' ? 'text-black' : 'text-gray-300'">EN</button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="min-h-screen pt-32 flex flex-col items-center justify-center px-6 overflow-hidden">
+        <div class="max-w-7xl w-full grid md:grid-cols-12 gap-12 items-center">
+            <div class="md:col-span-7" data-aos="fade-up">
+                <div class="text-[10px] uppercase tracking-[0.5em] text-gray-400 mb-6"
+                    x-text="lang === 'fr' ? 'Électricien • Profil Multilingue' : (lang === 'es' ? 'Electricista • Perfil Multilingüe' : 'Electrician • Multilingual Profile')">
+                </div>
+                <h1 class="text-7xl md:text-[10rem] leading-[0.8] font-bold mb-8">
+                    Yusmel <br> <span class="italic serif font-normal text-gray-300">Colombo</span>
+                </h1>
+                <p class="text-xl md:text-2xl font-light serif italic text-gray-500 max-w-xl mb-12"
+                    x-text="lang === 'fr' ? 'Précision, rigueur et discipline en chaque connexion.' : (lang === 'es' ? 'Precisión, rigor y disciplina en cada conexión.' : 'Precision, rigor, and discipline in every connection.')">
+                </p>
+                <div class="flex gap-12 items-center">
+                    <a href="#contact"
+                        class="bg-black text-white px-10 py-5 text-[10px] uppercase font-bold tracking-[0.3em] hover:bg-gray-800 transition-all shadow-2xl">Contact
+                        Protocol</a>
+                    <div class="text-[10px] uppercase tracking-[0.2em] font-bold text-gray-400">Permis B + Véhicule
+                    </div>
+                </div>
+            </div>
+            <div class="md:col-span-5 relative" data-aos="fade-left" data-aos-delay="200">
+                <img src="../yusmel_hero.png" alt="Yusmel Colombo" class="w-full grayscale contrast-125 hero-mask">
+                <div class="absolute -bottom-10 -right-10 bg-white p-12 shadow-2xl border lux-border">
+                    <div class="text-4xl serif font-bold">DAP</div>
+                    <div class="text-[9px] uppercase tracking-[0.3em] font-bold text-gray-400">Luxembourg Certified
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Profile -->
+    <section id="profil" class="py-40 bg-zinc-50">
+        <div class="max-w-4xl mx-auto px-6 text-center" data-aos="fade-up">
+            <h2 class="text-4xl serif italic mb-12">Profil Professionnel</h2>
+            <p class="text-2xl font-light leading-relaxed text-gray-600 mb-16">
+                "Bien que jeune dans ce domaine technique, j'ai acquis une grande polyvalence grâce à mis diversas
+                experiencias profesionales."
+            </p>
+            <div
+                class="grid grid-cols-2 md:grid-cols-3 gap-8 text-[11px] uppercase tracking-[0.2em] font-bold text-gray-400">
+                <div class="flex flex-col gap-2"><span class="text-black">Espagnol</span> Maternelle</div>
+                <div class="flex flex-col gap-2"><span class="text-black">Français</span> B1.2</div>
+                <div class="flex flex-col gap-2"><span class="text-black">Anglais</span> B1</div>
+                <div class="flex flex-col gap-2"><span class="text-black">Luxembourgeois</span> B1</div>
+                <div class="flex flex-col gap-2"><span class="text-black">Italien</span> A2.2</div>
+                <div class="flex flex-col gap-2"><span class="text-black">Portugais</span> A2.2</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise -->
+    <section id="expert" class="py-40">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-24 items-start">
+                <div data-aos="fade-right">
+                    <h2 class="text-6xl serif font-bold mb-12">Spécialisation & <br> Compétences</h2>
+                    <ul class="space-y-6 text-xl font-light text-gray-500">
+                        <li class="flex items-center gap-4"><span class="w-2 h-2 bg-black rounded-full"></span>
+                            Électricité Générale</li>
+                        <li class="flex items-center gap-4"><span class="w-2 h-2 bg-black rounded-full"></span>
+                            Métrologie</li>
+                        <li class="flex items-center gap-4"><span class="w-2 h-2 bg-black rounded-full"></span>
+                            Informatique et IOT</li>
+                        <li class="flex items-center gap-4"><span class="w-2 h-2 bg-black rounded-full"></span>
+                            Installation de climatiseurs</li>
+                    </ul>
+                </div>
+                <div class="grid grid-cols-2 gap-1 bg-gray-100" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-white p-12 flex flex-col justify-center min-h-[250px]">
+                        <div class="text-[10px] font-bold tracking-widest text-gray-300 mb-4">SKILL 01</div>
+                        <h3 class="text-lg font-bold uppercase tracking-widest">Rigueur & Précision</h3>
+                    </div>
+                    <div class="bg-white p-12 flex flex-col justify-center min-h-[250px]">
+                        <div class="text-[10px] font-bold tracking-widest text-gray-300 mb-4">SKILL 02</div>
+                        <h3 class="text-lg font-bold uppercase tracking-widest">Flexibilité</h3>
+                    </div>
+                    <div class="bg-white p-12 flex flex-col justify-center min-h-[250px]">
+                        <div class="text-[10px] font-bold tracking-widest text-gray-300 mb-4">SKILL 03</div>
+                        <h3 class="text-lg font-bold uppercase tracking-widest">Travail en Équipe</h3>
+                    </div>
+                    <div class="bg-white p-12 flex flex-col justify-center min-h-[250px]">
+                        <div class="text-[10px] font-bold tracking-widest text-gray-300 mb-4">SKILL 04</div>
+                        <h3 class="text-lg font-bold uppercase tracking-widest">Apprentissage</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="parcours" class="py-40 bg-zinc-900 text-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 relative">
+            <h2 class="text-8xl serif font-bold mb-32 opacity-20">Chronologie</h2>
+
+            <div class="space-y-24 relative z-10">
+                <!-- 2023 -->
+                <div class="grid md:grid-cols-12 gap-8 items-start" data-aos="fade-up">
+                    <div class="md:col-span-3 text-xs font-bold tracking-[0.4em] text-gray-500">DEPUIS OCT 2023</div>
+                    <div class="md:col-span-6">
+                        <h3 class="text-3xl serif italic mb-4">Global Facilities (Luxembourg)</h3>
+                        <p class="text-xl font-light text-gray-400">DAP en électricité, apprentissage.</p>
+                    </div>
+                    <div class="md:col-span-3 flex justify-end">
+                        <div class="w-12 h-[1px] bg-gray-700"></div>
+                    </div>
+                </div>
+
+                <!-- 2022-2023 -->
+                <div class="grid md:grid-cols-12 gap-8 items-start" data-aos="fade-up">
+                    <div class="md:col-span-3 text-xs font-bold tracking-[0.4em] text-gray-500">2022 - 2023</div>
+                    <div class="md:col-span-6">
+                        <h3 class="text-3xl serif italic mb-4">MySafety (Luxembourg)</h3>
+                        <p class="text-xl font-light text-gray-400">DAP en électricité, apprentissage.</p>
+                    </div>
+                </div>
+
+                <!-- 2021-2022 -->
+                <div class="grid md:grid-cols-12 gap-8 items-start" data-aos="fade-up">
+                    <div class="md:col-span-3 text-xs font-bold tracking-[0.4em] text-gray-500">2021 - 2022</div>
+                    <div class="md:col-span-6">
+                        <h3 class="text-3xl serif italic mb-4">Co-Labor</h3>
+                        <p class="text-xl font-light text-gray-400">Ouvrier polyvalent.</p>
+                    </div>
+                </div>
+
+                <!-- 2014-2016 -->
+                <div class="grid md:grid-cols-12 gap-8 items-start" data-aos="fade-up">
+                    <div class="md:col-span-3 text-xs font-bold tracking-[0.4em] text-gray-500">2014 - 2016</div>
+                    <div class="md:col-span-6">
+                        <h3 class="text-3xl serif italic mb-4">HVAC Sector</h3>
+                        <p class="text-xl font-light text-gray-400">Aide-installateur en HVAC.</p>
+                    </div>
+                </div>
+
+                <!-- 2006-2008 -->
+                <div class="grid md:grid-cols-12 gap-8 items-start" data-aos="fade-up">
+                    <div class="md:col-span-3 text-xs font-bold tracking-[0.4em] text-gray-500">2006 - 2008</div>
+                    <div class="md:col-span-6">
+                        <h3 class="text-3xl serif italic mb-4">Métrologie</h3>
+                        <p class="text-xl font-light text-gray-400">Contrôle de qualité.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education -->
+    <section class="py-40">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl serif italic mb-20 text-center">Études et Formations</h2>
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="bg-zinc-50 p-12" data-aos="zoom-in">
+                    <div class="text-[10px] font-bold tracking-widest text-gray-300 mb-4">DEPUI 2022</div>
+                    <h4 class="text-xl font-bold uppercase tracking-widest mb-2 text-blue-600">DAP Électricien</h4>
+                    <p class="text-gray-500 font-light">Lycée Technique de Bonnevoie</p>
+                </div>
+                <div class="bg-zinc-50 p-12" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="text-[10px] font-bold tracking-widest text-gray-300 mb-4">2020</div>
+                    <h4 class="text-xl font-bold uppercase tracking-widest mb-2">JR Web Developer</h4>
+                    <p class="text-gray-500 font-light">House of training</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <footer id="contact" class="py-40 bg-zinc-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-20 items-end">
+                <div data-aos="fade-up">
+                    <h2 class="text-8xl serif font-bold mb-12">Parlons Tech.</h2>
+                    <div class="space-y-4 text-xl font-light text-gray-400">
+                        <p>17a, rue du Lavoir</p>
+                        <p>L-3358 Leudelange • Luxembourg</p>
+                    </div>
+                </div>
+                <div class="space-y-8" data-aos="fade-up" data-aos-delay="200">
+                    <a href="tel:+352621430283"
+                        class="flex justify-between items-center group p-10 border lux-border bg-white hover:border-black transition-all">
+                        <span class="text-[10px] font-bold tracking-[0.4em] uppercase">GSM</span>
+                        <span class="text-3xl serif italic">+(352) 621 430 283</span>
+                    </a>
+                    <a href="mailto:yucolaguilar@gmail.com"
+                        class="flex justify-between items-center group p-10 border lux-border bg-white hover:border-black transition-all">
+                        <span class="text-[10px] font-bold tracking-[0.4em] uppercase">Email</span>
+                        <span class="text-3xl serif italic">yucolaguilar@gmail.com</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
+</body>
+
+</html>

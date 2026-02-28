@@ -1,0 +1,200 @@
+# The Technical Precision Direction
+
+## Product Overview
+
+**The Pitch:** A digital portfolio for Yusmel Colombo that elevates the trade of an electrician to the visual standard of architectural engineering. It transforms a standard CV into a rigorous, schematic-inspired visual identity.
+
+**For:** High-end construction firms, facility management directors in Luxembourg, and premium residential clients who value meticulous detail and multilingual versatility.
+
+**Device:** Desktop (Primary focus for B2B/Recruiter review)
+
+**Design Direction:** "Airy & High-Key Schematic." Extreme white space balanced by rigid grid lines. Content is organized like technical specifications rather than marketing copy.
+
+**Inspired by:** *Aesop* (minimalist store interiors), *Swiss Graphic Design* (grid systems), *Linear* (precision UI).
+
+---
+
+## Screens
+
+- **Home / Overview:** Full-page scrollable schematic of professional value.
+- **Project Detail Modal:** Overlay showing technical depth of specific roles.
+- **Printable Spec Sheet:** A CSS-print optimized view for generating a PDF CV.
+- **Contact Protocol:** Minimalist overlay for initiating communication.
+
+---
+
+## Key Flows
+
+**[Flow: Credibility Verification]:** Recruiter needs to verify DAP certification and language skills.
+
+1. User lands on **Home / Overview** -> sees "YC ELECTRIC" logo and "DAP CERTIFIED" badge immediately.
+2. User scrolls to **Competency Matrix** -> scans 4-column grid of core skills.
+3. User hovers over "Languages" -> sees proficiency bars animate with exact CEFR levels (B1.2, A2.2).
+
+**[Flow: Career Trajectory Analysis]:**
+
+1. User scrolls to **The Timeline** -> sees horizontal axis from 2006 to 2024.
+2. User clicks "2023 Global Facilities" node -> **Project Detail Modal** opens with specific responsibilities.
+
+---
+
+<details>
+<summary>Design System</summary>
+
+## Color Palette
+
+- **Primary:** `#1A1A1A` - All typography, borders, logos (Charcoal)
+- **Background:** `#FFFFFF` - Main canvas
+- **Surface:** `#F8F9FA` - Schematic zones, hover states (Ghost White)
+- **Grid Lines:** `#E5E7EB` - 1px structural dividers
+- **Accent:** `#3B82F6` - Active states, link underlines, "Live" indicators (Soft Electric Blue)
+- **Technical:** `#64748B` - Meta data, dates, secondary labels
+
+## Typography
+
+Mixing a sharp, editorial serif with a monospaced technical font.
+
+- **Display Serif:** *Playfair Display*, 600, 48px-64px (Headings)
+- **Tech Serif:** *Playfair Display*, 400 Italic, 24px (Subheads, quotes)
+- **Body:** *Inter*, 300, 16px (Main reading text)
+- **Data/Labels:** *JetBrains Mono*, 400, 12px (Uppercase, tracking 1px)
+
+**Style notes:** 1px solid borders everywhere. No drop shadows—flat, ink-on-paper aesthetic. Layout relies on visible grid lines.
+
+## Design Tokens
+
+```css
+:root {
+  --color-ink: #1A1A1A;
+  --color-canvas: #FFFFFF;
+  --color-surface: #F8F9FA;
+  --color-grid: #E5E7EB;
+  --color-electric: #3B82F6;
+  
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  
+  --border-std: 1px solid var(--color-grid);
+  --border-ink: 1px solid var(--color-ink);
+  
+  --spacing-unit: 8px; /* Base unit */
+  --spacing-block: 120px; /* Section spacing */
+}
+```
+
+</details>
+
+---
+
+<details>
+<summary>Screen Specifications</summary>
+
+### [Screen 1: Home / Overview]
+
+**Purpose:** The single source of truth. A long-scroll, high-impact resume.
+
+**Layout:** 12-column grid. Visible vertical grid lines separate the main content areas.
+
+**Key Elements:**
+- **The Masthead (Header):**
+    - **Logo:** `YC ELECTRIC` (Playfair Display, 24px), Top Left.
+    - **Status:** `AVAILABLE FOR HIRE` (Mono, 10px) with pulsing blue dot, Top Right.
+    - **Lang Switch:** `EN / FR / DE` (Mono, 12px), fixed position.
+- **Hero Schematic:**
+    - **Headline:** "Precision Electrical Engineering & Facility Maintenance." (Playfair, 56px). Left aligned, col 2-8.
+    - **Tech Data Box:** Right aligned, col 9-11. Contains "Yusmel Colombo", "Leudelange, LU", "+352 621 430 283" formatted as raw data rows.
+- **Expertise Grid (The 4-Column Row):**
+    - **Layout:** Full width, 4 equal columns separated by vertical lines. Background `#F8F9FA`.
+    - **Col 1:** `01` (Italic Serif), "ELECTRICITÉ" (Mono), List: High & Low Voltage, Cabling, Plans.
+    - **Col 2:** `02` (Italic Serif), "MÉTROLOGIE" (Mono), List: Calibration, Precision Measurement.
+    - **Col 3:** `03` (Italic Serif), "IOT & IT" (Mono), List: Networking, Smart Home, Diagnostics.
+    - **Col 4:** `04` (Italic Serif), "CLIMATISATION" (Mono), List: HVAC Install, Maintenance.
+- **The Timeline Journey:**
+    - **Visual:** A single continuous horizontal line crossing the screen.
+    - **Nodes:** Vertical tick marks at key dates (2006, 2014, 2016...).
+    - **Content:** Alternating top/bottom placement.
+        - *Top:* "2023 - Global Facilities" (Bold).
+        - *Bottom:* "2022 - MySafety" (Muted).
+- **Soft Skills Radar:**
+    - **Format:** Not a chart, but a typographic list.
+    - **Items:** "FLEXIBILITÉ", "RIGUEUR", "RELATIONNEL". Displayed in massive 80px font, light grey `#E5E7EB`. Hover turns text black `#1A1A1A`.
+
+**States:**
+- **Initial:** Hero elements fade in sequentially (Data box -> Grid lines -> Headline).
+
+**Components:**
+- **GridItem:** 100% height, `border-right: 1px solid #E5E7EB`, padding 40px.
+- **MonoLabel:** Uppercase, 12px, tracking widely, color `#64748B`.
+
+**Interactions:**
+- **Scroll:** The "YC ELECTRIC" logo shrinks from 24px to 16px and sticks to top.
+- **Hover Timeline Node:** The node scale up (1.5x), detailed description tooltip appears.
+
+**Responsive:**
+- **Desktop:** 12-col grid, horizontal timeline.
+- **Mobile:** 1-col grid. Timeline converts to vertical list.
+
+### [Screen 2: Printable Spec Sheet]
+
+**Purpose:** A print-optimized view for recruiters requiring a PDF. Triggered via "Download CV" button.
+
+**Layout:** A4 ratio constraint, strictly black and white.
+
+**Key Elements:**
+- **Header Block:** Name and Title (Left), Contact Table (Right).
+- **Education Section:** Tabular layout. Year (Left Col), Institution (Middle), Degree (Right).
+    - `2022` | `CNFPC Esch` | `DAP Électricien`
+- **Language Matrix:**
+    - Grid of 6 small boxes.
+    - `FRANÇAIS` (B1.2), `ESPAGNOL` (Native), `ANGLAIS` (B1), etc.
+    - No graphical bars, just text values in bold.
+
+**States:**
+- **Default:** Static HTML rendered for print media query `@media print`.
+
+### [Screen 3: Contact Protocol]
+
+**Purpose:** Frictionless contact method without leaving the "technical" vibe.
+
+**Layout:** Slide-out panel from the right (30% width).
+
+**Key Elements:**
+- **Backdrop:** Blur overlay on main content.
+- **Panel:** Solid White `#FFFFFF`, Left border `1px solid #1A1A1A`.
+- **Form:**
+    - Labels are Monospace caps.
+    - Inputs are just bottom borders `border-bottom: 1px solid #E5E7EB`.
+    - No rounded corners.
+- **Direct Data:**
+    - "EMAIL DIRECT:" `yucolaguilar@gmail.com` (Click to copy).
+    - "TEL URGENCY:" `+352 621 430 283`.
+
+**Interactions:**
+- **Click 'Copy':** Text briefly changes to "COPIED" in Blue `#3B82F6`.
+
+</details>
+
+---
+
+<details>
+<summary>Build Guide</summary>
+
+**Stack:** HTML5 + Tailwind CSS v3
+
+**Configuration:**
+- Enable `JIT` mode.
+- Add custom font families in `tailwind.config.js`.
+- Extend spacing to include large "architectural" gaps (e.g., `120px`).
+
+**Build Order:**
+1. **Screen 1 (Home):** Define the 12-column grid and typography hierarchy. This establishes the "Technical Precision" feel.
+2. **Components:** Build the `MonoLabel` and `GridItem` components.
+3. **Screen 3 (Contact):** Implement the slide-out logic.
+4. **Screen 2 (Print):** Write specific `@media print` CSS overrides to hide nav elements and flatten layout.
+
+**Asset Prep:**
+- No images required (pure typography).
+- Icons: Use *Phosphor Icons* (Thin weight) for technical feel.
+
+</details>
