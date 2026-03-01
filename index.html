@@ -370,11 +370,17 @@
 
                 <!-- Exteam Group -->
                 <div data-aos="fade-up">
-                    <div class="text-[10px] font-bold tracking-[0.4em] text-prime mb-2 uppercase"
-                        x-text="lang === 'lb' ? 'Zäit 2025' : 'Depuis 2025'"></div>
+                    <div class="text-[10px] font-bold tracking-[0.4em] text-prime mb-2 uppercase">
+                        <span x-show="lang === 'lb'" x-cloak>Zäit 2025</span>
+                        <span x-show="lang === 'es'" x-cloak>Desde 2025</span>
+                        <span x-show="lang !== 'lb' && lang !== 'es'" x-cloak>Depuis 2025</span>
+                    </div>
                     <h3 class="text-3xl serif italic mb-2 text-prime">Exteam Group</h3>
-                    <p class="text-xl font-light text-white"
-                        x-text="lang === 'lb' ? 'Missioun an der BDL (Banque de Luxembourg).' : 'Mission à la BDL (Banque de Luxembourg).'">
+                    <p class="text-xl font-light text-white">
+                        <span x-show="lang === 'lb'" x-cloak>Missioun an der BDL (Banque de Luxembourg).</span>
+                        <span x-show="lang === 'es'" x-cloak>Misión en la BDL (Banque de Luxembourg).</span>
+                        <span x-show="lang !== 'lb' && lang !== 'es'" x-cloak>Mission à la BDL (Banque de
+                            Luxembourg).</span>
                     </p>
                 </div>
 
