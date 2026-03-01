@@ -215,7 +215,7 @@
                     </span>
                 </div>
                 <p class="text-lg md:text-2xl font-light serif italic text-gray-500 max-w-xl mb-16 leading-relaxed"
-                    x-text="lang === 'fr' ? 'Luxe technique: Précision et discipline en chaque connexion.' : (lang === 'es' ? 'Lujo técnico: Precisión y disciplina en cada conexión.' : (lang === 'lb' ? 'Technesche Luxus: Präzisioun an Disziplin an all Verbindung.' : 'Technical Luxury: Precision and discipline in every connection.'))">
+                    x-text="lang === 'es' ? 'Lujo técnico: Precisión y disciplina en cada conexión.' : (lang === 'lb' ? 'Technesche Luxus: Präzisioun an Disziplin an all Verbindung.' : (lang === 'en' ? 'Technical Luxury: Precision and discipline in every connection.' : (lang === 'pt' ? 'Luxo técnico: Precisão e disciplina em cada conexão.' : 'Luxe technique: Précision et discipline en chaque connexion.')))">
                 </p>
                 <div class="flex flex-col md:flex-row gap-12 items-start md:items-center">
                     <a href="#contact"
@@ -234,7 +234,7 @@
                     <div class="flex items-center gap-6">
                         <div class="w-12 h-[1px] bg-zinc-200"></div>
                         <div class="text-[10px] uppercase tracking-[0.3em] font-bold text-gray-400"
-                            x-text="lang === 'lb' ? 'Führerschäin B + Voll Mobilitéit' : (lang === 'es' ? 'Licencia B + Movilidad Total' : 'Permis B + Mobilité Totale')">
+                            x-text="lang === 'lb' ? 'Führerschäin B + Voll Mobilitéit' : (lang === 'es' ? 'Licencia B + Movilidad Total' : (lang === 'en' ? 'Driver\'s License B + Full Mobility' : (lang === 'pt' ? 'Carta de Condução B + Mobilidade Total' : 'Permis B + Mobilité Totale')))">
                         </div>
                     </div>
                 </div>
@@ -247,9 +247,10 @@
                 <div
                     class="absolute -bottom-8 -left-8 bg-prime p-10 shadow-[0_35px_60px_-15px_rgba(30,58,138,0.3)] border lux-border z-50">
                     <div class="text-4xl serif font-bold mb-1 tracking-tighter text-white"
-                        x-text="lang === 'es' ? 'Electricista' : 'Électricien'"></div>
+                        x-text="lang === 'es' || lang === 'pt' ? 'Electricista' : (lang === 'en' ? 'Electrician' : (lang === 'lb' ? 'Elektriker' : 'Électricien'))">
+                    </div>
                     <div class="text-[9px] uppercase tracking-[0.4em] font-black text-white/70"
-                        x-text="lang === 'lb' ? 'Certifiéiert Lëtzebuerg' : 'Certifié Luxembourg'">
+                        x-text="lang === 'lb' ? 'Certifiéiert Lëtzebuerg' : (lang === 'es' ? 'Certificado Luxemburgo' : (lang === 'en' ? 'Certified Luxembourg' : (lang === 'pt' ? 'Certificado Luxemburgo' : 'Certifié Luxembourg')))">
                     </div>
                 </div>
             </div>
@@ -280,8 +281,7 @@
                         class="group border-l-4 border-prime pl-8 py-6 flex flex-col items-start bg-white shadow-sm transition-all hover:shadow-md">
                         <span
                             class="text-[11px] uppercase tracking-widest text-[#1E3A8A] font-black block mb-4 leading-none">
-                            <span x-show="lang === 'es'" x-cloak>Español</span>
-                            <span x-show="lang !== 'es'" x-cloak>Espagnol</span>
+                            <span>Español</span>
                         </span>
                         <span class="text-2xl font-bold text-zinc-800 uppercase tracking-tighter">Natif</span>
                     </div>
@@ -289,8 +289,7 @@
                         class="group border-l-4 border-prime pl-8 py-6 flex flex-col items-start bg-white shadow-sm transition-all hover:shadow-md">
                         <span
                             class="text-[11px] uppercase tracking-widest text-[#1E3A8A] font-black block mb-4 leading-none">
-                            <span x-show="lang === 'lb'" x-cloak>Franséisch</span>
-                            <span x-show="lang !== 'lb'" x-cloak>Français</span>
+                            <span>Français</span>
                         </span>
                         <span class="text-2xl font-bold text-zinc-800 uppercase tracking-tighter">B1.2 Business</span>
                     </div>
@@ -298,8 +297,7 @@
                         class="group border-l-4 border-prime pl-8 py-6 flex flex-col items-start bg-white shadow-sm transition-all hover:shadow-md">
                         <span
                             class="text-[11px] uppercase tracking-widest text-[#1E3A8A] font-black block mb-4 leading-none">
-                            <span x-show="lang === 'lb'" x-cloak>Lëtzebuergesch</span>
-                            <span x-show="lang !== 'lb'" x-cloak>Luxembourgeois</span>
+                            <span>Lëtzebuergesch</span>
                         </span>
                         <span class="text-2xl font-bold text-zinc-800 uppercase tracking-tighter">B1
                             Communication</span>
@@ -308,8 +306,7 @@
                         class="group border-l-4 border-prime pl-8 py-6 flex flex-col items-start bg-white shadow-sm transition-all hover:shadow-md">
                         <span
                             class="text-[11px] uppercase tracking-widest text-[#1E3A8A] font-black block mb-4 leading-none">
-                            <span x-show="lang === 'lb'" x-cloak>Englesch</span>
-                            <span x-show="lang !== 'lb'" x-cloak>Anglais</span>
+                            <span>English</span>
                         </span>
                         <span class="text-2xl font-bold text-zinc-800 uppercase tracking-tighter">B1 Technique</span>
                     </div>
@@ -317,8 +314,7 @@
                         class="group border-l-4 border-prime pl-8 py-6 flex flex-col items-start bg-white shadow-sm transition-all hover:shadow-md">
                         <span
                             class="text-[11px] uppercase tracking-widest text-[#1E3A8A] font-black block mb-4 leading-none">
-                            <span x-show="lang === 'lb'" x-cloak>Portugisesch</span>
-                            <span x-show="lang !== 'lb'" x-cloak>Portugais</span>
+                            <span>Português</span>
                         </span>
                         <span class="text-2xl font-bold text-zinc-800 uppercase tracking-tighter">A2.2 Pratique</span>
                     </div>
@@ -326,8 +322,7 @@
                         class="group border-l-4 border-prime pl-8 py-6 flex flex-col items-start bg-white shadow-sm transition-all hover:shadow-md">
                         <span
                             class="text-[11px] uppercase tracking-widest text-[#1E3A8A] font-black block mb-4 leading-none">
-                            <span x-show="lang === 'lb'" x-cloak>Italienesch</span>
-                            <span x-show="lang !== 'lb'" x-cloak>Italien</span>
+                            <span>Italiano</span>
                         </span>
                         <span class="text-2xl font-bold text-zinc-800 uppercase tracking-tighter">A2.2 Pratique</span>
                     </div>
@@ -342,33 +337,36 @@
             <div class="grid lg:grid-cols-2 gap-32 items-center">
                 <div data-aos="fade-right">
                     <h2 class="text-7xl serif font-bold mb-16 leading-tight">
-                        <span x-text="lang === 'lb' ? 'D\'Ausféierung vun der' : 'L\'Exécution de la'"></span> <br>
-                        <span class="italic font-normal" x-text="lang === 'lb' ? 'Präzisioun' : 'Précision'"></span>
+                        <span
+                            x-text="lang === 'lb' ? 'D\'Ausféierung vun der' : (lang === 'es' ? 'La Ejecución de la' : (lang === 'en' ? 'The Execution of' : (lang === 'pt' ? 'A Execução da' : 'L\'Exécution de la')))"></span>
+                        <br>
+                        <span class="italic font-normal"
+                            x-text="lang === 'lb' ? 'Präzisioun' : (lang === 'es' ? 'Precisión' : (lang === 'en' ? 'Precision' : (lang === 'pt' ? 'Precisão' : 'Précision')))"></span>
                     </h2>
                     <ul class="space-y-10 text-xl font-light text-zinc-500">
                         <li class="flex items-center gap-6 group hover:text-prime transition-colors">
                             <span
                                 class="w-12 h-[1px] bg-zinc-200 group-hover:w-16 group-hover:bg-prime transition-all"></span>
                             <span
-                                x-text="lang === 'lb' ? 'Allgemeng & Industriell Elektrizitéit' : 'Électricité Générale & Industrielle'"></span>
+                                x-text="lang === 'lb' ? 'Allgemeng & Industriell Elektrizitéit' : (lang === 'es' ? 'Electricidad General e Industrial' : (lang === 'en' ? 'General & Industrial Electricity' : (lang === 'pt' ? 'Eletricidade Geral e Industrial' : 'Électricité Générale & Industrielle')))"></span>
                         </li>
                         <li class="flex items-center gap-6 group hover:text-prime transition-colors">
                             <span
                                 class="w-12 h-[1px] bg-zinc-200 group-hover:w-16 group-hover:bg-prime transition-all"></span>
                             <span
-                                x-text="lang === 'lb' ? 'Metrologie an Qualitéitskontroll' : 'Métrologie et Contrôle Qualité'"></span>
+                                x-text="lang === 'lb' ? 'Metrologie an Qualitéitskontroll' : (lang === 'es' ? 'Metrología y Control de Calidad' : (lang === 'en' ? 'Metrology and Quality Control' : (lang === 'pt' ? 'Metrologia e Controlo de Qualidade' : 'Métrologie et Contrôle Qualité')))"></span>
                         </li>
                         <li class="flex items-center gap-6 group hover:text-prime transition-colors">
                             <span
                                 class="w-12 h-[1px] bg-zinc-200 group-hover:w-16 group-hover:bg-prime transition-all"></span>
                             <span
-                                x-text="lang === 'lb' ? 'Domotik, Informatik an IOT' : 'Domotique, Informatique et IOT'"></span>
+                                x-text="lang === 'lb' ? 'Domotik, Informatik an IOT' : (lang === 'es' ? 'Domótica, Informática e IOT' : (lang === 'en' ? 'Home Automation, IT and IOT' : (lang === 'pt' ? 'Domótica, Informática e IOT' : 'Domotique, Informatique et IOT')))"></span>
                         </li>
                         <li class="flex items-center gap-6 group hover:text-prime transition-colors">
                             <span
                                 class="w-12 h-[1px] bg-zinc-200 group-hover:w-16 group-hover:bg-prime transition-all"></span>
                             <span
-                                x-text="lang === 'lb' ? 'Maintenance vun HVAC Systemer' : 'Maintenance Systèmes HVAC'"></span>
+                                x-text="lang === 'lb' ? 'Maintenance vun HVAC Systemer' : (lang === 'es' ? 'Mantenimiento de Sistemas HVAC' : (lang === 'en' ? 'HVAC Systems Maintenance' : (lang === 'pt' ? 'Manutenção de Sistemas HVAC' : 'Maintenance Systèmes HVAC')))"></span>
                         </li>
                     </ul>
                 </div>
@@ -376,7 +374,8 @@
                     <div class="grid grid-cols-2 gap-1 bg-zinc-100 p-1">
                         <div class="bg-white p-14 flex flex-col justify-between min-h-[280px]">
                             <h3 class="text-xl font-black uppercase tracking-widest leading-none"
-                                x-text="lang === 'lb' ? 'Technesch Rigurositéit' : 'Rigueur Technique'"></h3>
+                                x-text="lang === 'lb' ? 'Technesch Rigurositéit' : (lang === 'es' ? 'Rigor Técnico' : (lang === 'en' ? 'Technical Rigor' : (lang === 'pt' ? 'Rigor Técnico' : 'Rigueur Technique')))">
+                            </h3>
                         </div>
                         <div class="bg-zinc-50 overflow-hidden">
                             <img src="yusmel_tools_real.png" alt="Outils Précision"
@@ -388,7 +387,8 @@
                         </div>
                         <div class="bg-white p-14 flex flex-col justify-between min-h-[280px]">
                             <h3 class="text-xl font-black uppercase tracking-widest leading-none"
-                                x-text="lang === 'lb' ? 'Global Flexibilitéit' : 'Flexibilité Globale'"></h3>
+                                x-text="lang === 'lb' ? 'Global Flexibilitéit' : (lang === 'es' ? 'Flexibilidad Global' : (lang === 'en' ? 'Global Flexibility' : (lang === 'pt' ? 'Flexibilidade Global' : 'Flexibilité Globale')))">
+                            </h3>
                         </div>
                     </div>
                 </div>
@@ -400,28 +400,32 @@
     <section id="parcours" class="py-40 bg-zinc-900 text-white overflow-hidden">
         <div class="max-w-7xl mx-auto px-6 relative">
             <h2 class="text-8xl serif font-bold mb-32 opacity-20"
-                x-text="lang === 'lb' ? 'Chronologie' : 'Chronologie'">
+                x-text="lang === 'es' || lang === 'pt' ? 'Cronología' : (lang === 'en' ? 'Timeline' : 'Chronologie')">
             </h2>
 
             <div class="grid md:grid-cols-2 gap-20 relative z-10">
                 <!-- Luxembourg Column (Right) -->
                 <div class="order-1 md:order-2 space-y-12 border-l border-zinc-800 pl-8">
                     <h3 class="text-xs font-black tracking-[0.6em] text-accent uppercase mb-16"
-                        x-text="lang === 'es' ? 'Luxemburgo (Desde 2019)' : 'Luxembourg (Depuis 2019)'"></h3>
+                        x-text="lang === 'es' ? 'Luxemburgo (Desde 2019)' : (lang === 'lb' ? 'Lëtzebuerg (Zënter 2019)' : (lang === 'en' ? 'Luxembourg (Since 2019)' : (lang === 'pt' ? 'Luxemburgo (Desde 2019)' : 'Luxembourg (Depuis 2019)')))">
+                    </h3>
 
                     <!-- Exteam Group -->
                     <div data-aos="fade-up">
                         <div class="text-[10px] font-bold tracking-[0.4em] text-prime mb-2 uppercase">
                             <span x-show="lang === 'lb'" x-cloak>Zäit 2025</span>
                             <span x-show="lang === 'es'" x-cloak>Desde 2025</span>
-                            <span x-show="lang !== 'lb' && lang !== 'es'" x-cloak>Depuis 2025</span>
+                            <span x-show="lang === 'fr'" x-cloak>Depuis 2025</span>
+                            <span x-show="lang === 'en'" x-cloak>Since 2025</span>
+                            <span x-show="lang === 'pt'" x-cloak>Desde 2025</span>
                         </div>
                         <h3 class="text-3xl serif italic mb-2 text-prime">Exteam Group</h3>
                         <p class="text-xl font-light text-white">
                             <span x-show="lang === 'lb'" x-cloak>Missioun an der BDL (Banque de Luxembourg).</span>
                             <span x-show="lang === 'es'" x-cloak>Misión en la BDL (Banque de Luxembourg).</span>
-                            <span x-show="lang !== 'lb' && lang !== 'es'" x-cloak>Mission à la BDL (Banque de
-                                Luxembourg).</span>
+                            <span x-show="lang === 'fr'" x-cloak>Mission à la BDL (Banque de Luxembourg).</span>
+                            <span x-show="lang === 'en'" x-cloak>Mission at the BDL (Banque de Luxembourg).</span>
+                            <span x-show="lang === 'pt'" x-cloak>Missão no BDL (Banque de Luxembourg).</span>
                         </p>
                     </div>
 
@@ -431,7 +435,7 @@
                         </div>
                         <h3 class="text-3xl serif italic mb-2 text-gray-200">Global Facilities</h3>
                         <p class="text-xl font-light text-gray-400"
-                            x-text="lang === 'lb' ? 'DAP an der Elektrizitéit, Léierplaz.' : 'DAP en électricité, apprentissage.'">
+                            x-text="lang === 'lb' ? 'DAP an der Elektrizitéit, Léierplaz.' : (lang === 'es' ? 'DAP en electricidad, aprendizaje.' : (lang === 'en' ? 'DAP in electricity, apprenticeship.' : (lang === 'pt' ? 'DAP em eletricidade, aprendizagem.' : 'DAP en électricité, apprentissage.')))">
                         </p>
                     </div>
 
@@ -441,7 +445,7 @@
                         </div>
                         <h3 class="text-3xl serif italic mb-2">MySafety</h3>
                         <p class="text-xl font-light text-gray-400"
-                            x-text="lang === 'lb' ? 'DAP an der Elektrizitéit, Léierplaz.' : 'DAP en électricité, apprentissage.'">
+                            x-text="lang === 'lb' ? 'DAP an der Elektrizitéit, Léierplaz.' : (lang === 'es' ? 'DAP en electricidad, aprendizaje.' : (lang === 'en' ? 'DAP in electricity, apprenticeship.' : (lang === 'pt' ? 'DAP em eletricidade, aprendizagem.' : 'DAP en électricité, apprentissage.')))">
                         </p>
                     </div>
 
@@ -451,7 +455,8 @@
                         </div>
                         <h3 class="text-3xl serif italic mb-2 text-white">Co-Labor</h3>
                         <p class="text-xl font-light text-gray-300"
-                            x-text="lang === 'lb' ? 'Villsäitegen Aarbechter.' : 'Ouvrier polyvalent.'"></p>
+                            x-text="lang === 'lb' ? 'Villsäitegen Aarbechter.' : (lang === 'es' ? 'Obrero polivalente.' : (lang === 'en' ? 'Versatile worker.' : (lang === 'pt' ? 'Trabalhador polivalente.' : 'Ouvrier polyvalent.')))">
+                        </p>
                     </div>
 
                     <!-- Verda -->
@@ -461,7 +466,8 @@
                             2020</div>
                         <h3 class="text-3xl serif italic mb-2 text-white">Verda (Jardinerie)</h3>
                         <p class="text-xl font-light text-gray-300"
-                            x-text="lang === 'lb' ? 'Villsäitegen Aarbechter.' : 'Ouvrier polyvalent.'"></p>
+                            x-text="lang === 'lb' ? 'Villsäitegen Aarbechter.' : (lang === 'es' ? 'Obrero polivalente.' : (lang === 'en' ? 'Versatile worker.' : (lang === 'pt' ? 'Trabalhador polivalente.' : 'Ouvrier polyvalent.')))">
+                        </p>
                     </div>
 
                     <!-- Winterlights -->
@@ -470,14 +476,16 @@
                         </div>
                         <h3 class="text-3xl serif italic mb-2 text-white">Restaurant Kugener (Winterlights)</h3>
                         <p class="text-xl font-light text-gray-300"
-                            x-text="lang === 'lb' ? 'Geleeëntlech Hëllef.' : 'Aide occasionelle.'"></p>
+                            x-text="lang === 'lb' ? 'Geleeëntlech Hëllef.' : (lang === 'es' ? 'Ayuda ocasional.' : (lang === 'en' ? 'Occasional help.' : (lang === 'pt' ? 'Ajuda ocasional.' : 'Aide occasionelle.')))">
+                        </p>
                     </div>
                 </div>
 
                 <!-- International Column (Left) -->
                 <div class="order-2 md:order-1 space-y-12">
                     <h3 class="text-xs font-black tracking-[0.6em] text-zinc-400 uppercase mb-16"
-                        x-text="lang === 'es' ? 'Internacional (Antes de 2019)' : 'International (Avant 2019)'"></h3>
+                        x-text="lang === 'es' ? 'Internacional (Antes de 2019)' : (lang === 'lb' ? 'International (Virun 2019)' : (lang === 'en' ? 'International (Before 2019)' : (lang === 'pt' ? 'Internacional (Antes de 2019)' : 'International (Avant 2019)')))">
+                    </h3>
 
                     <!-- Restauration -->
                     <div data-aos="fade-up">
@@ -485,7 +493,7 @@
                         </div>
                         <h3 class="text-3xl serif italic mb-2">Restauration</h3>
                         <p class="text-xl font-light text-gray-400"
-                            x-text="lang === 'lb' ? 'Co-Gérant vun engem Restaurant.' : 'Co-gérant d\'un restaurant.'">
+                            x-text="lang === 'lb' ? 'Co-Gérant vun engem Restaurant.' : (lang === 'es' ? 'Co-gerente de un restaurante.' : (lang === 'en' ? 'Co-manager of a restaurant.' : (lang === 'pt' ? 'Co-gerente de um restaurante.' : 'Co-gérant d\'un restaurant.')))">
                         </p>
                     </div>
 
@@ -495,7 +503,7 @@
                         </div>
                         <h3 class="text-3xl serif italic mb-2">Tech & Tourism</h3>
                         <p class="text-xl font-light text-gray-400"
-                            x-text="lang === 'lb' ? 'Maintenance vun Internetverbindungen, Reesguide.' : 'Maintenance et gestion des connexions internet, guide de voyage.'">
+                            x-text="lang === 'lb' ? 'Maintenance vun Internetverbindungen, Reesguide.' : (lang === 'es' ? 'Mantenimiento de conexiones de internet, guía de viaje.' : (lang === 'en' ? 'Internet connections maintenance, travel guide.' : (lang === 'pt' ? 'Manutenção de conexões de internet, guia de viagem.' : 'Maintenance et gestion des connexions internet, guide de voyage.')))">
                         </p>
                     </div>
 
@@ -505,17 +513,20 @@
                         </div>
                         <h3 class="text-3xl serif italic mb-2">HVAC Sector</h3>
                         <p class="text-xl font-light text-gray-400"
-                            x-text="lang === 'lb' ? 'Hëllefs-Installateur an HVAC.' : 'Aide-installateur en HVAC.'"></p>
+                            x-text="lang === 'lb' ? 'Hëllefs-Installateur an HVAC.' : (lang === 'es' ? 'Ayudante de instalador en HVAC.' : (lang === 'en' ? 'Assistant HVAC installer.' : (lang === 'pt' ? 'Ajudante de instalador em HVAC.' : 'Aide-installateur en HVAC.')))">
+                        </p>
                     </div>
 
                     <!-- Métrologie -->
                     <div data-aos="fade-up">
                         <div class="text-[10px] font-bold tracking-[0.4em] text-gray-500 mb-2 uppercase">2006 - 2008
                         </div>
-                        <h3 class="text-3xl serif italic mb-2" x-text="lang === 'lb' ? 'Metrologie' : 'Métrologie'">
+                        <h3 class="text-3xl serif italic mb-2"
+                            x-text="lang === 'es' || lang === 'pt' ? 'Metrología' : (lang === 'en' ? 'Metrology' : (lang === 'lb' ? 'Metrologie' : 'Métrologie'))">
                         </h3>
                         <p class="text-xl font-light text-gray-400"
-                            x-text="lang === 'lb' ? 'Qualitéitskontroll.' : 'Métrologie et contrôle de qualité.'"></p>
+                            x-text="lang === 'lb' ? 'Qualitéitskontroll.' : (lang === 'es' ? 'Metrología y control de calidad.' : (lang === 'en' ? 'Metrology and quality control.' : (lang === 'pt' ? 'Metrologia e controlo de qualidade.' : 'Métrologie et contrôle de qualité.')))">
+                        </p>
                     </div>
                 </div>
             </div>
@@ -526,23 +537,28 @@
     <section class="py-40">
         <div class="max-w-7xl mx-auto px-6">
             <h2 class="text-4xl serif italic mb-20 text-center"
-                x-text="lang === 'lb' ? 'Studien a Formatiounen' : 'Études et Formations'"></h2>
+                x-text="lang === 'lb' ? 'Studien a Formatiounen' : (lang === 'es' ? 'Estudios y Formación' : (lang === 'en' ? 'Studies & Training' : (lang === 'pt' ? 'Estudos e Formação' : 'Études et Formations')))">
+            </h2>
             <div class="grid md:grid-cols-2 gap-16">
                 <!-- Luxembourg Column -->
                 <div data-aos="fade-right">
                     <h3 class="text-xl font-black uppercase tracking-[0.4em] text-prime mb-12 border-b border-prime/10 pb-4"
-                        x-text="lang === 'lb' ? 'Lëtzebuerg Parcours' : 'Parcours au Luxembourg'"></h3>
+                        x-text="lang === 'lb' ? 'Lëtzebuerg Parcours' : (lang === 'es' ? 'Trayectoria en Luxemburgo' : (lang === 'en' ? 'Luxembourg Pathway' : (lang === 'pt' ? 'Trajetória em Luxemburgo' : 'Parcours au Luxembourg')))">
+                    </h3>
                     <div class="space-y-6">
                         <div class="bg-zinc-50 p-6 border-l-4 border-prime transition-transform hover:scale-[1.02]">
-                            <div class="text-[9px] font-bold text-gray-400 mb-1 uppercase tracking-tighter">Depuis 2022
+                            <div class="text-[9px] font-bold text-gray-400 mb-1 uppercase tracking-tighter"
+                                x-text="lang === 'lb' ? 'Zënter 2022' : (lang === 'es' ? 'Desde 2022' : (lang === 'en' ? 'Since 2022' : (lang === 'pt' ? 'Desde 2022' : 'Depuis 2022')))">
                             </div>
                             <h4 class="text-lg font-black uppercase text-prime"
-                                x-text="lang === 'es' ? 'Electricista' : 'Électricien'"></h4>
+                                x-text="lang === 'es' || lang === 'pt' ? 'Electricista' : (lang === 'en' ? 'Electrician' : (lang === 'lb' ? 'Elektriker' : 'Électricien'))">
+                            </h4>
                             <p class="text-xs text-gray-500 uppercase tracking-widest mt-1">Lycée Technique de Bonnevoie
                             </p>
                         </div>
                         <div class="bg-zinc-50 p-6 border-l-4 border-prime transition-transform hover:scale-[1.02]">
-                            <div class="text-[9px] font-bold text-gray-400 mb-1 uppercase tracking-tighter">Depuis 2021
+                            <div class="text-[9px] font-bold text-gray-400 mb-1 uppercase tracking-tighter"
+                                x-text="lang === 'lb' ? 'Zënter 2021' : (lang === 'es' ? 'Desde 2021' : (lang === 'en' ? 'Since 2021' : (lang === 'pt' ? 'Desde 2021' : 'Depuis 2021')))">
                             </div>
                             <h4 class="text-lg font-black uppercase text-prime"
                                 x-text="lang === 'lb' ? 'Lëtzebuergesch' : (lang === 'es' ? 'Luxemburgués' : 'Luxembourgeois')">
@@ -569,7 +585,8 @@
                 <!-- Cuba Column -->
                 <div data-aos="fade-left">
                     <h3 class="text-xl font-black uppercase tracking-[0.4em] text-gray-400 mb-12 border-b border-gray-100 pb-4"
-                        x-text="lang === 'lb' ? 'Formatioun op Kuba' : 'Formation à Cuba'"></h3>
+                        x-text="lang === 'lb' ? 'Formatioun op Kuba' : (lang === 'es' ? 'Formación en Cuba' : (lang === 'en' ? 'Training in Cuba' : (lang === 'pt' ? 'Formação em Cuba' : 'Formation à Cuba')))">
+                    </h3>
                     <div class="space-y-6">
                         <div
                             class="bg-zinc-50 p-6 border-l-4 border-zinc-200 opacity-80 filter grayscale hover:grayscale-0 hover:opacity-100 transition-all">
@@ -622,7 +639,8 @@
             <div class="grid md:grid-cols-2 gap-20 items-end">
                 <div data-aos="fade-up">
                     <h2 class="text-8xl serif font-bold mb-12 text-white"
-                        x-text="lang === 'lb' ? 'Loosst eis geschwat.' : 'Parlons Tech.'"></h2>
+                        x-text="lang === 'lb' ? 'Loosst eis geschwat.' : (lang === 'es' ? 'Hablemos de tecnología.' : (lang === 'en' ? 'Let\'s talk tech.' : (lang === 'pt' ? 'Vamos falar de tecnologia.' : 'Parlons Tech.')))">
+                    </h2>
                     <div class="space-y-4 text-xl font-light text-gray-500">
                         <p class="font-black text-white/90">17a, rue du Lavoir</p>
                         <p class="font-bold"
