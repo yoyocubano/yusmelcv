@@ -122,498 +122,561 @@
     </style>
 </head>
 
-<!-- Texture & Grain -->
-<div class="fixed inset-0 bg-noise z-[-1]"></div>
+<body x-data="app">
+    <!-- Texture & Grain -->
+    <div class="fixed inset-0 bg-noise z-[-1]"></div>
 
-<!-- Navigation -->
-<nav
-    class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b lux-border h-24 flex items-center px-8 md:px-16 justify-between">
-    <div class="serif text-2xl tracking-tighter text-prime flex items-baseline gap-1">
-        yusmel <span class="font-sans text-[10px] uppercase tracking-[0.6em] text-zinc-900 font-black">COLOMBO</span>
-    </div>
-    <div class="hidden md:flex gap-16 text-[10px] uppercase tracking-[0.4em] font-bold text-gray-400">
-        <a href="#profil" class="nav-link" x-text="lang === 'lb' ? 'Profil' : 'Profil'"></a>
-        <a href="#expert" class="nav-link" x-text="lang === 'lb' ? 'Expertise' : 'Expertise'"></a>
-        <a href="#parcours" class="nav-link" x-text="lang === 'lb' ? 'Wee' : 'Parcours'"></a>
-        <a href="#contact" class="nav-link text-black font-extrabold"
-            x-text="lang === 'lb' ? 'Kontakt' : 'Contact'"></a>
-    </div>
-    <div class="flex gap-4 text-[10px] font-bold">
-        <button @click="lang = 'fr'" :class="lang === 'fr' ? 'text-prime' : 'text-gray-300'">FR</button>
-        <button @click="lang = 'lb'" :class="lang === 'lb' ? 'text-prime' : 'text-gray-300'">LB</button>
-        <button @click="lang = 'en'" :class="lang === 'en' ? 'text-prime' : 'text-gray-300'">EN</button>
-        <button @click="lang = 'es'" :class="lang === 'es' ? 'text-prime' : 'text-gray-300'">ES</button>
-        <button @click="lang = 'pt'" :class="lang === 'pt' ? 'text-prime' : 'text-gray-300'">PT</button>
-        <button @click="lang = 'it'" :class="lang === 'it' ? 'text-prime' : 'text-gray-300'">IT</button>
-    </div>
-</nav>
+    <!-- Navigation -->
+    <nav
+        class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-xl border-b lux-border h-24 flex items-center px-6 md:px-12 justify-between transition-all duration-300">
+        <!-- Logo Premium -->
+        <a href="#" class="flex flex-col items-start leading-none group transition-transform hover:scale-105">
+            <span class="text-3xl font-black tracking-tighter text-prime">Yusmel</span>
+            <span
+                class="text-[9px] uppercase tracking-[0.3em] font-black text-gray-400 group-hover:text-prime transition-colors ml-1 mt-1">Colombo
+                • Électricien</span>
+        </a>
 
-<!-- Hero -->
-<section class="min-h-screen pt-40 flex flex-col items-center justify-center px-6 overflow-hidden bg-white">
-    <div class="max-w-7xl w-full grid md:grid-cols-12 gap-16 items-center">
-        <div class="md:col-span-7" data-aos="fade-up">
-            <div class="text-[11px] uppercase tracking-[0.6em] text-prime font-bold mb-8 h-8 flex items-end">
-                <span x-show="lang === 'fr'" x-cloak>Électricien • Spécialiste Luxembourg</span>
-                <span x-show="lang === 'es'" x-cloak>Electricista • Especialista Luxemburgo</span>
-                <span x-show="lang === 'lb'" x-cloak>Elektriker • Spezialist Lëtzebuerg</span>
-                <span x-show="lang === 'en'" x-cloak>Electrician • Luxembourg Specialist</span>
-                <span x-show="lang === 'pt'" x-cloak>Eletricista • Especialista Luxemburgo</span>
-                <span x-show="lang === 'it'" x-cloak>Elettricista • Specialista Lussemburgo</span>
-            </div>
-            <h1
-                class="text-7xl md:text-[9rem] leading-[0.8] font-black mb-12 tracking-tighter relative z-10 text-prime">
-                Yusmel <br> <span class="italic serif font-normal">Colombo</span>
-            </h1>
-            <div class="flex flex-wrap gap-4 mb-12">
-                <span
-                    class="px-4 py-2 border border-zinc-200 text-[10px] font-black uppercase tracking-widest text-zinc-400">
-                    <span x-show="lang === 'es'" x-cloak>Nacionalidad: Cubano - Luxemburgués</span>
-                    <span x-show="lang !== 'es'" x-cloak>Nationalité: Cubano - Luxembourgeois</span>
-                </span>
-                <span
-                    class="px-4 py-2 border border-blue-100 bg-blue-50/50 text-prime text-[10px] font-black uppercase tracking-widest">
-                    <span x-show="lang === 'es'" x-cloak>Licencia B + Vehículo Propio</span>
-                    <span x-show="lang !== 'es'" x-cloak>Permis B + Véhicule Personnel</span>
-                </span>
-            </div>
-            <p class="text-lg md:text-2xl font-light serif italic text-gray-500 max-w-xl mb-16 leading-relaxed"
-                x-text="lang === 'fr' ? 'Luxe technique: Précision et discipline en chaque connexion.' : (lang === 'es' ? 'Lujo técnico: Precisión y disciplina en cada conexión.' : (lang === 'lb' ? 'Technesche Luxus: Präzisioun an Disziplin an all Verbindung.' : 'Technical Luxury: Precision and discipline in every connection.'))">
-            </p>
-            <div class="flex flex-col md:flex-row gap-12 items-start md:items-center">
-                <a href="#contact"
-                    class="bg-black text-white px-14 py-6 text-[11px] uppercase font-black tracking-[0.4em] hover:bg-zinc-800 transition-all shadow-[0_20px_50px_rgba(0,0,0,0.15)] group relative overflow-hidden">
-                    <span class="relative z-10">
-                        <span x-show="lang === 'lb'" x-cloak>Kontakt Protokoll</span>
-                        <span x-show="lang === 'fr'" x-cloak>Protocole de Contact</span>
-                        <span x-show="lang === 'es'" x-cloak>Protocolo de Contacto</span>
-                        <span x-show="lang === 'en' || lang === 'pt' || lang === 'it'" x-cloak>Contact Protocol</span>
-                    </span>
-                    <div
-                        class="absolute inset-0 bg-prime translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-                    </div>
-                </a>
-                <div class="flex items-center gap-6">
-                    <div class="w-12 h-[1px] bg-zinc-200"></div>
-                    <div class="text-[10px] uppercase tracking-[0.3em] font-bold text-gray-400"
-                        x-text="lang === 'lb' ? 'Führerschäin B + Voll Mobilitéit' : (lang === 'es' ? 'Licencia B + Movilidad Total' : 'Permis B + Mobilité Totale')">
-                    </div>
-                </div>
-            </div>
+        <!-- Centered Navigation Links -->
+        <div class="hidden md:flex gap-12 text-[11px] uppercase tracking-[0.3em] font-bold text-zinc-500">
+            <a href="#profil" class="nav-link">
+                <span x-show="lang === 'lb'" x-cloak>Profil</span>
+                <span x-show="lang === 'es'" x-cloak>Visión</span>
+                <span x-show="lang !== 'lb' && lang !== 'es'" x-cloak>Profil</span>
+            </a>
+            <a href="#expert" class="nav-link">
+                <span x-show="lang === 'lb'" x-cloak>Expertise</span>
+                <span x-show="lang === 'es'" x-cloak>Especialidad</span>
+                <span x-show="lang !== 'lb' && lang !== 'es'" x-cloak>Expertise</span>
+            </a>
+            <a href="#parcours" class="nav-link">
+                <span x-show="lang === 'lb'" x-cloak>Wee</span>
+                <span x-show="lang === 'es'" x-cloak>Trayectoria</span>
+                <span x-show="lang !== 'lb' && lang !== 'es'" x-cloak>Parcours</span>
+            </a>
         </div>
-        <div class="md:col-span-5 relative z-40" data-aos="fade-left" data-aos-delay="300">
-            <div class="hero-frame overflow-hidden">
-                <img src="yusmel_real.png" alt="Yusmel Colombo Portrait"
-                    class="w-full img-premium block relative -top-4 scale-110">
-            </div>
+
+        <!-- Languages & Contact -->
+        <div class="flex items-center gap-6">
+            <!-- Language Selector with Premium Details -->
             <div
-                class="absolute -bottom-8 -left-8 bg-prime p-10 shadow-[0_35px_60px_-15px_rgba(30,58,138,0.3)] border lux-border z-50">
-                <div class="text-4xl serif font-bold mb-1 tracking-tighter text-white"
-                    x-text="lang === 'es' ? 'Electricista' : 'Électricien'"></div>
-                <div class="text-[9px] uppercase tracking-[0.4em] font-black text-white/70"
-                    x-text="lang === 'lb' ? 'Certifiéiert Lëtzebuerg' : 'Certifié Luxembourg'">
+                class="flex gap-2 text-[10px] font-black uppercase tracking-widest text-zinc-400 bg-zinc-50/80 px-4 py-2 rounded-lg border border-zinc-100 shadow-sm">
+                <button @click="lang = 'fr'"
+                    :class="lang === 'fr' ? 'text-prime border-b-2 border-prime' : 'hover:text-zinc-800'"
+                    class="pb-0.5 transition-all">FR</button>
+                <div class="w-px h-3 bg-zinc-300 mt-0.5 mx-1"></div>
+                <button @click="lang = 'es'"
+                    :class="lang === 'es' ? 'text-prime border-b-2 border-prime' : 'hover:text-zinc-800'"
+                    class="pb-0.5 transition-all">ES</button>
+                <div class="w-px h-3 bg-zinc-300 mt-0.5 mx-1"></div>
+                <button @click="lang = 'en'"
+                    :class="lang === 'en' ? 'text-prime border-b-2 border-prime' : 'hover:text-zinc-800'"
+                    class="pb-0.5 transition-all">EN</button>
+                <div class="w-px h-3 bg-zinc-300 mt-0.5 mx-1 hidden lg:block"></div>
+                <button @click="lang = 'lb'"
+                    :class="lang === 'lb' ? 'text-prime border-b-2 border-prime' : 'hover:text-zinc-800'"
+                    class="pb-0.5 transition-all hidden lg:block">LB</button>
+                <div class="w-px h-3 bg-zinc-300 mt-0.5 mx-1 hidden lg:block"></div>
+                <button @click="lang = 'pt'"
+                    :class="lang === 'pt' ? 'text-prime border-b-2 border-prime' : 'hover:text-zinc-800'"
+                    class="pb-0.5 transition-all hidden lg:block">PT</button>
+                <div class="w-px h-3 bg-zinc-300 mt-0.5 mx-1 hidden lg:block"></div>
+                <button @click="lang = 'it'"
+                    :class="lang === 'it' ? 'text-prime border-b-2 border-prime' : 'hover:text-zinc-800'"
+                    class="pb-0.5 transition-all hidden lg:block">IT</button>
+            </div>
+
+            <a href="#contact"
+                class="bg-prime text-white px-8 py-3.5 text-[10px] uppercase font-black tracking-[0.2em] hover:bg-blue-800 transition-all shadow-[0_10px_20px_rgba(30,58,138,0.2)] hidden md:block">
+                <span x-show="lang === 'lb'" x-cloak>Kontakt</span>
+                <span x-show="lang === 'es'" x-cloak>Contacto</span>
+                <span x-show="lang !== 'lb' && lang !== 'es'" x-cloak>Contact</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="min-h-screen pt-40 flex flex-col items-center justify-center px-6 overflow-hidden bg-white">
+        <div class="max-w-7xl w-full grid md:grid-cols-12 gap-16 items-center">
+            <div class="md:col-span-7" data-aos="fade-up">
+                <div class="text-[11px] uppercase tracking-[0.6em] text-prime font-bold mb-8 h-8 flex items-end">
+                    <span x-show="lang === 'fr'" x-cloak>Électricien • Spécialiste Luxembourg</span>
+                    <span x-show="lang === 'es'" x-cloak>Electricista • Especialista Luxemburgo</span>
+                    <span x-show="lang === 'lb'" x-cloak>Elektriker • Spezialist Lëtzebuerg</span>
+                    <span x-show="lang === 'en'" x-cloak>Electrician • Luxembourg Specialist</span>
+                    <span x-show="lang === 'pt'" x-cloak>Eletricista • Especialista Luxemburgo</span>
+                    <span x-show="lang === 'it'" x-cloak>Elettricista • Specialista Lussemburgo</span>
+                </div>
+                <h1
+                    class="text-7xl md:text-[9rem] leading-[0.8] font-black mb-12 tracking-tighter relative z-10 text-prime">
+                    Yusmel <br> <span class="italic serif font-normal">Colombo</span>
+                </h1>
+                <div class="flex flex-wrap gap-4 mb-12">
+                    <span
+                        class="px-4 py-2 border border-zinc-200 text-[10px] font-black uppercase tracking-widest text-zinc-400">
+                        <span x-show="lang === 'es'" x-cloak>Nacionalidad: Cubano - Luxemburgués</span>
+                        <span x-show="lang !== 'es'" x-cloak>Nationalité: Cubano - Luxembourgeois</span>
+                    </span>
+                    <span
+                        class="px-4 py-2 border border-blue-100 bg-blue-50/50 text-prime text-[10px] font-black uppercase tracking-widest">
+                        <span x-show="lang === 'es'" x-cloak>Licencia B + Vehículo Propio</span>
+                        <span x-show="lang !== 'es'" x-cloak>Permis B + Véhicule Personnel</span>
+                    </span>
+                </div>
+                <p class="text-lg md:text-2xl font-light serif italic text-gray-500 max-w-xl mb-16 leading-relaxed"
+                    x-text="lang === 'fr' ? 'Luxe technique: Précision et discipline en chaque connexion.' : (lang === 'es' ? 'Lujo técnico: Precisión y disciplina en cada conexión.' : (lang === 'lb' ? 'Technesche Luxus: Präzisioun an Disziplin an all Verbindung.' : 'Technical Luxury: Precision and discipline in every connection.'))">
+                </p>
+                <div class="flex flex-col md:flex-row gap-12 items-start md:items-center">
+                    <a href="#contact"
+                        class="bg-black text-white px-14 py-6 text-[11px] uppercase font-black tracking-[0.4em] hover:bg-zinc-800 transition-all shadow-[0_20px_50px_rgba(0,0,0,0.15)] group relative overflow-hidden">
+                        <span class="relative z-10">
+                            <span x-show="lang === 'lb'" x-cloak>Kontakt Protokoll</span>
+                            <span x-show="lang === 'fr'" x-cloak>Protocole de Contact</span>
+                            <span x-show="lang === 'es'" x-cloak>Protocolo de Contacto</span>
+                            <span x-show="lang === 'en' || lang === 'pt' || lang === 'it'" x-cloak>Contact
+                                Protocol</span>
+                        </span>
+                        <div
+                            class="absolute inset-0 bg-prime translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                        </div>
+                    </a>
+                    <div class="flex items-center gap-6">
+                        <div class="w-12 h-[1px] bg-zinc-200"></div>
+                        <div class="text-[10px] uppercase tracking-[0.3em] font-bold text-gray-400"
+                            x-text="lang === 'lb' ? 'Führerschäin B + Voll Mobilitéit' : (lang === 'es' ? 'Licencia B + Movilidad Total' : 'Permis B + Mobilité Totale')">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="md:col-span-5 relative z-40" data-aos="fade-left" data-aos-delay="300">
+                <div class="hero-frame overflow-hidden">
+                    <img src="yusmel_real.png" alt="Yusmel Colombo Portrait"
+                        class="w-full img-premium block relative -top-4 scale-110">
+                </div>
+                <div
+                    class="absolute -bottom-8 -left-8 bg-prime p-10 shadow-[0_35px_60px_-15px_rgba(30,58,138,0.3)] border lux-border z-50">
+                    <div class="text-4xl serif font-bold mb-1 tracking-tighter text-white"
+                        x-text="lang === 'es' ? 'Electricista' : 'Électricien'"></div>
+                    <div class="text-[9px] uppercase tracking-[0.4em] font-black text-white/70"
+                        x-text="lang === 'lb' ? 'Certifiéiert Lëtzebuerg' : 'Certifié Luxembourg'">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Profile Context & Brand Asset -->
-<section id="profil" class="py-40 bg-zinc-50 border-t border-zinc-100">
-    <div class="max-w-7xl mx-auto px-6">
-        <div class="flex flex-col items-center text-center">
-            <h2 class="text-[12px] uppercase tracking-[0.6em] font-black text-gray-400 mb-12">
-                <span x-show="lang === 'lb'" x-cloak>Visioun & Wee</span>
-                <span x-show="lang !== 'lb'" x-cloak>Vision & Parcours</span>
-            </h2>
-            <p class="text-3xl md:text-5xl font-light leading-[1.3] text-zinc-800 mb-20 italic serif max-w-4xl">
-                <span x-show="lang === 'lb'" x-cloak>Mat enger technescher Villsäitegkeet déi international gewonnen
-                    gouf, iwwersetzen ech Komplexitéit a Sécherheet an elektresch Leeschtung.</span>
-                <span x-show="lang === 'fr'" x-cloak>Fort d'une polyvalence technique acquise à l'international, je
-                    traduis la complexité en sécurité et performance électrique.</span>
-                <span x-show="lang === 'es'" x-cloak>Con una versatilidad técnica adquirida a nivel internacional,
-                    traduzco la complejidad en seguridad y rendimiento eléctrico.</span>
-                <span x-show="lang === 'en' || lang === 'pt' || lang === 'it'" x-cloak>With technical versatility
-                    acquired internationally, I translate complexity into electrical safety and performance.</span>
-            </p>
-            <div class="grid grid-cols-2 lg:grid-cols-3 gap-12 w-full mt-16">
-                <!-- Languages with clear levels and labels -->
-                <div
-                    class="group border-l-4 border-prime pl-8 py-6 flex flex-col items-start bg-white shadow-sm transition-all hover:shadow-md">
-                    <span
-                        class="text-[11px] uppercase tracking-widest text-[#1E3A8A] font-black block mb-4 leading-none">
-                        <span x-show="lang === 'es'" x-cloak>Español</span>
-                        <span x-show="lang !== 'es'" x-cloak>Espagnol</span>
-                    </span>
-                    <span class="text-2xl font-bold text-zinc-800 uppercase tracking-tighter">Natif</span>
-                </div>
-                <div
-                    class="group border-l-4 border-prime pl-8 py-6 flex flex-col items-start bg-white shadow-sm transition-all hover:shadow-md">
-                    <span
-                        class="text-[11px] uppercase tracking-widest text-[#1E3A8A] font-black block mb-4 leading-none">
-                        <span x-show="lang === 'lb'" x-cloak>Franséisch</span>
-                        <span x-show="lang !== 'lb'" x-cloak>Français</span>
-                    </span>
-                    <span class="text-2xl font-bold text-zinc-800 uppercase tracking-tighter">B1.2 Business</span>
-                </div>
-                <div
-                    class="group border-l-4 border-prime pl-8 py-6 flex flex-col items-start bg-white shadow-sm transition-all hover:shadow-md">
-                    <span
-                        class="text-[11px] uppercase tracking-widest text-[#1E3A8A] font-black block mb-4 leading-none">
-                        <span x-show="lang === 'lb'" x-cloak>Lëtzebuergesch</span>
-                        <span x-show="lang !== 'lb'" x-cloak>Luxembourgeois</span>
-                    </span>
-                    <span class="text-2xl font-bold text-zinc-800 uppercase tracking-tighter">B1 Communication</span>
-                </div>
-                <div
-                    class="group border-l-4 border-prime pl-8 py-6 flex flex-col items-start bg-white shadow-sm transition-all hover:shadow-md">
-                    <span
-                        class="text-[11px] uppercase tracking-widest text-[#1E3A8A] font-black block mb-4 leading-none">
-                        <span x-show="lang === 'lb'" x-cloak>Englesch</span>
-                        <span x-show="lang !== 'lb'" x-cloak>Anglais</span>
-                    </span>
-                    <span class="text-2xl font-bold text-zinc-800 uppercase tracking-tighter">B1 Technique</span>
-                </div>
-                <div
-                    class="group border-l-4 border-prime pl-8 py-6 flex flex-col items-start bg-white shadow-sm transition-all hover:shadow-md">
-                    <span
-                        class="text-[11px] uppercase tracking-widest text-[#1E3A8A] font-black block mb-4 leading-none">
-                        <span x-show="lang === 'lb'" x-cloak>Portugisesch</span>
-                        <span x-show="lang !== 'lb'" x-cloak>Portugais</span>
-                    </span>
-                    <span class="text-2xl font-bold text-zinc-800 uppercase tracking-tighter">A2.2 Pratique</span>
-                </div>
-                <div
-                    class="group border-l-4 border-prime pl-8 py-6 flex flex-col items-start bg-white shadow-sm transition-all hover:shadow-md">
-                    <span
-                        class="text-[11px] uppercase tracking-widest text-[#1E3A8A] font-black block mb-4 leading-none">
-                        <span x-show="lang === 'lb'" x-cloak>Italienesch</span>
-                        <span x-show="lang !== 'lb'" x-cloak>Italien</span>
-                    </span>
-                    <span class="text-2xl font-bold text-zinc-800 uppercase tracking-tighter">A2.2 Pratique</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Expertise -->
-<section id="expert" class="py-56">
-    <div class="max-w-7xl mx-auto px-6">
-        <div class="grid lg:grid-cols-2 gap-32 items-center">
-            <div data-aos="fade-right">
-                <h2 class="text-7xl serif font-bold mb-16 leading-tight">
-                    <span x-text="lang === 'lb' ? 'D\'Ausféierung vun der' : 'L\'Exécution de la'"></span> <br>
-                    <span class="italic font-normal" x-text="lang === 'lb' ? 'Präzisioun' : 'Précision'"></span>
+    <!-- Profile Context & Brand Asset -->
+    <section id="profil" class="py-40 bg-zinc-50 border-t border-zinc-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col items-center text-center">
+                <h2 class="text-[12px] uppercase tracking-[0.6em] font-black text-gray-400 mb-12">
+                    <span x-show="lang === 'lb'" x-cloak>Visioun & Wee</span>
+                    <span x-show="lang !== 'lb'" x-cloak>Vision & Parcours</span>
                 </h2>
-                <ul class="space-y-10 text-xl font-light text-zinc-500">
-                    <li class="flex items-center gap-6 group hover:text-prime transition-colors">
+                <p class="text-3xl md:text-5xl font-light leading-[1.3] text-zinc-800 mb-20 italic serif max-w-4xl">
+                    <span x-show="lang === 'lb'" x-cloak>Mat enger technescher Villsäitegkeet déi international gewonnen
+                        gouf, iwwersetzen ech Komplexitéit a Sécherheet an elektresch Leeschtung.</span>
+                    <span x-show="lang === 'fr'" x-cloak>Fort d'une polyvalence technique acquise à l'international, je
+                        traduis la complexité en sécurité et performance électrique.</span>
+                    <span x-show="lang === 'es'" x-cloak>Con una versatilidad técnica adquirida a nivel internacional,
+                        traduzco la complejidad en seguridad y rendimiento eléctrico.</span>
+                    <span x-show="lang === 'en' || lang === 'pt' || lang === 'it'" x-cloak>With technical versatility
+                        acquired internationally, I translate complexity into electrical safety and performance.</span>
+                </p>
+                <div class="grid grid-cols-2 lg:grid-cols-3 gap-12 w-full mt-16">
+                    <!-- Languages with clear levels and labels -->
+                    <div
+                        class="group border-l-4 border-prime pl-8 py-6 flex flex-col items-start bg-white shadow-sm transition-all hover:shadow-md">
                         <span
-                            class="w-12 h-[1px] bg-zinc-200 group-hover:w-16 group-hover:bg-prime transition-all"></span>
-                        <span
-                            x-text="lang === 'lb' ? 'Allgemeng & Industriell Elektrizitéit' : 'Électricité Générale & Industrielle'"></span>
-                    </li>
-                    <li class="flex items-center gap-6 group hover:text-prime transition-colors">
-                        <span
-                            class="w-12 h-[1px] bg-zinc-200 group-hover:w-16 group-hover:bg-prime transition-all"></span>
-                        <span
-                            x-text="lang === 'lb' ? 'Metrologie an Qualitéitskontroll' : 'Métrologie et Contrôle Qualité'"></span>
-                    </li>
-                    <li class="flex items-center gap-6 group hover:text-prime transition-colors">
-                        <span
-                            class="w-12 h-[1px] bg-zinc-200 group-hover:w-16 group-hover:bg-prime transition-all"></span>
-                        <span
-                            x-text="lang === 'lb' ? 'Domotik, Informatik an IOT' : 'Domotique, Informatique et IOT'"></span>
-                    </li>
-                    <li class="flex items-center gap-6 group hover:text-prime transition-colors">
-                        <span
-                            class="w-12 h-[1px] bg-zinc-200 group-hover:w-16 group-hover:bg-prime transition-all"></span>
-                        <span
-                            x-text="lang === 'lb' ? 'Maintenance vun HVAC Systemer' : 'Maintenance Systèmes HVAC'"></span>
-                    </li>
-                </ul>
-            </div>
-            <div class="relative" data-aos="fade-up" data-aos-delay="200">
-                <div class="grid grid-cols-2 gap-1 bg-zinc-100 p-1">
-                    <div class="bg-white p-14 flex flex-col justify-between min-h-[280px]">
-                        <h3 class="text-xl font-black uppercase tracking-widest leading-none"
-                            x-text="lang === 'lb' ? 'Technesch Rigurositéit' : 'Rigueur Technique'"></h3>
+                            class="text-[11px] uppercase tracking-widest text-[#1E3A8A] font-black block mb-4 leading-none">
+                            <span x-show="lang === 'es'" x-cloak>Español</span>
+                            <span x-show="lang !== 'es'" x-cloak>Espagnol</span>
+                        </span>
+                        <span class="text-2xl font-bold text-zinc-800 uppercase tracking-tighter">Natif</span>
                     </div>
-                    <div class="bg-zinc-50 overflow-hidden">
-                        <img src="yusmel_tools_real.png" alt="Outils Précision"
-                            class="w-full h-full object-cover img-premium">
+                    <div
+                        class="group border-l-4 border-prime pl-8 py-6 flex flex-col items-start bg-white shadow-sm transition-all hover:shadow-md">
+                        <span
+                            class="text-[11px] uppercase tracking-widest text-[#1E3A8A] font-black block mb-4 leading-none">
+                            <span x-show="lang === 'lb'" x-cloak>Franséisch</span>
+                            <span x-show="lang !== 'lb'" x-cloak>Français</span>
+                        </span>
+                        <span class="text-2xl font-bold text-zinc-800 uppercase tracking-tighter">B1.2 Business</span>
                     </div>
-                    <div class="bg-zinc-50 overflow-hidden">
-                        <img src="yusmel_detail.png" alt="Détail Électrique"
-                            class="w-full h-full object-cover img-premium">
+                    <div
+                        class="group border-l-4 border-prime pl-8 py-6 flex flex-col items-start bg-white shadow-sm transition-all hover:shadow-md">
+                        <span
+                            class="text-[11px] uppercase tracking-widest text-[#1E3A8A] font-black block mb-4 leading-none">
+                            <span x-show="lang === 'lb'" x-cloak>Lëtzebuergesch</span>
+                            <span x-show="lang !== 'lb'" x-cloak>Luxembourgeois</span>
+                        </span>
+                        <span class="text-2xl font-bold text-zinc-800 uppercase tracking-tighter">B1
+                            Communication</span>
                     </div>
-                    <div class="bg-white p-14 flex flex-col justify-between min-h-[280px]">
-                        <h3 class="text-xl font-black uppercase tracking-widest leading-none"
-                            x-text="lang === 'lb' ? 'Global Flexibilitéit' : 'Flexibilité Globale'"></h3>
+                    <div
+                        class="group border-l-4 border-prime pl-8 py-6 flex flex-col items-start bg-white shadow-sm transition-all hover:shadow-md">
+                        <span
+                            class="text-[11px] uppercase tracking-widest text-[#1E3A8A] font-black block mb-4 leading-none">
+                            <span x-show="lang === 'lb'" x-cloak>Englesch</span>
+                            <span x-show="lang !== 'lb'" x-cloak>Anglais</span>
+                        </span>
+                        <span class="text-2xl font-bold text-zinc-800 uppercase tracking-tighter">B1 Technique</span>
+                    </div>
+                    <div
+                        class="group border-l-4 border-prime pl-8 py-6 flex flex-col items-start bg-white shadow-sm transition-all hover:shadow-md">
+                        <span
+                            class="text-[11px] uppercase tracking-widest text-[#1E3A8A] font-black block mb-4 leading-none">
+                            <span x-show="lang === 'lb'" x-cloak>Portugisesch</span>
+                            <span x-show="lang !== 'lb'" x-cloak>Portugais</span>
+                        </span>
+                        <span class="text-2xl font-bold text-zinc-800 uppercase tracking-tighter">A2.2 Pratique</span>
+                    </div>
+                    <div
+                        class="group border-l-4 border-prime pl-8 py-6 flex flex-col items-start bg-white shadow-sm transition-all hover:shadow-md">
+                        <span
+                            class="text-[11px] uppercase tracking-widest text-[#1E3A8A] font-black block mb-4 leading-none">
+                            <span x-show="lang === 'lb'" x-cloak>Italienesch</span>
+                            <span x-show="lang !== 'lb'" x-cloak>Italien</span>
+                        </span>
+                        <span class="text-2xl font-bold text-zinc-800 uppercase tracking-tighter">A2.2 Pratique</span>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Experience -->
-<section id="parcours" class="py-40 bg-zinc-900 text-white overflow-hidden">
-    <div class="max-w-7xl mx-auto px-6 relative">
-        <h2 class="text-8xl serif font-bold mb-32 opacity-20" x-text="lang === 'lb' ? 'Chronologie' : 'Chronologie'">
-        </h2>
-
-        <div class="grid md:grid-cols-2 gap-20 relative z-10">
-            <!-- Luxembourg Column (Right) -->
-            <div class="order-1 md:order-2 space-y-12 border-l border-zinc-800 pl-8">
-                <h3 class="text-xs font-black tracking-[0.6em] text-accent uppercase mb-16"
-                    x-text="lang === 'es' ? 'Luxemburgo (Desde 2019)' : 'Luxembourg (Depuis 2019)'"></h3>
-
-                <!-- Exteam Group -->
-                <div data-aos="fade-up">
-                    <div class="text-[10px] font-bold tracking-[0.4em] text-prime mb-2 uppercase">
-                        <span x-show="lang === 'lb'" x-cloak>Zäit 2025</span>
-                        <span x-show="lang === 'es'" x-cloak>Desde 2025</span>
-                        <span x-show="lang !== 'lb' && lang !== 'es'" x-cloak>Depuis 2025</span>
-                    </div>
-                    <h3 class="text-3xl serif italic mb-2 text-prime">Exteam Group</h3>
-                    <p class="text-xl font-light text-white">
-                        <span x-show="lang === 'lb'" x-cloak>Missioun an der BDL (Banque de Luxembourg).</span>
-                        <span x-show="lang === 'es'" x-cloak>Misión en la BDL (Banque de Luxembourg).</span>
-                        <span x-show="lang !== 'lb' && lang !== 'es'" x-cloak>Mission à la BDL (Banque de
-                            Luxembourg).</span>
-                    </p>
+    <!-- Expertise -->
+    <section id="expert" class="py-56">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-32 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="text-7xl serif font-bold mb-16 leading-tight">
+                        <span x-text="lang === 'lb' ? 'D\'Ausféierung vun der' : 'L\'Exécution de la'"></span> <br>
+                        <span class="italic font-normal" x-text="lang === 'lb' ? 'Präzisioun' : 'Précision'"></span>
+                    </h2>
+                    <ul class="space-y-10 text-xl font-light text-zinc-500">
+                        <li class="flex items-center gap-6 group hover:text-prime transition-colors">
+                            <span
+                                class="w-12 h-[1px] bg-zinc-200 group-hover:w-16 group-hover:bg-prime transition-all"></span>
+                            <span
+                                x-text="lang === 'lb' ? 'Allgemeng & Industriell Elektrizitéit' : 'Électricité Générale & Industrielle'"></span>
+                        </li>
+                        <li class="flex items-center gap-6 group hover:text-prime transition-colors">
+                            <span
+                                class="w-12 h-[1px] bg-zinc-200 group-hover:w-16 group-hover:bg-prime transition-all"></span>
+                            <span
+                                x-text="lang === 'lb' ? 'Metrologie an Qualitéitskontroll' : 'Métrologie et Contrôle Qualité'"></span>
+                        </li>
+                        <li class="flex items-center gap-6 group hover:text-prime transition-colors">
+                            <span
+                                class="w-12 h-[1px] bg-zinc-200 group-hover:w-16 group-hover:bg-prime transition-all"></span>
+                            <span
+                                x-text="lang === 'lb' ? 'Domotik, Informatik an IOT' : 'Domotique, Informatique et IOT'"></span>
+                        </li>
+                        <li class="flex items-center gap-6 group hover:text-prime transition-colors">
+                            <span
+                                class="w-12 h-[1px] bg-zinc-200 group-hover:w-16 group-hover:bg-prime transition-all"></span>
+                            <span
+                                x-text="lang === 'lb' ? 'Maintenance vun HVAC Systemer' : 'Maintenance Systèmes HVAC'"></span>
+                        </li>
+                    </ul>
                 </div>
-
-                <!-- Global Facilities -->
-                <div data-aos="fade-up">
-                    <div class="text-[10px] font-bold tracking-[0.4em] text-gray-400 mb-2 uppercase">2023 - 2025</div>
-                    <h3 class="text-3xl serif italic mb-2 text-gray-200">Global Facilities</h3>
-                    <p class="text-xl font-light text-gray-400"
-                        x-text="lang === 'lb' ? 'DAP an der Elektrizitéit, Léierplaz.' : 'DAP en électricité, apprentissage.'">
-                    </p>
-                </div>
-
-                <!-- MySafety -->
-                <div data-aos="fade-up">
-                    <div class="text-[10px] font-bold tracking-[0.4em] text-gray-500 mb-2 uppercase">2022 - 2023</div>
-                    <h3 class="text-3xl serif italic mb-2">MySafety</h3>
-                    <p class="text-xl font-light text-gray-400"
-                        x-text="lang === 'lb' ? 'DAP an der Elektrizitéit, Léierplaz.' : 'DAP en électricité, apprentissage.'">
-                    </p>
-                </div>
-
-                <!-- Co-Labor -->
-                <div data-aos="fade-up">
-                    <div class="text-[10px] font-bold tracking-[0.4em] text-gray-400 mb-2 uppercase">2021 - 2022</div>
-                    <h3 class="text-3xl serif italic mb-2 text-white">Co-Labor</h3>
-                    <p class="text-xl font-light text-gray-300"
-                        x-text="lang === 'lb' ? 'Villsäitegen Aarbechter.' : 'Ouvrier polyvalent.'"></p>
-                </div>
-
-                <!-- Verda -->
-                <div data-aos="fade-up">
-                    <div
-                        class="text-[10px] font-bold tracking-[0.4em] text-prime underline decoration-prime/30 mb-2 uppercase">
-                        2020</div>
-                    <h3 class="text-3xl serif italic mb-2 text-white">Verda (Jardinerie)</h3>
-                    <p class="text-xl font-light text-gray-300"
-                        x-text="lang === 'lb' ? 'Villsäitegen Aarbechter.' : 'Ouvrier polyvalent.'"></p>
-                </div>
-
-                <!-- Winterlights -->
-                <div data-aos="fade-up">
-                    <div class="text-[10px] font-bold tracking-[0.4em] text-gray-400 mb-2 uppercase">2019 - 2020</div>
-                    <h3 class="text-3xl serif italic mb-2 text-white">Restaurant Kugener (Winterlights)</h3>
-                    <p class="text-xl font-light text-gray-300"
-                        x-text="lang === 'lb' ? 'Geleeëntlech Hëllef.' : 'Aide occasionelle.'"></p>
-                </div>
-            </div>
-
-            <!-- International Column (Left) -->
-            <div class="order-2 md:order-1 space-y-12">
-                <h3 class="text-xs font-black tracking-[0.6em] text-zinc-400 uppercase mb-16"
-                    x-text="lang === 'es' ? 'Internacional (Antes de 2019)' : 'International (Avant 2019)'"></h3>
-
-                <!-- Restauration -->
-                <div data-aos="fade-up">
-                    <div class="text-[10px] font-bold tracking-[0.4em] text-gray-500 mb-2 uppercase">2017 - 2019</div>
-                    <h3 class="text-3xl serif italic mb-2">Restauration</h3>
-                    <p class="text-xl font-light text-gray-400"
-                        x-text="lang === 'lb' ? 'Co-Gérant vun engem Restaurant.' : 'Co-gérant d\'un restaurant.'"></p>
-                </div>
-
-                <!-- Tech & Tourism -->
-                <div data-aos="fade-up">
-                    <div class="text-[10px] font-bold tracking-[0.4em] text-gray-500 mb-2 uppercase">2016 - 2017</div>
-                    <h3 class="text-3xl serif italic mb-2">Tech & Tourism</h3>
-                    <p class="text-xl font-light text-gray-400"
-                        x-text="lang === 'lb' ? 'Maintenance vun Internetverbindungen, Reesguide.' : 'Maintenance et gestion des connexions internet, guide de voyage.'">
-                    </p>
-                </div>
-
-                <!-- HVAC -->
-                <div data-aos="fade-up">
-                    <div class="text-[10px] font-bold tracking-[0.4em] text-gray-500 mb-2 uppercase">2014 - 2016</div>
-                    <h3 class="text-3xl serif italic mb-2">HVAC Sector</h3>
-                    <p class="text-xl font-light text-gray-400"
-                        x-text="lang === 'lb' ? 'Hëllefs-Installateur an HVAC.' : 'Aide-installateur en HVAC.'"></p>
-                </div>
-
-                <!-- Métrologie -->
-                <div data-aos="fade-up">
-                    <div class="text-[10px] font-bold tracking-[0.4em] text-gray-500 mb-2 uppercase">2006 - 2008</div>
-                    <h3 class="text-3xl serif italic mb-2" x-text="lang === 'lb' ? 'Metrologie' : 'Métrologie'"></h3>
-                    <p class="text-xl font-light text-gray-400"
-                        x-text="lang === 'lb' ? 'Qualitéitskontroll.' : 'Métrologie et contrôle de qualité.'"></p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Education -->
-<section class="py-40">
-    <div class="max-w-7xl mx-auto px-6">
-        <h2 class="text-4xl serif italic mb-20 text-center"
-            x-text="lang === 'lb' ? 'Studien a Formatiounen' : 'Études et Formations'"></h2>
-        <div class="grid md:grid-cols-2 gap-16">
-            <!-- Luxembourg Column -->
-            <div data-aos="fade-right">
-                <h3 class="text-xl font-black uppercase tracking-[0.4em] text-prime mb-12 border-b border-prime/10 pb-4"
-                    x-text="lang === 'lb' ? 'Lëtzebuerg Parcours' : 'Parcours au Luxembourg'"></h3>
-                <div class="space-y-6">
-                    <div class="bg-zinc-50 p-6 border-l-4 border-prime transition-transform hover:scale-[1.02]">
-                        <div class="text-[9px] font-bold text-gray-400 mb-1 uppercase tracking-tighter">Depuis 2022
+                <div class="relative" data-aos="fade-up" data-aos-delay="200">
+                    <div class="grid grid-cols-2 gap-1 bg-zinc-100 p-1">
+                        <div class="bg-white p-14 flex flex-col justify-between min-h-[280px]">
+                            <h3 class="text-xl font-black uppercase tracking-widest leading-none"
+                                x-text="lang === 'lb' ? 'Technesch Rigurositéit' : 'Rigueur Technique'"></h3>
                         </div>
-                        <h4 class="text-lg font-black uppercase text-prime"
-                            x-text="lang === 'es' ? 'Electricista' : 'Électricien'"></h4>
-                        <p class="text-xs text-gray-500 uppercase tracking-widest mt-1">Lycée Technique de Bonnevoie</p>
-                    </div>
-                    <div class="bg-zinc-50 p-6 border-l-4 border-prime transition-transform hover:scale-[1.02]">
-                        <div class="text-[9px] font-bold text-gray-400 mb-1 uppercase tracking-tighter">Depuis 2021
+                        <div class="bg-zinc-50 overflow-hidden">
+                            <img src="yusmel_tools_real.png" alt="Outils Précision"
+                                class="w-full h-full object-cover img-premium">
                         </div>
-                        <h4 class="text-lg font-black uppercase text-prime"
-                            x-text="lang === 'lb' ? 'Lëtzebuergesch' : (lang === 'es' ? 'Luxemburgués' : 'Luxembourgeois')">
-                        </h4>
-                        <p class="text-xs text-gray-500 uppercase tracking-widest mt-1">Ville de Luxembourg (VDL)</p>
-                    </div>
-                    <div class="bg-zinc-50 p-6 border-l-4 border-prime transition-transform hover:scale-[1.02]">
-                        <div class="text-[9px] font-bold text-gray-400 mb-1 uppercase tracking-tighter">2020</div>
-                        <h4 class="text-lg font-black uppercase text-prime"
-                            x-text="lang === 'lb' ? 'JR Web Entwéckler' : 'JR Web Developer'"></h4>
-                        <p class="text-xs text-gray-500 uppercase tracking-widest mt-1">House of Training</p>
-                    </div>
-                    <div class="bg-zinc-50 p-6 border-l-4 border-prime transition-transform hover:scale-[1.02]">
-                        <div class="text-[9px] font-bold text-gray-400 mb-1 uppercase tracking-tighter">2019 - 2021
+                        <div class="bg-zinc-50 overflow-hidden">
+                            <img src="yusmel_detail.png" alt="Détail Électrique"
+                                class="w-full h-full object-cover img-premium">
                         </div>
-                        <h4 class="text-lg font-black uppercase text-prime"
-                            x-text="lang === 'es' ? 'Lengua Francesa' : 'Langue Française'"></h4>
-                        <p class="text-xs text-gray-500 uppercase tracking-widest mt-1">CLAE</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Cuba Column -->
-            <div data-aos="fade-left">
-                <h3 class="text-xl font-black uppercase tracking-[0.4em] text-gray-400 mb-12 border-b border-gray-100 pb-4"
-                    x-text="lang === 'lb' ? 'Formatioun op Kuba' : 'Formation à Cuba'"></h3>
-                <div class="space-y-6">
-                    <div
-                        class="bg-zinc-50 p-6 border-l-4 border-zinc-200 opacity-80 filter grayscale hover:grayscale-0 hover:opacity-100 transition-all">
-                        <div class="text-[9px] font-bold text-gray-400 mb-1 uppercase tracking-tighter">2013</div>
-                        <h4 class="text-lg font-bold uppercase text-zinc-700"
-                            x-text="lang === 'es' ? 'Gestión y Arte' : 'Gestion & Art'"></h4>
-                        <p class="text-xs text-gray-500 uppercase tracking-widest mt-1">Casa de la Cultura, FMC</p>
-                    </div>
-                    <div
-                        class="bg-zinc-50 p-6 border-l-4 border-zinc-200 opacity-80 filter grayscale hover:grayscale-0 transition-all">
-                        <div class="text-[9px] font-bold text-gray-400 mb-1 uppercase tracking-tighter">2011 - 2012
+                        <div class="bg-white p-14 flex flex-col justify-between min-h-[280px]">
+                            <h3 class="text-xl font-black uppercase tracking-widest leading-none"
+                                x-text="lang === 'lb' ? 'Global Flexibilitéit' : 'Flexibilité Globale'"></h3>
                         </div>
-                        <h4 class="text-lg font-bold uppercase text-zinc-700"
-                            x-text="lang === 'es' ? 'Bachillerato' : 'Baccalauréat'"></h4>
-                        <p class="text-xs text-gray-500 uppercase tracking-widest mt-1">Facultad Carlos Cespedes</p>
-                    </div>
-                    <div
-                        class="bg-zinc-50 p-6 border-l-4 border-zinc-200 opacity-80 filter grayscale hover:grayscale-0 transition-all">
-                        <div class="text-[9px] font-bold text-gray-400 mb-1 uppercase tracking-tighter">2009 - 2011
-                        </div>
-                        <h4 class="text-lg font-bold uppercase text-zinc-700"
-                            x-text="lang === 'es' ? 'Inglés y Marketing' : 'Anglais & Marketing'"></h4>
-                        <p class="text-xs text-gray-500 uppercase tracking-widest mt-1 font-black">École "La Salle"</p>
-                    </div>
-                    <div
-                        class="bg-zinc-50 p-6 border-l-4 border-zinc-200 opacity-80 filter grayscale hover:grayscale-0 transition-all">
-                        <div class="text-[9px] font-bold text-gray-400 mb-1 uppercase tracking-tighter">2008</div>
-                        <h4 class="text-lg font-bold uppercase text-zinc-700"
-                            x-text="lang === 'es' ? 'Italiano B1' : 'Italien B1'"></h4>
-                        <p class="text-xs text-gray-500 uppercase tracking-widest mt-1">École privée</p>
-                    </div>
-                    <div
-                        class="bg-zinc-50 p-6 border-l-4 border-zinc-200 opacity-80 filter grayscale hover:grayscale-0 transition-all">
-                        <div class="text-[9px] font-bold text-gray-400 mb-1 uppercase tracking-tighter">2003 - 2007
-                        </div>
-                        <h4 class="text-lg font-bold uppercase text-zinc-700"
-                            x-text="lang === 'es' ? 'Metrología' : 'Métrologie'"></h4>
-                        <p class="text-xs text-gray-500 uppercase tracking-widest mt-1">Lycée René R. Latour</p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Contact -->
-<footer id="contact" class="py-40 bg-zinc-900 border-t border-zinc-800">
-    <div class="max-w-7xl mx-auto px-6">
-        <div class="grid md:grid-cols-2 gap-20 items-end">
-            <div data-aos="fade-up">
-                <h2 class="text-8xl serif font-bold mb-12 text-white"
-                    x-text="lang === 'lb' ? 'Loosst eis geschwat.' : 'Parlons Tech.'"></h2>
-                <div class="space-y-4 text-xl font-light text-gray-500">
-                    <p class="font-black text-white/90">17a, rue du Lavoir</p>
-                    <p class="font-bold"
-                        x-text="lang === 'lb' ? 'L-3358 Leudelange • Lëtzebuerg' : 'L-3358 Leudelange • Luxembourg'">
-                    </p>
+    <!-- Experience -->
+    <section id="parcours" class="py-40 bg-zinc-900 text-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 relative">
+            <h2 class="text-8xl serif font-bold mb-32 opacity-20"
+                x-text="lang === 'lb' ? 'Chronologie' : 'Chronologie'">
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-20 relative z-10">
+                <!-- Luxembourg Column (Right) -->
+                <div class="order-1 md:order-2 space-y-12 border-l border-zinc-800 pl-8">
+                    <h3 class="text-xs font-black tracking-[0.6em] text-accent uppercase mb-16"
+                        x-text="lang === 'es' ? 'Luxemburgo (Desde 2019)' : 'Luxembourg (Depuis 2019)'"></h3>
+
+                    <!-- Exteam Group -->
+                    <div data-aos="fade-up">
+                        <div class="text-[10px] font-bold tracking-[0.4em] text-prime mb-2 uppercase">
+                            <span x-show="lang === 'lb'" x-cloak>Zäit 2025</span>
+                            <span x-show="lang === 'es'" x-cloak>Desde 2025</span>
+                            <span x-show="lang !== 'lb' && lang !== 'es'" x-cloak>Depuis 2025</span>
+                        </div>
+                        <h3 class="text-3xl serif italic mb-2 text-prime">Exteam Group</h3>
+                        <p class="text-xl font-light text-white">
+                            <span x-show="lang === 'lb'" x-cloak>Missioun an der BDL (Banque de Luxembourg).</span>
+                            <span x-show="lang === 'es'" x-cloak>Misión en la BDL (Banque de Luxembourg).</span>
+                            <span x-show="lang !== 'lb' && lang !== 'es'" x-cloak>Mission à la BDL (Banque de
+                                Luxembourg).</span>
+                        </p>
+                    </div>
+
+                    <!-- Global Facilities -->
+                    <div data-aos="fade-up">
+                        <div class="text-[10px] font-bold tracking-[0.4em] text-gray-400 mb-2 uppercase">2023 - 2025
+                        </div>
+                        <h3 class="text-3xl serif italic mb-2 text-gray-200">Global Facilities</h3>
+                        <p class="text-xl font-light text-gray-400"
+                            x-text="lang === 'lb' ? 'DAP an der Elektrizitéit, Léierplaz.' : 'DAP en électricité, apprentissage.'">
+                        </p>
+                    </div>
+
+                    <!-- MySafety -->
+                    <div data-aos="fade-up">
+                        <div class="text-[10px] font-bold tracking-[0.4em] text-gray-500 mb-2 uppercase">2022 - 2023
+                        </div>
+                        <h3 class="text-3xl serif italic mb-2">MySafety</h3>
+                        <p class="text-xl font-light text-gray-400"
+                            x-text="lang === 'lb' ? 'DAP an der Elektrizitéit, Léierplaz.' : 'DAP en électricité, apprentissage.'">
+                        </p>
+                    </div>
+
+                    <!-- Co-Labor -->
+                    <div data-aos="fade-up">
+                        <div class="text-[10px] font-bold tracking-[0.4em] text-gray-400 mb-2 uppercase">2021 - 2022
+                        </div>
+                        <h3 class="text-3xl serif italic mb-2 text-white">Co-Labor</h3>
+                        <p class="text-xl font-light text-gray-300"
+                            x-text="lang === 'lb' ? 'Villsäitegen Aarbechter.' : 'Ouvrier polyvalent.'"></p>
+                    </div>
+
+                    <!-- Verda -->
+                    <div data-aos="fade-up">
+                        <div
+                            class="text-[10px] font-bold tracking-[0.4em] text-prime underline decoration-prime/30 mb-2 uppercase">
+                            2020</div>
+                        <h3 class="text-3xl serif italic mb-2 text-white">Verda (Jardinerie)</h3>
+                        <p class="text-xl font-light text-gray-300"
+                            x-text="lang === 'lb' ? 'Villsäitegen Aarbechter.' : 'Ouvrier polyvalent.'"></p>
+                    </div>
+
+                    <!-- Winterlights -->
+                    <div data-aos="fade-up">
+                        <div class="text-[10px] font-bold tracking-[0.4em] text-gray-400 mb-2 uppercase">2019 - 2020
+                        </div>
+                        <h3 class="text-3xl serif italic mb-2 text-white">Restaurant Kugener (Winterlights)</h3>
+                        <p class="text-xl font-light text-gray-300"
+                            x-text="lang === 'lb' ? 'Geleeëntlech Hëllef.' : 'Aide occasionelle.'"></p>
+                    </div>
+                </div>
+
+                <!-- International Column (Left) -->
+                <div class="order-2 md:order-1 space-y-12">
+                    <h3 class="text-xs font-black tracking-[0.6em] text-zinc-400 uppercase mb-16"
+                        x-text="lang === 'es' ? 'Internacional (Antes de 2019)' : 'International (Avant 2019)'"></h3>
+
+                    <!-- Restauration -->
+                    <div data-aos="fade-up">
+                        <div class="text-[10px] font-bold tracking-[0.4em] text-gray-500 mb-2 uppercase">2017 - 2019
+                        </div>
+                        <h3 class="text-3xl serif italic mb-2">Restauration</h3>
+                        <p class="text-xl font-light text-gray-400"
+                            x-text="lang === 'lb' ? 'Co-Gérant vun engem Restaurant.' : 'Co-gérant d\'un restaurant.'">
+                        </p>
+                    </div>
+
+                    <!-- Tech & Tourism -->
+                    <div data-aos="fade-up">
+                        <div class="text-[10px] font-bold tracking-[0.4em] text-gray-500 mb-2 uppercase">2016 - 2017
+                        </div>
+                        <h3 class="text-3xl serif italic mb-2">Tech & Tourism</h3>
+                        <p class="text-xl font-light text-gray-400"
+                            x-text="lang === 'lb' ? 'Maintenance vun Internetverbindungen, Reesguide.' : 'Maintenance et gestion des connexions internet, guide de voyage.'">
+                        </p>
+                    </div>
+
+                    <!-- HVAC -->
+                    <div data-aos="fade-up">
+                        <div class="text-[10px] font-bold tracking-[0.4em] text-gray-500 mb-2 uppercase">2014 - 2016
+                        </div>
+                        <h3 class="text-3xl serif italic mb-2">HVAC Sector</h3>
+                        <p class="text-xl font-light text-gray-400"
+                            x-text="lang === 'lb' ? 'Hëllefs-Installateur an HVAC.' : 'Aide-installateur en HVAC.'"></p>
+                    </div>
+
+                    <!-- Métrologie -->
+                    <div data-aos="fade-up">
+                        <div class="text-[10px] font-bold tracking-[0.4em] text-gray-500 mb-2 uppercase">2006 - 2008
+                        </div>
+                        <h3 class="text-3xl serif italic mb-2" x-text="lang === 'lb' ? 'Metrologie' : 'Métrologie'">
+                        </h3>
+                        <p class="text-xl font-light text-gray-400"
+                            x-text="lang === 'lb' ? 'Qualitéitskontroll.' : 'Métrologie et contrôle de qualité.'"></p>
+                    </div>
                 </div>
             </div>
-            <div class="space-y-8" data-aos="fade-up" data-aos-delay="200">
-                <a href="tel:+352621430283"
-                    class="flex justify-between items-center group p-10 border border-zinc-800 bg-zinc-800/50 hover:border-prime transition-all">
-                    <span
-                        class="text-[10px] font-bold tracking-[0.4em] uppercase text-gray-500 group-hover:text-prime">GSM</span>
-                    <span class="text-3xl serif italic text-white">+(352) 621 430 283</span>
-                </a>
-                <a href="mailto:yucolaguilar@gmail.com"
-                    class="flex justify-between items-center group p-10 border border-zinc-800 bg-zinc-800/50 hover:border-prime transition-all">
-                    <span
-                        class="text-[10px] font-bold tracking-[0.4em] uppercase text-gray-500 group-hover:text-prime">Email</span>
-                    <span class="text-3xl serif italic text-white text-sm md:text-3xl">yucolaguilar@gmail.com</span>
-                </a>
+        </div>
+    </section>
+
+    <!-- Education -->
+    <section class="py-40">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl serif italic mb-20 text-center"
+                x-text="lang === 'lb' ? 'Studien a Formatiounen' : 'Études et Formations'"></h2>
+            <div class="grid md:grid-cols-2 gap-16">
+                <!-- Luxembourg Column -->
+                <div data-aos="fade-right">
+                    <h3 class="text-xl font-black uppercase tracking-[0.4em] text-prime mb-12 border-b border-prime/10 pb-4"
+                        x-text="lang === 'lb' ? 'Lëtzebuerg Parcours' : 'Parcours au Luxembourg'"></h3>
+                    <div class="space-y-6">
+                        <div class="bg-zinc-50 p-6 border-l-4 border-prime transition-transform hover:scale-[1.02]">
+                            <div class="text-[9px] font-bold text-gray-400 mb-1 uppercase tracking-tighter">Depuis 2022
+                            </div>
+                            <h4 class="text-lg font-black uppercase text-prime"
+                                x-text="lang === 'es' ? 'Electricista' : 'Électricien'"></h4>
+                            <p class="text-xs text-gray-500 uppercase tracking-widest mt-1">Lycée Technique de Bonnevoie
+                            </p>
+                        </div>
+                        <div class="bg-zinc-50 p-6 border-l-4 border-prime transition-transform hover:scale-[1.02]">
+                            <div class="text-[9px] font-bold text-gray-400 mb-1 uppercase tracking-tighter">Depuis 2021
+                            </div>
+                            <h4 class="text-lg font-black uppercase text-prime"
+                                x-text="lang === 'lb' ? 'Lëtzebuergesch' : (lang === 'es' ? 'Luxemburgués' : 'Luxembourgeois')">
+                            </h4>
+                            <p class="text-xs text-gray-500 uppercase tracking-widest mt-1">Ville de Luxembourg (VDL)
+                            </p>
+                        </div>
+                        <div class="bg-zinc-50 p-6 border-l-4 border-prime transition-transform hover:scale-[1.02]">
+                            <div class="text-[9px] font-bold text-gray-400 mb-1 uppercase tracking-tighter">2020</div>
+                            <h4 class="text-lg font-black uppercase text-prime"
+                                x-text="lang === 'lb' ? 'JR Web Entwéckler' : 'JR Web Developer'"></h4>
+                            <p class="text-xs text-gray-500 uppercase tracking-widest mt-1">House of Training</p>
+                        </div>
+                        <div class="bg-zinc-50 p-6 border-l-4 border-prime transition-transform hover:scale-[1.02]">
+                            <div class="text-[9px] font-bold text-gray-400 mb-1 uppercase tracking-tighter">2019 - 2021
+                            </div>
+                            <h4 class="text-lg font-black uppercase text-prime"
+                                x-text="lang === 'es' ? 'Lengua Francesa' : 'Langue Française'"></h4>
+                            <p class="text-xs text-gray-500 uppercase tracking-widest mt-1">CLAE</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cuba Column -->
+                <div data-aos="fade-left">
+                    <h3 class="text-xl font-black uppercase tracking-[0.4em] text-gray-400 mb-12 border-b border-gray-100 pb-4"
+                        x-text="lang === 'lb' ? 'Formatioun op Kuba' : 'Formation à Cuba'"></h3>
+                    <div class="space-y-6">
+                        <div
+                            class="bg-zinc-50 p-6 border-l-4 border-zinc-200 opacity-80 filter grayscale hover:grayscale-0 hover:opacity-100 transition-all">
+                            <div class="text-[9px] font-bold text-gray-400 mb-1 uppercase tracking-tighter">2013</div>
+                            <h4 class="text-lg font-bold uppercase text-zinc-700"
+                                x-text="lang === 'es' ? 'Gestión y Arte' : 'Gestion & Art'"></h4>
+                            <p class="text-xs text-gray-500 uppercase tracking-widest mt-1">Casa de la Cultura, FMC</p>
+                        </div>
+                        <div
+                            class="bg-zinc-50 p-6 border-l-4 border-zinc-200 opacity-80 filter grayscale hover:grayscale-0 transition-all">
+                            <div class="text-[9px] font-bold text-gray-400 mb-1 uppercase tracking-tighter">2011 - 2012
+                            </div>
+                            <h4 class="text-lg font-bold uppercase text-zinc-700"
+                                x-text="lang === 'es' ? 'Bachillerato' : 'Baccalauréat'"></h4>
+                            <p class="text-xs text-gray-500 uppercase tracking-widest mt-1">Facultad Carlos Cespedes</p>
+                        </div>
+                        <div
+                            class="bg-zinc-50 p-6 border-l-4 border-zinc-200 opacity-80 filter grayscale hover:grayscale-0 transition-all">
+                            <div class="text-[9px] font-bold text-gray-400 mb-1 uppercase tracking-tighter">2009 - 2011
+                            </div>
+                            <h4 class="text-lg font-bold uppercase text-zinc-700"
+                                x-text="lang === 'es' ? 'Inglés y Marketing' : 'Anglais & Marketing'"></h4>
+                            <p class="text-xs text-gray-500 uppercase tracking-widest mt-1 font-black">École "La Salle"
+                            </p>
+                        </div>
+                        <div
+                            class="bg-zinc-50 p-6 border-l-4 border-zinc-200 opacity-80 filter grayscale hover:grayscale-0 transition-all">
+                            <div class="text-[9px] font-bold text-gray-400 mb-1 uppercase tracking-tighter">2008</div>
+                            <h4 class="text-lg font-bold uppercase text-zinc-700"
+                                x-text="lang === 'es' ? 'Italiano B1' : 'Italien B1'"></h4>
+                            <p class="text-xs text-gray-500 uppercase tracking-widest mt-1">École privée</p>
+                        </div>
+                        <div
+                            class="bg-zinc-50 p-6 border-l-4 border-zinc-200 opacity-80 filter grayscale hover:grayscale-0 transition-all">
+                            <div class="text-[9px] font-bold text-gray-400 mb-1 uppercase tracking-tighter">2003 - 2007
+                            </div>
+                            <h4 class="text-lg font-bold uppercase text-zinc-700"
+                                x-text="lang === 'es' ? 'Metrología' : 'Métrologie'"></h4>
+                            <p class="text-xs text-gray-500 uppercase tracking-widest mt-1">Lycée René R. Latour</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</footer>
+    </section>
 
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script>
-    AOS.init({ duration: 1000, once: true });
+    <!-- Contact -->
+    <footer id="contact" class="py-40 bg-zinc-900 border-t border-zinc-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-20 items-end">
+                <div data-aos="fade-up">
+                    <h2 class="text-8xl serif font-bold mb-12 text-white"
+                        x-text="lang === 'lb' ? 'Loosst eis geschwat.' : 'Parlons Tech.'"></h2>
+                    <div class="space-y-4 text-xl font-light text-gray-500">
+                        <p class="font-black text-white/90">17a, rue du Lavoir</p>
+                        <p class="font-bold"
+                            x-text="lang === 'lb' ? 'L-3358 Leudelange • Lëtzebuerg' : 'L-3358 Leudelange • Luxembourg'">
+                        </p>
+                    </div>
+                </div>
+                <div class="space-y-8" data-aos="fade-up" data-aos-delay="200">
+                    <a href="tel:+352621430283"
+                        class="flex justify-between items-center group p-10 border border-zinc-800 bg-zinc-800/50 hover:border-prime transition-all">
+                        <span
+                            class="text-[10px] font-bold tracking-[0.4em] uppercase text-gray-500 group-hover:text-prime">GSM</span>
+                        <span class="text-3xl serif italic text-white">+(352) 621 430 283</span>
+                    </a>
+                    <a href="mailto:yucolaguilar@gmail.com"
+                        class="flex justify-between items-center group p-10 border border-zinc-800 bg-zinc-800/50 hover:border-prime transition-all">
+                        <span
+                            class="text-[10px] font-bold tracking-[0.4em] uppercase text-gray-500 group-hover:text-prime">Email</span>
+                        <span class="text-3xl serif italic text-white text-sm md:text-3xl">yucolaguilar@gmail.com</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-    // Add event listener for language change to refresh AOS
-    document.addEventListener('alpine:init', () => {
-        Alpine.data('app', () => ({
-            lang: 'fr',
-            init() {
-                this.$watch('lang', () => {
-                    setTimeout(() => {
-                        AOS.refresh();
-                        // Also trigger a resize event to force AOS to recalculate positions
-                        window.dispatchEvent(new Event('resize'));
-                    }, 50);
-                });
-            }
-        }))
-    });
-</script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+
+        // Add event listener for language change to refresh AOS
+        document.addEventListener('alpine:init', () => {
+            Alpine.data('app', () => ({
+                lang: 'fr',
+                init() {
+                    this.$watch('lang', () => {
+                        setTimeout(() => {
+                            AOS.refresh();
+                            // Also trigger a resize event to force AOS to recalculate positions
+                            window.dispatchEvent(new Event('resize'));
+                        }, 50);
+                    });
+                }
+            }))
+        });
+    </script>
 </body>
 
 </html>
