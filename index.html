@@ -129,8 +129,17 @@
     <!-- Navigation -->
     <nav
         class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-xl border-b lux-border h-24 flex items-center px-6 md:px-12 justify-between transition-all duration-300">
-        <!-- Hidden Logo Placeholder for Flex Alignment -->
-        <div></div>
+        <!-- Vector SVG Logo -->
+        <a href="#" class="flex items-center gap-2 group transition-transform hover:scale-105">
+            <div
+                class="w-10 h-10 bg-prime rounded-lg flex items-center justify-center shadow-lg group-hover:shadow-blue-900/40 transition-shadow">
+                <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+                </svg>
+            </div>
+            <span class="text-2xl font-black tracking-tighter text-zinc-800 ml-1">YC</span>
+        </a>
 
         <!-- Centered Navigation Links -->
         <div class="hidden md:flex gap-12 text-[11px] uppercase tracking-[0.3em] font-bold text-zinc-500">
@@ -650,16 +659,23 @@
                 </div>
                 <div class="space-y-8" data-aos="fade-up" data-aos-delay="200">
                     <a href="tel:+352621430283"
-                        class="flex justify-between items-center group p-10 border border-zinc-800 bg-zinc-800/50 hover:border-prime transition-all">
+                        class="flex justify-between items-center group p-10 border border-zinc-800 bg-zinc-800/50 hover:border-prime hover:bg-zinc-800/80 transition-all">
                         <span
-                            class="text-[10px] font-bold tracking-[0.4em] uppercase text-gray-500 group-hover:text-prime">GSM</span>
-                        <span class="text-3xl serif italic text-white">+(352) 621 430 283</span>
+                            class="text-[12px] font-black tracking-[0.4em] uppercase text-gray-500 group-hover:text-prime flex items-center gap-3">
+                            <span class="text-2xl">📱</span> GSM
+                        </span>
+                        <span
+                            class="text-3xl serif italic text-white transition-transform group-hover:translate-x-2">+(352)
+                            621 430 283</span>
                     </a>
                     <a href="mailto:yucolaguilar@gmail.com"
-                        class="flex justify-between items-center group p-10 border border-zinc-800 bg-zinc-800/50 hover:border-prime transition-all">
+                        class="flex justify-between items-center group p-10 border border-zinc-800 bg-zinc-800/50 hover:border-prime hover:bg-zinc-800/80 transition-all">
                         <span
-                            class="text-[10px] font-bold tracking-[0.4em] uppercase text-gray-500 group-hover:text-prime">Email</span>
-                        <span class="text-3xl serif italic text-white text-sm md:text-3xl">yucolaguilar@gmail.com</span>
+                            class="text-[12px] font-black tracking-[0.4em] uppercase text-gray-500 group-hover:text-prime flex items-center gap-3">
+                            <span class="text-2xl">✉️</span> EMAIL
+                        </span>
+                        <span
+                            class="text-3xl serif italic text-white text-sm md:text-3xl transition-transform group-hover:translate-x-2">yucolaguilar@gmail.com</span>
                     </a>
                 </div>
             </div>
