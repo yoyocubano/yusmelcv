@@ -152,21 +152,42 @@
 <section class="min-h-screen pt-40 flex flex-col items-center justify-center px-6 overflow-hidden bg-white">
     <div class="max-w-7xl w-full grid md:grid-cols-12 gap-16 items-center">
         <div class="md:col-span-7" data-aos="fade-up">
-            <div class="text-[11px] uppercase tracking-[0.6em] text-prime font-bold mb-8"
-                x-text="lang === 'fr' ? 'Électricien • Spécialiste Luxembourg' : (lang === 'es' ? 'Electricista • Especialista Luxemburgo' : (lang === 'lb' ? 'Elektriker • Spezialist Lëtzebuerg' : 'Electrician • Luxembourg Specialist'))">
+            <div class="text-[11px] uppercase tracking-[0.6em] text-prime font-bold mb-8 h-8 flex items-end">
+                <span x-show="lang === 'fr'" x-cloak>Électricien • Spécialiste Luxembourg</span>
+                <span x-show="lang === 'es'" x-cloak>Electricista • Especialista Luxemburgo</span>
+                <span x-show="lang === 'lb'" x-cloak>Elektriker • Spezialist Lëtzebuerg</span>
+                <span x-show="lang === 'en'" x-cloak>Electrician • Luxembourg Specialist</span>
+                <span x-show="lang === 'pt'" x-cloak>Eletricista • Especialista Luxemburgo</span>
+                <span x-show="lang === 'it'" x-cloak>Elettricista • Specialista Lussemburgo</span>
             </div>
             <h1
                 class="text-7xl md:text-[9rem] leading-[0.8] font-black mb-12 tracking-tighter relative z-10 text-prime">
                 Yusmel <br> <span class="italic serif font-normal">Colombo</span>
             </h1>
+            <div class="flex flex-wrap gap-4 mb-12">
+                <span
+                    class="px-4 py-2 border border-zinc-200 text-[10px] font-black uppercase tracking-widest text-zinc-400">
+                    <span x-show="lang === 'es'" x-cloak>Nacionalidad: Cubano - Luxemburgués</span>
+                    <span x-show="lang !== 'es'" x-cloak>Nationalité: Cubano - Luxembourgeois</span>
+                </span>
+                <span
+                    class="px-4 py-2 border border-blue-100 bg-blue-50/50 text-prime text-[10px] font-black uppercase tracking-widest">
+                    <span x-show="lang === 'es'" x-cloak>Licencia B + Vehículo Propio</span>
+                    <span x-show="lang !== 'es'" x-cloak>Permis B + Véhicule Personnel</span>
+                </span>
+            </div>
             <p class="text-lg md:text-2xl font-light serif italic text-gray-500 max-w-xl mb-16 leading-relaxed"
                 x-text="lang === 'fr' ? 'Luxe technique: Précision et discipline en chaque connexion.' : (lang === 'es' ? 'Lujo técnico: Precisión y disciplina en cada conexión.' : (lang === 'lb' ? 'Technesche Luxus: Präzisioun an Disziplin an all Verbindung.' : 'Technical Luxury: Precision and discipline in every connection.'))">
             </p>
             <div class="flex flex-col md:flex-row gap-12 items-start md:items-center">
                 <a href="#contact"
                     class="bg-black text-white px-14 py-6 text-[11px] uppercase font-black tracking-[0.4em] hover:bg-zinc-800 transition-all shadow-[0_20px_50px_rgba(0,0,0,0.15)] group relative overflow-hidden">
-                    <span class="relative z-10"
-                        x-text="lang === 'lb' ? 'Kontakt Protokoll' : (lang === 'fr' ? 'Protocole de Contact' : (lang === 'es' ? 'Protocolo de Contacto' : 'Contact Protocol'))"></span>
+                    <span class="relative z-10">
+                        <span x-show="lang === 'lb'" x-cloak>Kontakt Protokoll</span>
+                        <span x-show="lang === 'fr'" x-cloak>Protocole de Contact</span>
+                        <span x-show="lang === 'es'" x-cloak>Protocolo de Contacto</span>
+                        <span x-show="lang === 'en' || lang === 'pt' || lang === 'it'" x-cloak>Contact Protocol</span>
+                    </span>
                     <div
                         class="absolute inset-0 bg-prime translate-y-full group-hover:translate-y-0 transition-transform duration-500">
                     </div>
@@ -197,51 +218,77 @@
 </section>
 
 <!-- Profile Context & Brand Asset -->
-<section id="profil" class="py-56 bg-zinc-50 relative overflow-hidden">
-    <!-- Background cleaned up for clarity -->
-    <div class="max-w-5xl mx-auto px-6 relative z-10" data-aos="fade-up">
+<section id="profil" class="py-40 bg-zinc-50 border-t border-zinc-100">
+    <div class="max-w-7xl mx-auto px-6">
         <div class="flex flex-col items-center text-center">
-            <h2 class="text-[12px] uppercase tracking-[0.6em] font-black text-gray-300 mb-12"
-                x-text="lang === 'lb' ? 'Visioun & Wee' : 'Vision & Parcours'"></h2>
-            <p class="text-3xl md:text-5xl font-light leading-[1.3] text-zinc-800 mb-20 italic serif"
-                x-text="lang === 'lb' ? 'Mat enger technescher Villsäitegkeet déi international gewonnen gouf, iwwersetzen ech Komplexitéit a Sécherheet an elektresch Leeschtung.' : 'Fort d\'une polyvalence technique acquise à l\'international, je traduis la complexité en sécurité et performance électrique.'">
+            <h2 class="text-[12px] uppercase tracking-[0.6em] font-black text-gray-400 mb-12">
+                <span x-show="lang === 'lb'" x-cloak>Visioun & Wee</span>
+                <span x-show="lang !== 'lb'" x-cloak>Vision & Parcours</span>
+            </h2>
+            <p class="text-3xl md:text-5xl font-light leading-[1.3] text-zinc-800 mb-20 italic serif max-w-4xl">
+                <span x-show="lang === 'lb'" x-cloak>Mat enger technescher Villsäitegkeet déi international gewonnen
+                    gouf, iwwersetzen ech Komplexitéit a Sécherheet an elektresch Leeschtung.</span>
+                <span x-show="lang === 'fr'" x-cloak>Fort d'une polyvalence technique acquise à l'international, je
+                    traduis la complexité en sécurité et performance électrique.</span>
+                <span x-show="lang === 'es'" x-cloak>Con una versatilidad técnica adquirida a nivel internacional,
+                    traduzco la complejidad en seguridad y rendimiento eléctrico.</span>
+                <span x-show="lang === 'en' || lang === 'pt' || lang === 'it'" x-cloak>With technical versatility
+                    acquired internationally, I translate complexity into electrical safety and performance.</span>
             </p>
             <div class="grid grid-cols-2 lg:grid-cols-3 gap-12 w-full mt-16">
                 <!-- Languages with clear levels and labels -->
-                <div class="group border-l-4 border-prime pl-8 py-4 bg-white shadow-sm transition-all hover:shadow-md">
+                <div
+                    class="group border-l-4 border-prime pl-8 py-6 flex flex-col items-start bg-white shadow-sm transition-all hover:shadow-md">
                     <span
-                        class="text-[11px] uppercase tracking-widest text-[#1E3A8A] font-black block mb-2 leading-none"
-                        x-text="lang === 'es' ? 'Español' : 'Espagnol'"></span>
+                        class="text-[11px] uppercase tracking-widest text-[#1E3A8A] font-black block mb-4 leading-none">
+                        <span x-show="lang === 'es'" x-cloak>Español</span>
+                        <span x-show="lang !== 'es'" x-cloak>Espagnol</span>
+                    </span>
                     <span class="text-2xl font-bold text-zinc-800 uppercase tracking-tighter">Natif</span>
                 </div>
-                <div class="group border-l-4 border-prime pl-8 py-4 bg-white shadow-sm transition-all hover:shadow-md">
+                <div
+                    class="group border-l-4 border-prime pl-8 py-6 flex flex-col items-start bg-white shadow-sm transition-all hover:shadow-md">
                     <span
-                        class="text-[11px] uppercase tracking-widest text-[#1E3A8A] font-black block mb-2 leading-none"
-                        x-text="lang === 'lb' ? 'Franséisch' : 'Français'"></span>
+                        class="text-[11px] uppercase tracking-widest text-[#1E3A8A] font-black block mb-4 leading-none">
+                        <span x-show="lang === 'lb'" x-cloak>Franséisch</span>
+                        <span x-show="lang !== 'lb'" x-cloak>Français</span>
+                    </span>
                     <span class="text-2xl font-bold text-zinc-800 uppercase tracking-tighter">B1.2 Business</span>
                 </div>
-                <div class="group border-l-4 border-prime pl-8 py-4 bg-white shadow-sm transition-all hover:shadow-md">
+                <div
+                    class="group border-l-4 border-prime pl-8 py-6 flex flex-col items-start bg-white shadow-sm transition-all hover:shadow-md">
                     <span
-                        class="text-[11px] uppercase tracking-widest text-[#1E3A8A] font-black block mb-2 leading-none"
-                        x-text="lang === 'lb' ? 'Lëtzebuergesch' : 'Luxembourgeois'"></span>
+                        class="text-[11px] uppercase tracking-widest text-[#1E3A8A] font-black block mb-4 leading-none">
+                        <span x-show="lang === 'lb'" x-cloak>Lëtzebuergesch</span>
+                        <span x-show="lang !== 'lb'" x-cloak>Luxembourgeois</span>
+                    </span>
                     <span class="text-2xl font-bold text-zinc-800 uppercase tracking-tighter">B1 Communication</span>
                 </div>
-                <div class="group border-l-4 border-prime pl-8 py-4 bg-white shadow-sm transition-all hover:shadow-md">
+                <div
+                    class="group border-l-4 border-prime pl-8 py-6 flex flex-col items-start bg-white shadow-sm transition-all hover:shadow-md">
                     <span
-                        class="text-[11px] uppercase tracking-widest text-[#1E3A8A] font-black block mb-2 leading-none"
-                        x-text="lang === 'lb' ? 'Englesch' : 'Anglais'"></span>
+                        class="text-[11px] uppercase tracking-widest text-[#1E3A8A] font-black block mb-4 leading-none">
+                        <span x-show="lang === 'lb'" x-cloak>Englesch</span>
+                        <span x-show="lang !== 'lb'" x-cloak>Anglais</span>
+                    </span>
                     <span class="text-2xl font-bold text-zinc-800 uppercase tracking-tighter">B1 Technique</span>
                 </div>
-                <div class="group border-l-4 border-prime pl-8 py-4 bg-white shadow-sm transition-all hover:shadow-md">
+                <div
+                    class="group border-l-4 border-prime pl-8 py-6 flex flex-col items-start bg-white shadow-sm transition-all hover:shadow-md">
                     <span
-                        class="text-[11px] uppercase tracking-widest text-[#1E3A8A] font-black block mb-2 leading-none"
-                        x-text="lang === 'lb' ? 'Portugisesch' : 'Portugais'"></span>
+                        class="text-[11px] uppercase tracking-widest text-[#1E3A8A] font-black block mb-4 leading-none">
+                        <span x-show="lang === 'lb'" x-cloak>Portugisesch</span>
+                        <span x-show="lang !== 'lb'" x-cloak>Portugais</span>
+                    </span>
                     <span class="text-2xl font-bold text-zinc-800 uppercase tracking-tighter">A2.2 Pratique</span>
                 </div>
-                <div class="group border-l-4 border-prime pl-8 py-4 bg-white shadow-sm transition-all hover:shadow-md">
+                <div
+                    class="group border-l-4 border-prime pl-8 py-6 flex flex-col items-start bg-white shadow-sm transition-all hover:shadow-md">
                     <span
-                        class="text-[11px] uppercase tracking-widest text-[#1E3A8A] font-black block mb-2 leading-none"
-                        x-text="lang === 'lb' ? 'Italienesch' : 'Italien'"></span>
+                        class="text-[11px] uppercase tracking-widest text-[#1E3A8A] font-black block mb-4 leading-none">
+                        <span x-show="lang === 'lb'" x-cloak>Italienesch</span>
+                        <span x-show="lang !== 'lb'" x-cloak>Italien</span>
+                    </span>
                     <span class="text-2xl font-bold text-zinc-800 uppercase tracking-tighter">A2.2 Pratique</span>
                 </div>
             </div>
