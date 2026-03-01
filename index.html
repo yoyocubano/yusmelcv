@@ -160,30 +160,30 @@
         <div class="flex items-center gap-6">
             <!-- Language Selector with Premium Details -->
             <div
-                class="flex gap-2 text-[10px] font-black uppercase tracking-widest text-zinc-400 bg-zinc-50/80 px-4 py-2 rounded-lg border border-zinc-100 shadow-sm">
+                class="flex gap-2 text-[9px] md:text-[10px] font-black uppercase tracking-widest text-zinc-400 bg-zinc-50/80 px-4 py-2 rounded-lg border border-zinc-100 shadow-sm flex-wrap justify-center">
                 <button @click="lang = 'fr'"
                     :class="lang === 'fr' ? 'text-prime border-b-2 border-prime' : 'hover:text-zinc-800'"
                     class="pb-0.5 transition-all">FR</button>
-                <div class="w-px h-3 bg-zinc-300 mt-0.5 mx-1"></div>
+                <div class="w-px h-3 bg-zinc-300 mt-0.5 mx-0.5"></div>
                 <button @click="lang = 'es'"
                     :class="lang === 'es' ? 'text-prime border-b-2 border-prime' : 'hover:text-zinc-800'"
                     class="pb-0.5 transition-all">ES</button>
-                <div class="w-px h-3 bg-zinc-300 mt-0.5 mx-1"></div>
+                <div class="w-px h-3 bg-zinc-300 mt-0.5 mx-0.5"></div>
                 <button @click="lang = 'en'"
                     :class="lang === 'en' ? 'text-prime border-b-2 border-prime' : 'hover:text-zinc-800'"
                     class="pb-0.5 transition-all">EN</button>
-                <div class="w-px h-3 bg-zinc-300 mt-0.5 mx-1 hidden lg:block"></div>
+                <div class="w-px h-3 bg-zinc-300 mt-0.5 mx-0.5"></div>
                 <button @click="lang = 'lb'"
                     :class="lang === 'lb' ? 'text-prime border-b-2 border-prime' : 'hover:text-zinc-800'"
-                    class="pb-0.5 transition-all hidden lg:block">LB</button>
-                <div class="w-px h-3 bg-zinc-300 mt-0.5 mx-1 hidden lg:block"></div>
+                    class="pb-0.5 transition-all">LB</button>
+                <div class="w-px h-3 bg-zinc-300 mt-0.5 mx-0.5 hidden sm:block"></div>
                 <button @click="lang = 'pt'"
                     :class="lang === 'pt' ? 'text-prime border-b-2 border-prime' : 'hover:text-zinc-800'"
-                    class="pb-0.5 transition-all hidden lg:block">PT</button>
-                <div class="w-px h-3 bg-zinc-300 mt-0.5 mx-1 hidden lg:block"></div>
+                    class="pb-0.5 transition-all hidden sm:block">PT</button>
+                <div class="w-px h-3 bg-zinc-300 mt-0.5 mx-0.5 hidden sm:block"></div>
                 <button @click="lang = 'it'"
                     :class="lang === 'it' ? 'text-prime border-b-2 border-prime' : 'hover:text-zinc-800'"
-                    class="pb-0.5 transition-all hidden lg:block">IT</button>
+                    class="pb-0.5 transition-all hidden sm:block">IT</button>
             </div>
 
             <a href="#contact"
