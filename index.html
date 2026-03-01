@@ -129,13 +129,8 @@
     <!-- Navigation -->
     <nav
         class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-xl border-b lux-border h-24 flex items-center px-6 md:px-12 justify-between transition-all duration-300">
-        <!-- Logo Premium -->
-        <a href="#" class="flex flex-col items-start leading-none group transition-transform hover:scale-105">
-            <span class="text-3xl font-black tracking-tighter text-prime">Yusmel</span>
-            <span
-                class="text-[9px] uppercase tracking-[0.3em] font-black text-gray-400 group-hover:text-prime transition-colors ml-1 mt-1">Colombo
-                • Électricien</span>
-        </a>
+        <!-- Hidden Logo Placeholder for Flex Alignment -->
+        <div></div>
 
         <!-- Centered Navigation Links -->
         <div class="hidden md:flex gap-12 text-[11px] uppercase tracking-[0.3em] font-bold text-zinc-500">
@@ -180,10 +175,6 @@
                 <button @click="lang = 'pt'"
                     :class="lang === 'pt' ? 'text-prime border-b-2 border-prime' : 'hover:text-zinc-800'"
                     class="pb-0.5 transition-all hidden sm:block">PT</button>
-                <div class="w-px h-3 bg-zinc-300 mt-0.5 mx-0.5 hidden sm:block"></div>
-                <button @click="lang = 'it'"
-                    :class="lang === 'it' ? 'text-prime border-b-2 border-prime' : 'hover:text-zinc-800'"
-                    class="pb-0.5 transition-all hidden sm:block">IT</button>
             </div>
 
             <a href="#contact"
